@@ -13,7 +13,7 @@ Zusätzlich kommt noch, dass Worte wie "einsetzen (in eine Formel - Mathematik)"
 Accounts können nur über MySQL erstellt werden und nicht über die Website, da Phase-G für den privaten Gebrauch gedacht ist. Auf Anfrage werde ich den Code aber gerne noch erweitern.<br>
 Außerdem muss für jede Account eine neue Datenbank erstellt werden, was vielleicht irgendwann behoben wird, jedoch generell eigentlich auch keine schlechte Lösung ist.
 
-Level-Abstände (frei wählbar durch bearbeiten der Datei)
+Level-Abstände (frei wählbar durch bearbeiten der Datei):
 Die Abstände sind unterschiedlich, da man die Vokabel besser kann je öfter man sie richtig hat und demnach muss man sie auch erstmal nicht beantworten.<br><br>
 Level 0: 0 Tage<br>
 Level 1: 5 Tage<br>
