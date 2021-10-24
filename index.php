@@ -123,15 +123,7 @@
 <?php
     }elseif($_GET["post"] == "fail"){
         
-      $lastid = $_COOKIE["last"];
-      $lastcurrent = mysqli_query($dbw, "SELECT * FROM words WHERE `id` = '$lastid'");
-      $lastrow = mysqli_fetch_assoc($lastcurrent);
-      // the message
-      $msg = "Name: " . $lastrow['name'] . " Link: " . $lastrow['link'];
-
-      // send email
-      mail("heyhohoheyhoey@tutanota.com","falsches Wort",$msg);
-      header("location: index.php");
+      //Platzhalter Github Issue
     }else{
       
       //─────────────────────Zufallswahl─────────────────────
