@@ -18,7 +18,7 @@ Die Abstände sind unterschiedlich, da man die Vokabel besser kann je öfter man
 # How to install
 1. Erstelle einen Ordner für die Index-Seite
 2. Erstelle kopiere hier die Dateien index.php und database.php rein.
-3. Ersetze alle Variablen in den createacc.sql und createwords.sql Dateien nach deinen Wünschen.
+3. Ersetze alle Variablen (markiert mit ///) in den createacc.sql und createwords.sql Dateien nach deinen Wünschen.
 4. Erstelle in MySQL Datenbanken mit den createacc.sql und createwords.sql Dateien und bearbeite die database.php Datei entsprechend deiner MySQL-login Daten.
 5. Erstelle einen Unterordner video und ziehe hier alle Dateien rein, die du bei der Website unter Download -> Wörterbuch gesamt -> video findest.
 
