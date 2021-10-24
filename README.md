@@ -16,7 +16,7 @@ Außerdem muss für jede Account eine neue Datenbank erstellt werden, was vielle
 
 
 Level-Abstände (frei wählbar durch bearbeiten der Datei):
-
+---
 Die Abstände sind unterschiedlich, da man die Vokabel besser kann je öfter man sie richtig hat und demnach muss man sie auch erstmal nicht beantworten.<br><br>
 Level 0: 0 Tage<br>
 Level 1: 5 Tage<br>
