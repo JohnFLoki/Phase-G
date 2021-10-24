@@ -26,10 +26,11 @@ Hier sind alle Hinweise auf gefundene fehlerhafte Daten und die Lösung des Prob
 ---
 # ToDo
 1. Cooles CSS
-2. Vokabeln fällig stats
-3. (Code verschönern)
-4. (Datenbanken Verbesserungen s.o.)
-5. (Accountsystem Verbesserungen s.o.)
-6. (Docker)
+2. Github Issue
+3. Vokabeln fällig stats
+4. (Code verschönern)
+5. (Datenbanken Verbesserungen s.o.)
+6. (Accountsystem Verbesserungen s.o.)
+7. (Docker)
 # Copyright
 Alle Inhalte dieser Repository stehen unter einer Creative Commons Namensnennung - Nicht-kommerziell - Weitergabe unter gleichen Bedingungen 3.0 Deutschland Lizenz (https://creativecommons.org/licenses/by-nc-sa/3.0/de/) und die Daten der Vokabeln sind von der Website https://gebaerdenlernen.de/index.php von Henrike Maria Bartsch welche auch unter der Lizenz Creative Commons Namensnennung - Nicht-kommerziell - Weitergabe unter gleichen Bedingungen 3.0 Deutschland steht (Stand 25.10.2021).
