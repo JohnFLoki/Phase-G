@@ -15,10 +15,18 @@ Accounts können nur über MySQL erstellt werden und nicht über die Website, da
 Außerdem muss für jede Account eine neue Datenbank erstellt werden, was vielleicht irgendwann behoben wird, jedoch generell eigentlich auch keine schlechte Lösung ist.<br>
 #Level-Abstände (frei wählbar durch bearbeiten der Datei)
 Die Abstände sind unterschiedlich, da man die Vokabel besser kann je öfter man sie richtig hat und demnach muss man sie auch erstmal nicht beantworten.
+Level 0: 0 Tage
+Level 1: 5 Tage
+Level 2: 20 Tage
+Level 3: 40 Tage
+Level 4: 80 Tage
+Level 5: 160 Tage
+Level 6: 320 Tage
+Level 7: 15 Monate 
 # How to install
 1. Erstelle einen Ordner für die Index-Seite
 2. Erstelle kopiere hier die Dateien index.php und database.php rein.
-3. Ersetze alle Variablen (markiert mit ///) in den createacc.sql und createwords.sql Dateien nach deinen Wünschen.
+3. Ersetze alle Variablen (markiert mit ///) in den createacc.sql, createwords.sql und database.php Dateien nach deinen Wünschen.
 4. Erstelle in MySQL Datenbanken mit den createacc.sql und createwords.sql Dateien und bearbeite die database.php Datei entsprechend deiner MySQL-login Daten.
 5. Erstelle einen Unterordner video und ziehe hier alle Dateien rein, die du bei der Website unter Download -> Wörterbuch gesamt -> video findest.
 
