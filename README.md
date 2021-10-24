@@ -14,15 +14,15 @@ Zusätzlich kommt noch, dass Worte wie "einsetzen (in eine Formel - Mathematik)"
 Accounts können nur über MySQL erstellt werden und nicht über die Website, da Phase-G für den privaten Gebrauch gedacht ist. Auf Anfrage werde ich den Code aber gerne noch erweitern.<br>
 Außerdem muss für jede Account eine neue Datenbank erstellt werden, was vielleicht irgendwann behoben wird, jedoch generell eigentlich auch keine schlechte Lösung ist.<br>
 #Level-Abstände (frei wählbar durch bearbeiten der Datei)
-Die Abstände sind unterschiedlich, da man die Vokabel besser kann je öfter man sie richtig hat und demnach muss man sie auch erstmal nicht beantworten.
-0: 0 Tage
-1: 5 Tage
-2: 20 Tage
-Level 3: 40 Tage
-Level 4: 80 Tage
-Level 5: 160 Tage
-Level 6: 320 Tage
-Level 7: 15 Monate 
+Die Abstände sind unterschiedlich, da man die Vokabel besser kann je öfter man sie richtig hat und demnach muss man sie auch erstmal nicht beantworten.<br>
+Level 0: 0 Tage<br>
+Level 1: 5 Tage<br>
+Level 2: 20 Tage<br>
+Level 3: 40 Tage<br>
+Level 4: 80 Tage<br>
+Level 5: 160 Tage<br>
+Level 6: 320 Tage<br>
+Level 7: 15 Monate<br>
 # How to install
 1. Erstelle einen Ordner für die Index-Seite
 2. Erstelle kopiere hier die Dateien index.php und database.php rein.
