@@ -3,7 +3,7 @@ Karteikartensystem basierend auf HTML, PHP und MySQL.
 # Videos
 Die Videos bekommst du nicht hier sondern bei der Quelle: https://gebaerdenlernen.de/index.php
 # Funktion
-Jede Vokabel hat in der Datenbank einen Eintrag der über die Eigenschaften Datum und Level verfügt.
+Jede Vokabel hat in der Datenbank einen Eintrag der über die Eigenschaften Datum und Level verfügt.<br>
 Man bekommt nur Vokabel abgefragt, wo der Datum-Eintrag vor dem heutigen Tag liegt.
 Sollte eine Vokabel richtig beantwortet werden, wir das Level +1 gesetzt (außer bei Level 7 da bleibt es dabei) und das Datum wird um den Wert des Levels erhöht (siehe unten).
 Wenn sie nicht richtig beantwortet wird sinkt das Level um 1 (außer bei Level 0).
