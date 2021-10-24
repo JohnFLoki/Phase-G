@@ -15,9 +15,9 @@ Accounts können nur über MySQL erstellt werden und nicht über die Website, da
 Außerdem muss für jede Account eine neue Datenbank erstellt werden, was vielleicht irgendwann behoben wird, jedoch generell eigentlich auch keine schlechte Lösung ist.<br>
 #Level-Abstände (frei wählbar durch bearbeiten der Datei)
 Die Abstände sind unterschiedlich, da man die Vokabel besser kann je öfter man sie richtig hat und demnach muss man sie auch erstmal nicht beantworten.
-Level 0: 0 Tage
-Level 1: 5 Tage
-Level 2: 20 Tage
+0: 0 Tage
+1: 5 Tage
+2: 20 Tage
 Level 3: 40 Tage
 Level 4: 80 Tage
 Level 5: 160 Tage
