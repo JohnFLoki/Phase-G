@@ -24,7 +24,7 @@
     
     //─────────────────────Account─────────────────────
 ?>
-  <div style="stats">
+  <div class="stats">
     Hallo <?php echo $_SESSION['login_user']; ?>!<br>
     Deine Statistik:<br>
 <?php
