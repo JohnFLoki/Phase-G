@@ -14,9 +14,7 @@
 <head>
   <title>Phase G</title>
   <meta http-equiv="Pragma" content="no-cache">
-  <style>
-    
-  </style>
+  <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
