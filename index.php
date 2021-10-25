@@ -24,7 +24,7 @@
     
     //─────────────────────Account─────────────────────
 ?>
-  <div style="top: 20px !important; right:20px !important; position: absolute;">
+  <div style="stats">
     Hallo <?php echo $_SESSION['login_user']; ?>!<br>
     Deine Statistik:<br>
 <?php
@@ -63,7 +63,7 @@
       $lastcurrent = mysqli_query($dbw, "SELECT * FROM words WHERE `id` = '$lastid'");
       $lastrow = mysqli_fetch_assoc($lastcurrent);
       
-      echo "<div>";
+      echo "<div class=\"response\">";
       $newlevel = $lastrow["level"];
       if($_POST["wort"] == $lastrow["name"]){
         //─────────────────────richtig─────────────────────
@@ -140,13 +140,13 @@
         $tmp2 = $mysqlday;
         $tmp3 = $mysqlday;
         $nextday = substr($tmp1, 6) . "-" . substr($tmp2, 4, 2) . "-" . substr($tmp3, 0, 5);
-        echo "Du hast bereits alle Vokabeln für heute abgearbeitet. Der $nextday ist dein nächster Lerntag.";
+        echo "<div class=\"response\">Du hast bereits alle Vokabeln für heute abgearbeitet. Der $nextday ist dein nächster Lerntag.</div>";
       }else{
         setcookie("last", $row['id'], 0);
       
       //─────────────────────Antwort─────────────────────
 ?>
-        <div>
+        <div class="answer">
             <video height="480" width="640" controls loop autoplay>
         <source src="./video/<?php echo $row['link']; ?>.mp4" type="video/mp4">
       </video>
@@ -180,7 +180,7 @@
       header("Refresh:2");
     }else{
 ?>
-            <div style="">Benutzername oder Passwort falsch!<br>
+            <div class="login">Benutzername oder Passwort falsch!<br>
                 <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
                     <input type="text" name="uname" placeholder="Benutzername" required /><br><br>
                     <input type="password" name="pass" placeholder="Passwort" required /><br><br>
@@ -191,7 +191,7 @@
     }
   }else{
 ?>
-                <div style=""><br>
+                <div class="login"><br>
                     <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
                         <input type="text" name="uname" placeholder="Benutzername" required /><br><br>
                         <input type="password" name="pass" placeholder="Passwort" required /><br><br>
