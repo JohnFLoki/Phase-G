@@ -7,7 +7,7 @@
     // destroy the session
     session_destroy();
     sleep(2);
-    header("location: index.php");
+    header("location: ./index.php");
   }
 ?>
 <html>
@@ -21,7 +21,7 @@
 
 <body>
 <?php
-  include 'database.php';
+  include './database.php';
   if($acccount == 1){
     
     //─────────────────────Account─────────────────────
@@ -55,7 +55,7 @@
       $count7 = mysqli_num_rows($statssql);
       echo "Level 7: " . $count7 . "<br>";
 ?>
-    <a href="/index.php?logout=1"><button>Ausloggen</button></a><br>
+    <a href="./index.php?logout=1"><button>Ausloggen</button></a><br>
   </div>
 <?php
       
@@ -118,20 +118,20 @@
     $sql = "UPDATE words SET date='$newdate' WHERE id='$lastid'";
     mysqli_query($dbw, $sql);
 ?>
-  <a href="/index.php"><button>Weiter</button></a>
+  <a href="./index.php"><button>Weiter</button></a>
   </div>
 <?php
     }elseif($_GET["post"] == "fail"){
-        
+      
       //Platzhalter Github Issue
+      
     }else{
       
       //─────────────────────Zufallswahl─────────────────────
       //4660 einträge
       //date-calc
       $time = date("Ymd");
-      //https://www.mysqltutorial.org/select-random-records-database-table.aspx
-      //https://stackoverflow.com/questions/7060439/mysql-select-row-where-field-is-smaller-than-other
+      
       $current = mysqli_query($dbw, "SELECT * FROM words WHERE `date` <= '$time' ORDER BY RAND() LIMIT 1");
       $row = mysqli_fetch_assoc($current);
       $count = mysqli_num_rows($current);
@@ -147,11 +147,10 @@
         setcookie("last", $row['id'], 0);
       
       //─────────────────────Antwort─────────────────────
-      //TODO: https://www.w3schools.com/Tags/tryit.asp?filename=tryhtml5_av_prop_playbackrate
 ?>
         <div>
             <video height="480" width="640" controls loop autoplay>
-        <source src="/video/<?php echo $row['link']; ?>.mp4" type="video/mp4">
+        <source src="./video/<?php echo $row['link']; ?>.mp4" type="video/mp4">
       </video>
             <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>?post=1">
                 <br>Vokabellevel: <?php echo $row['level']; ?>
@@ -205,4 +204,5 @@
   } 
 ?>
 </body>
+
 </html>
