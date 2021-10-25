@@ -37,14 +37,15 @@ Hier sind alle Hinweise auf gefundene fehlerhafte Daten und die Lösung des Prob
 ---
 # ToDo
 1. Cooles CSS
-2. Github Issue
-3. Vokabeln fällig stats
-4. (Hashed Passwords)
-5. (Demo page)
-6. (Code verschönern)
-7. (Datenbanken Verbesserungen s.o.)
-8. (Accountsystem Verbesserungen s.o.)
-9. (Docker)
-10. (Acccount Playback Speed https://www.w3schools.com/Tags/tryit.asp?filename=tryhtml5_av_prop_playbackrate)
+2. Login mit Cookies
+3. Github Issue
+4. Vokabeln fällig stats
+5. (Hashed Passwords)
+6. (Demo page)
+7. (Code verschönern)
+8. (Datenbanken Verbesserungen s.o.)
+9. (Accountsystem Verbesserungen s.o.)
+10. (Docker)
+11. (Acccount Playback Speed https://www.w3schools.com/Tags/tryit.asp?filename=tryhtml5_av_prop_playbackrate)
 # Copyright
 Alle Inhalte dieser Repository stehen unter einer Creative Commons Namensnennung - Nicht-kommerziell - Weitergabe unter gleichen Bedingungen 3.0 Deutschland Lizenz (https://creativecommons.org/licenses/by-nc-sa/3.0/de/) und die Daten der Vokabeln sind von der Website https://gebaerdenlernen.de/index.php von Henrike Maria Bartsch welche auch unter der Lizenz Creative Commons Namensnennung - Nicht-kommerziell - Weitergabe unter gleichen Bedingungen 3.0 Deutschland steht (Stand 25.10.2021).
