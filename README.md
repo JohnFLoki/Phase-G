@@ -28,7 +28,7 @@ Level 6: 320 Tage<br>
 Level 7: 15 Monate<br>
 # How to install
 1. Erstelle einen Ordner für die Index-Seite
-2. Erstelle kopiere hier die Dateien index.php und database.php rein.
+2. Erstelle kopiere hier die Dateien index.php, database.php und style.css rein.
 3. Ersetze alle Variablen (markiert mit ///) in den createacc.sql, createwords.sql und database.php Dateien nach deinen Wünschen (Importieren auf eigenes Riskiko).
 4. Erstelle in MySQL Datenbanken mit den createacc.sql und createwords.sql Dateien und bearbeite die database.php Datei entsprechend deiner MySQL-login Daten.
 5. Erstelle einen Unterordner video und ziehe hier alle Dateien rein, die du bei der Website unter Download -> Wörterbuch gesamt -> video findest.
