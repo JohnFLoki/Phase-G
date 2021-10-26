@@ -12,7 +12,7 @@
 ?>
 <html>
 <head>
-  <title>Phase G</title>
+  <title>Phase-G</title>
   <meta http-equiv="Pragma" content="no-cache">
   <link href="style.css" rel="stylesheet" type="text/css">
 </head>
@@ -24,37 +24,70 @@
     
     //─────────────────────Account─────────────────────
 ?>
+  <div class="middle"><div class="hello">
+  <table cellspacing="0" cellpadding="0">
+      <tr>
+        <td class="hallo"><b>Hallo <?php echo $_SESSION['login_user']; ?>!</b></td>
+        <td class="hallob" ><b><a href="./index.php?logout=1">Ausloggen</a></b></td>
+    </tr>
+  </table>
+  </div></div>
+  <!---─────────────────────Stats─────────────────────--->
   <div class="stats">
-    Hallo <?php echo $_SESSION['login_user']; ?>!<br>
-    Deine Statistik:<br>
+    <table cellspacing="10" id="menu" style="width:100%; transition: 0.7s; margin: 0 0 0 -120%;">
+      <tr>
+        <td>
+          Deine Statistik:
+        </td>
 <?php
-      $statssql = mysqli_query($dbw, "SELECT * FROM words WHERE `level` = '0'");
-      $count0 = mysqli_num_rows($statssql);
-      echo "Level 0: " . $count0 . "<br>";
-      $statssql = mysqli_query($dbw, "SELECT * FROM words WHERE `level` = '1'");
-      $count1 = mysqli_num_rows($statssql);
-      echo "Level 1: " . $count1 . "<br>";
-      $statssql = mysqli_query($dbw, "SELECT * FROM words WHERE `level` = '2'");
-      $count2 = mysqli_num_rows($statssql);
-      echo "Level 2: " . $count2 . "<br>";
-      $statssql = mysqli_query($dbw, "SELECT * FROM words WHERE `level` = '3'");
-      $count3 = mysqli_num_rows($statssql);
-      echo "Level 3: " . $count3 . "<br>";
-      $statssql = mysqli_query($dbw, "SELECT * FROM words WHERE `level` = '4'");
-      $count4 = mysqli_num_rows($statssql);
-      echo "Level 4: " . $count4 . "<br>";
-      $statssql = mysqli_query($dbw, "SELECT * FROM words WHERE `level` = '5'");
-      $count5 = mysqli_num_rows($statssql);
-      echo "Level 5: " . $count5 . "<br>";
-      $statssql = mysqli_query($dbw, "SELECT * FROM words WHERE `level` = '6'");
-      $count6 = mysqli_num_rows($statssql);
-      echo "Level 6: " . $count6 . "<br>";
-      $statssql = mysqli_query($dbw, "SELECT * FROM words WHERE `level` = '7'");
-      $count7 = mysqli_num_rows($statssql);
-      echo "Level 7: " . $count7 . "<br>";
+        $statssql = mysqli_query($dbw, "SELECT * FROM words WHERE `level` = '0'");
+        $count0 = mysqli_num_rows($statssql);
+        echo "<td>Level 0: &nbsp;" . $count0 . "</td>";
+        $statssql = mysqli_query($dbw, "SELECT * FROM words WHERE `level` = '1'");
+        $count1 = mysqli_num_rows($statssql);
+        echo "<td>Level 1: &nbsp;" . $count1 . "</td>";
+        $statssql = mysqli_query($dbw, "SELECT * FROM words WHERE `level` = '2'");
+        $count2 = mysqli_num_rows($statssql);
+        echo "<td>Level 2: &nbsp;" . $count2 . "</td>";
+        $statssql = mysqli_query($dbw, "SELECT * FROM words WHERE `level` = '3'");
+        $count3 = mysqli_num_rows($statssql);
+        echo "<td>Level 3: &nbsp;" . $count3 . "</td>";
+        $statssql = mysqli_query($dbw, "SELECT * FROM words WHERE `level` = '4'");
+        $count4 = mysqli_num_rows($statssql);
+        echo "<td>Level 4: &nbsp;" . $count4 . "</td>";
+        $statssql = mysqli_query($dbw, "SELECT * FROM words WHERE `level` = '5'");
+        $count5 = mysqli_num_rows($statssql);
+        echo "<td>Level 5: &nbsp;" . $count5 . "</td>";
+        $statssql = mysqli_query($dbw, "SELECT * FROM words WHERE `level` = '6'");
+        $count6 = mysqli_num_rows($statssql);
+        echo "<td>Level 6: &nbsp;" . $count6 . "</td>";
+        $statssql = mysqli_query($dbw, "SELECT * FROM words WHERE `level` = '7'");
+        $count7 = mysqli_num_rows($statssql);
+        echo "<td>Level 7: &nbsp;" . $count7 . "</td>";
 ?>
-    <a href="./index.php?logout=1"><button>Ausloggen</button></a><br>
+        <td>
+            <a href="#" id="clicker2" onClick="closeStats()"><<</a>
+        </td>
+      </tr>
+    </table>
   </div>
+  <span class="auf" id="clicker" style="transition: 0.0s;">
+    <a style="color: #81a1c1 !important;" href="#" id="clicker2" onClick="openStats()">>></a>
+  </span>
+  <script id="rendered-js" >
+    function openStats() {
+      document.getElementById('menu').style.margin = '0px';
+      document.getElementById('clicker').style.visibility = 'hidden';
+    }
+    
+    function closeStats() {
+      document.getElementById('menu').style.margin = '0 0 0 -120%';
+      setTimeout(function() {
+        document.getElementById('clicker').style.visibility = 'visible';
+      }, 600);
+    }
+    //# sourceURL=pen.js
+    </script>
 <?php
       
     //─────────────────────Prüfung─────────────────────
@@ -62,8 +95,9 @@
       $lastid = $_COOKIE["last"];
       $lastcurrent = mysqli_query($dbw, "SELECT * FROM words WHERE `id` = '$lastid'");
       $lastrow = mysqli_fetch_assoc($lastcurrent);
-      
-      echo "<div class=\"response\">";
+?>
+  <div class="one"><div class="two"><div class="response">
+<?php
       $newlevel = $lastrow["level"];
       if($_POST["wort"] == $lastrow["name"]){
         //─────────────────────richtig─────────────────────
@@ -116,20 +150,17 @@
     $sql = "UPDATE words SET date='$newdate' WHERE id='$lastid'";
     mysqli_query($dbw, $sql);
 ?>
-  <a href="./index.php"><button>Weiter</button></a>
-  </div>
+    <a href="./index.php"><button>Weiter</button></a>
+  </div></div></div>
 <?php
-    }elseif($_GET["post"] == "fail"){
-      
-      //Platzhalter Github Issue
-      
     }else{
       
       //─────────────────────Zufallswahl─────────────────────
       //4660 einträge
       //date-calc
       $time = date("Ymd");
-      
+      //https://www.mysqltutorial.org/select-random-records-database-table.aspx
+      //https://stackoverflow.com/questions/7060439/mysql-select-row-where-field-is-smaller-than-other
       $current = mysqli_query($dbw, "SELECT * FROM words WHERE `date` <= '$time' ORDER BY RAND() LIMIT 1");
       $row = mysqli_fetch_assoc($current);
       $count = mysqli_num_rows($current);
@@ -140,27 +171,38 @@
         $tmp2 = $mysqlday;
         $tmp3 = $mysqlday;
         $nextday = substr($tmp1, 6) . "-" . substr($tmp2, 4, 2) . "-" . substr($tmp3, 0, 5);
-        echo "<div class=\"response\">Du hast bereits alle Vokabeln für heute abgearbeitet. Der $nextday ist dein nächster Lerntag.</div>";
+?>
+  <div class="one"><div class="two"><div class="login">Du hast bereits alle Vokabeln für heute abgearbeitet. Der <?php echo $nextday;?> ist dein nächster Lerntag.</div></div></div>
+<?php
       }else{
         setcookie("last", $row['id'], 0);
       
-      //─────────────────────Antwort─────────────────────
+        //─────────────────────Antwort─────────────────────
+        $statssql = mysqli_query($dbw, "SELECT * FROM words WHERE `date` <= '$time'");
+        $counttoday = mysqli_num_rows($statssql);
+        
 ?>
-        <div class="answer">
-            <video height="480" width="640" controls loop autoplay>
-        <source src="./video/<?php echo $row['link']; ?>.mp4" type="video/mp4">
-      </video>
-            <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>?post=1">
-                <br>Vokabellevel: <?php echo $row['level']; ?>
-                <br><textarea name="wort" placeholder="Antwort" required rows="4" cols="40">
-<?php if($row['level'] == 0){echo $row['name'];} ?>
-</textarea><br><br>
-                <input type="submit" name="login" value="Senden" />
-            </form>
-            <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>?post=fail">
-                <br><br><br><input type="submit" name="fail" value="Sollte das Wort komisch sein, oder das Video nicht laden klicke hier." />
-            </form>
-        </div>
+  <div class="one"><div class="two"><div class="answer">
+    <table cellspacing="0" cellpadding="0">
+      <tr>
+        <td>
+          <video height="480" width="640" controls loop autoplay>
+            <source src="./video/<?php echo $row['link']; ?>.mp4" type="video/mp4">
+          </video>
+        </td>
+        <td style="padding-left: 160px;">
+          Vokabellevel: <?php echo $row['level']; ?><br>
+          Vokalen heute fällig: <?php echo $counttoday; ?>
+          <br><br>
+          <form class="formone" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>?post=1">
+            <textarea name="wort" placeholder="Antwort" required><?php if($row['level'] == 0){echo $row['name'];} ?></textarea>
+            <input type="submit" name="login" value="Senden" />
+          </form>
+        </td>
+      </tr>
+    </table>
+    <a class="formtwo" href="https://github.com/JohnFCreep/Phase-G/issues/new?assignees=&labels=&template=vokabel-fehlerhaft.md&title=Vokabel fehlerhaft&body=Name: <?php echo $row['name']; ?> %40 Link: <?php echo $row['link']; ?>" target="_blank">Sollte das Wort komisch sein, oder das Video nicht laden klicke hier (Github).</a>
+  </div></div></div>
 <?php
       }
     }
@@ -176,31 +218,36 @@
 		
     if($count == 1) {
       $_SESSION['login_user'] = $_POST['uname'];
-      echo "Bitte warten, du wirst automatisch weitergeleitet.";
+?>
+  <div class="one"><div class="two"><div class="login"><p style="text-align: center; padding: 70px 0;">Bitte warten, du wirst automatisch weitergeleitet.</p></div></div></div>
+<?php
       header("Refresh:2");
     }else{
 ?>
-            <div class="login">Benutzername oder Passwort falsch!<br>
-                <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
-                    <input type="text" name="uname" placeholder="Benutzername" required /><br><br>
-                    <input type="password" name="pass" placeholder="Passwort" required /><br><br>
-                    <input type="submit" name="login" value="Senden" />
-                </form>
-            </div>
+  <div class="one"><div class="two"><div class="login"><br>
+    
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
+      <input type="text" name="uname" placeholder="Benutzername" required /><br><br>
+      <input type="password" name="pass" placeholder="Passwort" required /><br><br>
+      <b style="color: #df813b; font-size: 18px;">Benutzername oder Passwort falsch!</b>
+      <input type="submit" name="login" value="Senden" />
+    </form>
+  </div></div></div>
 <?php
     }
   }else{
 ?>
-                <div class="login"><br>
-                    <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
-                        <input type="text" name="uname" placeholder="Benutzername" required /><br><br>
-                        <input type="password" name="pass" placeholder="Passwort" required /><br><br>
-                        <input type="submit" name="login" value="Senden" />
-                    </form>
-                </div>
+  <div class="one"><div class="two"><div class="login"><br>
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
+      <input type="text" name="uname" placeholder="Benutzername" required /><br><br>
+      <input type="password" name="pass" placeholder="Passwort" required /><br><br>
+      <input type="submit" name="login" value="Senden" />
+    </form>
+  </div></div></div>
 <?php
   } 
 ?>
+<a href="https://github.com/JohnFCreep/Phase-G#funktion" class="git" target="_blank">Github (Funktion, Lizenz, ...)</a><br>
 </body>
 
 </html>
