@@ -34,19 +34,16 @@ Vorraussetzungen: Funktionierende WebServer, PHP (getestet auf 7.3) und MySQL (i
 4. Erstelle in MySQL Datenbanken mit den createacc.sql und createwords.sql Dateien und bearbeite die database.php Datei entsprechend deiner MySQL-login Daten.
 5. Erstelle einen Unterordner video und ziehe hier alle Dateien rein, die du bei der Website unter Download -> Wörterbuch gesamt -> video findest.
 
-Hier sind alle Hinweise auf gefundene fehlerhafte Daten und die Lösung des Problems:
+Hier sind alle Hinweise auf gefundene fehlerhafte Daten:
 ---
 # ToDo
-1. Cooles CSS
-2. Login mit Cookies
-3. Github Issue
-4. Vokabeln fällig stats
-5. (Hashed Passwords)
-6. (Demo page)
-7. (Code verschönern)
-8. (Datenbanken Verbesserungen s.o.)
-9. (Accountsystem Verbesserungen s.o.)
-10. (Docker)
-11. (Acccount Playback Speed https://www.w3schools.com/Tags/tryit.asp?filename=tryhtml5_av_prop_playbackrate)
+1. Login mit Cookies
+2. (Hashed Passwords)
+3. (Demo page)
+4. (Code verschönern)
+5. (Datenbanken Verbesserungen s.o.)
+6. (Accountsystem Verbesserungen s.o.)
+7. (Docker)
+8. (Acccount Playback Speed https://www.w3schools.com/Tags/tryit.asp?filename=tryhtml5_av_prop_playbackrate)
 # Copyright
 Alle Inhalte dieser Repository stehen unter einer Creative Commons Namensnennung - Nicht-kommerziell - Weitergabe unter gleichen Bedingungen 3.0 Deutschland Lizenz (https://creativecommons.org/licenses/by-nc-sa/3.0/de/) und die Daten der Vokabeln sind von der Website https://gebaerdenlernen.de/index.php von Henrike Maria Bartsch welche auch unter der Lizenz Creative Commons Namensnennung - Nicht-kommerziell - Weitergabe unter gleichen Bedingungen 3.0 Deutschland steht (Stand 25.10.2021).
