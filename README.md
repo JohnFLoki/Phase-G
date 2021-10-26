@@ -36,12 +36,12 @@ Vorraussetzungen: Funktionierende WebServer, PHP (getestet auf 7.3) und MySQL (i
 
 Struktur:
 ---
-phase-g
- ┝ video
- |   └ alle .mp4 Dateien aus der Zip
- ┝ database.php
- ┝ index.php
- └ style.css
+phase-g<br>
+ ┝ video<br>
+ |   └ alle .mp4 Dateien aus der Zip<br>
+ ┝ database.php<br>
+ ┝ index.php<br>
+ └ style.css<br>
 
 Hier sind alle Hinweise auf gefundene fehlerhafte Daten:
 ---
