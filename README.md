@@ -34,6 +34,15 @@ Vorraussetzungen: Funktionierende WebServer, PHP (getestet auf 7.3) und MySQL (i
 4. Erstelle in MySQL Datenbanken mit den createacc.sql und createwords.sql Dateien und bearbeite die database.php Datei entsprechend deiner MySQL-login Daten.
 5. Erstelle einen Unterordner video und ziehe hier alle Dateien rein, die du bei der Website unter Download -> Wörterbuch gesamt -> video findest.
 
+Struktur:
+---
+phase-g
+ ┝ video
+ |   └ alle .mp4 Dateien aus der Zip
+ ┝ database.php
+ ┝ index.php
+ └ style.css
+
 Hier sind alle Hinweise auf gefundene fehlerhafte Daten:
 ---
 # ToDo
