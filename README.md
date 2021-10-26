@@ -38,10 +38,10 @@ Struktur:
 ---
 phase-g<br>
  ┝ video<br>
- |   └ alle .mp4 Dateien aus der Zip<br>
+  |   └ alle .mp4 Dateien aus der Zip<br>
  ┝ database.php<br>
  ┝ index.php<br>
- └ style.css<br>
+└ style.css<br>
 
 Hier sind alle Hinweise auf gefundene fehlerhafte Daten:
 ---
