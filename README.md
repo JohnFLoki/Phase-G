@@ -46,13 +46,12 @@ phase-g<br>
 Hier sind alle Hinweise auf gefundene fehlerhafte Daten:
 ---
 # ToDo
-1. Login mit Cookies
-2. (Hashed Passwords)
-3. (Demo page)
-4. (Code verschönern)
-5. (Datenbanken Verbesserungen s.o.)
-6. (Accountsystem Verbesserungen s.o.)
-7. (Docker)
-8. (Acccount Playback Speed https://www.w3schools.com/Tags/tryit.asp?filename=tryhtml5_av_prop_playbackrate)
+- Demo Page
+- (Code verschönern)
+- (Datenbanken Verbesserungen s.o.)
+- (Accountsystem Verbesserungen s.o.)
+- (Docker)
+- (Acccount Playback Speed https://www.w3schools.com/Tags/tryit.asp?filename=tryhtml5_av_prop_playbackrate)
+- (Hashed Passwords)
 # Copyright
 Alle Inhalte dieser Repository stehen unter einer Creative Commons Namensnennung - Nicht-kommerziell - Weitergabe unter gleichen Bedingungen 3.0 Deutschland Lizenz (https://creativecommons.org/licenses/by-nc-sa/3.0/de/) und die Daten der Vokabeln sind von der Website https://gebaerdenlernen.de/index.php von Henrike Maria Bartsch welche auch unter der Lizenz Creative Commons Namensnennung - Nicht-kommerziell - Weitergabe unter gleichen Bedingungen 3.0 Deutschland steht (Stand 25.10.2021).
