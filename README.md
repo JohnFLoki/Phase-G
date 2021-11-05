@@ -47,6 +47,7 @@ Hier sind alle Hinweise auf gefundene fehlerhafte Daten:
 ---
 # ToDo
 - Demo Page
+- (Mobil)
 - (Code verschönern)
 - (Datenbanken Verbesserungen s.o.)
 - (Accountsystem Verbesserungen s.o.)
