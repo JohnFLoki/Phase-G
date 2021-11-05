@@ -9,7 +9,7 @@
   $usernametest = $_SESSION["login_user"];
   $sql = "SELECT * FROM accounts WHERE username = '$usernametest'";
   $accresult = mysqli_query($db, $sql);
-  $acccount = mysqli_num_rows($accresult);
+  $account = mysqli_num_rows($accresult);
    
   $DB_DATABASE2 = "phase_g_";
   $DB_DATABASE2 .= $_SESSION["login_user"];
