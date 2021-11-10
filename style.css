@@ -132,6 +132,19 @@ input, textarea {
 	font-weight: bold;
 	transition: background-color 0.2s;
 }
+.login .response{
+	width: 100%;
+	padding: 15px;
+	margin-top: 20px;
+	border-radius: 25px !important;
+	border-top-right-radius: 0px !important;
+	border-top-left-radius: 0px !important;
+	background-color: #434c5e;
+	border: 0;
+	cursor: pointer;
+	font-weight: bold;
+	transition: background-color 0.2s;
+}
 
 .login form input[type="submit"]:hover {
 	background-color: #2868c7;
@@ -214,12 +227,6 @@ textarea:hover{
 }
 .formtwo:hover {
 	background-color: #3b4252;
-}
-
-.response {
-	margin-left: auto;
-	margin-right: auto;
-	width: 400px;
 }
 
 .git{

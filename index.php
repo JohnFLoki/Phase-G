@@ -1,11 +1,13 @@
 <!-----https://gebaerdenlernen.de/index.php----->
 <?php
-  session_start();
+  //session_start();
   if($_GET['logout'] == 1){
     // remove all session variables
-    session_unset();
+    //session_unset();
     // destroy the session
-    session_destroy();
+    //session_destroy();
+    setcookie("login_user", "", time() - 3600);
+    echo $_COOKIE['login_user'];
     sleep(2);
     header("location: ./index.php");
   }
@@ -20,14 +22,14 @@
 <body>
 <?php
   include './database.php';
-  if($acccount == 1){
+  if($account == 1){
     
     //─────────────────────Account─────────────────────
 ?>
   <div class="middle"><div class="hello">
   <table cellspacing="0" cellpadding="0">
       <tr>
-        <td class="hallo"><b>Hallo <?php echo $_SESSION['login_user']; ?>!</b></td>
+        <td class="hallo"><b>Hallo <?php /*echo $_SESSION['login_user'];*/ echo $_COOKIE['login_user'] ?>!</b></td>
         <td class="hallob" ><b><a href="./index.php?logout=1">Ausloggen</a></b></td>
     </tr>
   </table>
@@ -92,66 +94,74 @@
       
     //─────────────────────Prüfung─────────────────────
     if($_GET["post"] == 1){
-      $lastid = $_COOKIE["last"];
-      $lastcurrent = mysqli_query($dbw, "SELECT * FROM words WHERE `id` = '$lastid'");
-      $lastrow = mysqli_fetch_assoc($lastcurrent);
 ?>
-  <div class="one"><div class="two"><div class="response">
+        <div class="one"><div class="two"><div class="login"><p style="text-align: center; padding-top: 70px;">
 <?php
-      $newlevel = $lastrow["level"];
-      if($_POST["wort"] == $lastrow["name"]){
-        //─────────────────────richtig─────────────────────
-        echo "Richtig das Wort war " . $lastrow["name"] . ".";
-        if($lastrow["level"] < 7){
-          $newlevel = $newlevel + 1;
-          $sql = "UPDATE words SET level='$newlevel' WHERE id='$lastid'";
-          mysqli_query($dbw, $sql);
-        }
+      if ($_COOKIE["last"] == -1) {
+        echo "Bitte klicke auf weiter!";
       }else{
-        //─────────────────────falsch─────────────────────
-        echo "Falsch! Das Wort war " . $lastrow['name'] . ".";
-        if($lastrow["level"] != 0){
-          $newlevel = $newlevel - 1;
-          $sql = "UPDATE words SET level='$newlevel' WHERE id='$lastid'";
-          mysqli_query($dbw, $sql);
+        $lastid = $_COOKIE["last"];
+        $lastcurrent = mysqli_query($dbw, "SELECT * FROM words WHERE `id` = '$lastid'");
+        $lastrow = mysqli_fetch_assoc($lastcurrent);
+        $newlevel = $lastrow["level"];
+        if($_POST["wort"] == $lastrow["name"]){
+          //─────────────────────richtig─────────────────────
+          echo "Richtig das Wort war \"" . $lastrow["name"] . "\".";
+          if($lastrow["level"] < 7){
+            $newlevel = $newlevel + 1;
+            $sql = "UPDATE words SET level='$newlevel' WHERE id='$lastid'";
+            mysqli_query($dbw, $sql);
+          }
+        }else{
+          //─────────────────────falsch─────────────────────
+          echo "Falsch! Das Wort war \"" . $lastrow['name'] . "\".";
+          if($lastrow["level"] != 0){
+            $newlevel = $newlevel - 1;
+            $sql = "UPDATE words SET level='$newlevel' WHERE id='$lastid'";
+            mysqli_query($dbw, $sql);
+          }
         }
+        $date2 = date("d-m-Y");
+        $date = date_create($date2);
+        switch ($newlevel) {
+          case "0":
+            $interval = date_interval_create_from_date_string('0 days');
+            break;
+          case "1":
+            $interval = date_interval_create_from_date_string('5 days');
+            break;
+          case "2":
+            $interval = date_interval_create_from_date_string('20 days');
+            break;
+          case "3":
+            $interval = date_interval_create_from_date_string('40 days');
+            break;
+          case "4":
+            $interval = date_interval_create_from_date_string('80 days');
+            break;
+          case "5":
+            $interval = date_interval_create_from_date_string('160 days');
+            break;
+          case "6":
+            $interval = date_interval_create_from_date_string('320 days');
+            break;
+          case "7":
+            $interval = date_interval_create_from_date_string('15 months');
+            break;
+        }
+        $date = date_create(date("d-m-Y"));
+        $res = date_add($date, $interval);   
+        $newdate = date_format($res, "Ymd");
+        $sql = "UPDATE words SET date='$newdate' WHERE id='$lastid'";
+        mysqli_query($dbw, $sql);
+        setcookie("last", -1, 0);
       }
-      $date2 = date("d-m-Y");
-      $date = date_create($date2);
-      switch ($newlevel) {
-        case "0":
-          $interval = date_interval_create_from_date_string('0 days');
-          break;
-        case "1":
-          $interval = date_interval_create_from_date_string('5 days');
-          break;
-        case "2":
-          $interval = date_interval_create_from_date_string('20 days');
-          break;
-        case "3":
-          $interval = date_interval_create_from_date_string('40 days');
-          break;
-        case "4":
-          $interval = date_interval_create_from_date_string('80 days');
-          break;
-        case "5":
-          $interval = date_interval_create_from_date_string('160 days');
-          break;
-        case "6":
-          $interval = date_interval_create_from_date_string('320 days');
-          break;
-        case "7":
-          $interval = date_interval_create_from_date_string('15 months');
-          break;
-      }
-    $date = date_create(date("d-m-Y"));
-    $res = date_add($date, $interval);   
-    $newdate = date_format($res, "Ymd");
-    $sql = "UPDATE words SET date='$newdate' WHERE id='$lastid'";
-    mysqli_query($dbw, $sql);
 ?>
-    <a href="./index.php"><button>Weiter</button></a>
-  </div></div></div>
+</p>
+    <form method="post" action="./index.php">
+      <input type="submit" name="" value="Weiter" />
+    </form>
+</div></div></div>
 <?php
     }else{
       
@@ -217,7 +227,8 @@
     $count = mysqli_num_rows($result);
 		
     if($count == 1) {
-      $_SESSION['login_user'] = $_POST['uname'];
+      //$_SESSION['login_user'] = $_POST['uname'];
+      setcookie('login_user', $myusername, time() + (86400 * 30));
 ?>
   <div class="one"><div class="two"><div class="login"><p style="text-align: center; padding: 70px 0;">Bitte warten, du wirst automatisch weitergeleitet.</p></div></div></div>
 <?php
