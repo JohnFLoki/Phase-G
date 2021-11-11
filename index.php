@@ -16,6 +16,7 @@
 <head>
   <title>Phase-G</title>
   <meta http-equiv="Pragma" content="no-cache">
+  <meta name="viewport" content="width=700px, user-scalable=no">
   <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 
@@ -35,6 +36,7 @@
   </table>
   </div></div>
   <!---─────────────────────Stats─────────────────────--->
+  <!---──────────────────────PC───────────────────────--->
   <div class="stats">
     <table cellspacing="10" id="menu" style="width:100%; transition: 0.7s; margin: 0 0 0 -120%;">
       <tr>
@@ -42,29 +44,29 @@
           Deine Statistik:
         </td>
 <?php
-        $statssql = mysqli_query($dbw, "SELECT * FROM words WHERE `level` = '0'");
-        $count0 = mysqli_num_rows($statssql);
+        $statssql0 = mysqli_query($dbw, "SELECT * FROM words WHERE `level` = '0'");
+        $statssql1 = mysqli_query($dbw, "SELECT * FROM words WHERE `level` = '1'");
+        $statssql2 = mysqli_query($dbw, "SELECT * FROM words WHERE `level` = '2'");
+        $statssql3 = mysqli_query($dbw, "SELECT * FROM words WHERE `level` = '3'");
+        $statssql4 = mysqli_query($dbw, "SELECT * FROM words WHERE `level` = '4'");
+        $statssql5 = mysqli_query($dbw, "SELECT * FROM words WHERE `level` = '5'");
+        $statssql6 = mysqli_query($dbw, "SELECT * FROM words WHERE `level` = '6'");
+        $statssql7 = mysqli_query($dbw, "SELECT * FROM words WHERE `level` = '7'");
+        $count0 = mysqli_num_rows($statssql0);
+        $count1 = mysqli_num_rows($statssql1);
+        $count2 = mysqli_num_rows($statssql2);
+        $count3 = mysqli_num_rows($statssql3);
+        $count4 = mysqli_num_rows($statssql4);
+        $count5 = mysqli_num_rows($statssql5);
+        $count6 = mysqli_num_rows($statssql6);
+        $count7 = mysqli_num_rows($statssql7);
         echo "<td>Level 0: &nbsp;" . $count0 . "</td>";
-        $statssql = mysqli_query($dbw, "SELECT * FROM words WHERE `level` = '1'");
-        $count1 = mysqli_num_rows($statssql);
         echo "<td>Level 1: &nbsp;" . $count1 . "</td>";
-        $statssql = mysqli_query($dbw, "SELECT * FROM words WHERE `level` = '2'");
-        $count2 = mysqli_num_rows($statssql);
         echo "<td>Level 2: &nbsp;" . $count2 . "</td>";
-        $statssql = mysqli_query($dbw, "SELECT * FROM words WHERE `level` = '3'");
-        $count3 = mysqli_num_rows($statssql);
         echo "<td>Level 3: &nbsp;" . $count3 . "</td>";
-        $statssql = mysqli_query($dbw, "SELECT * FROM words WHERE `level` = '4'");
-        $count4 = mysqli_num_rows($statssql);
         echo "<td>Level 4: &nbsp;" . $count4 . "</td>";
-        $statssql = mysqli_query($dbw, "SELECT * FROM words WHERE `level` = '5'");
-        $count5 = mysqli_num_rows($statssql);
         echo "<td>Level 5: &nbsp;" . $count5 . "</td>";
-        $statssql = mysqli_query($dbw, "SELECT * FROM words WHERE `level` = '6'");
-        $count6 = mysqli_num_rows($statssql);
         echo "<td>Level 6: &nbsp;" . $count6 . "</td>";
-        $statssql = mysqli_query($dbw, "SELECT * FROM words WHERE `level` = '7'");
-        $count7 = mysqli_num_rows($statssql);
         echo "<td>Level 7: &nbsp;" . $count7 . "</td>";
 ?>
         <td>
@@ -86,16 +88,56 @@
       document.getElementById('menu').style.margin = '0 0 0 -120%';
       setTimeout(function() {
         document.getElementById('clicker').style.visibility = 'visible';
-      }, 600);
+      }, 500);
     }
-    //# sourceURL=pen.js
-    </script>
+  </script>
+
+    <!---─────────────────────Handy─────────────────────--->
+    <div id="sidebar">
+      <div id="menuM" class="nav">
+      <b>&nbsp;&nbsp;Hallo <?php /*echo $_SESSION['login_user'];*/ echo $_COOKIE['login_user'] ?>!<br>
+      <a href="./index.php?logout=1">&nbsp;&nbsp;Ausloggen</a></b><a href=""></a><br><br>
+      &nbsp;&nbsp;Deine Stats:<br>
+<?php
+        echo "&nbsp;&nbsp;Level 0: &nbsp;&nbsp;" . $count0 . "<br>";
+        echo "&nbsp;&nbsp;Level 1: &nbsp;&nbsp;" . $count1 . "<br>";
+        echo "&nbsp;&nbsp;Level 2: &nbsp;&nbsp;" . $count2 . "<br>";
+        echo "&nbsp;&nbsp;Level 3: &nbsp;&nbsp;" . $count3 . "<br>";
+        echo "&nbsp;&nbsp;Level 4: &nbsp;&nbsp;" . $count4 . "<br>";
+        echo "&nbsp;&nbsp;Level 5: &nbsp;&nbsp;" . $count5 . "<br>";
+        echo "&nbsp;&nbsp;Level 6: &nbsp;&nbsp;" . $count6 . "<br>";
+        echo "&nbsp;&nbsp;Level 7: &nbsp;&nbsp;" . $count7 . "";
+?>
+        <a href="https://github.com/JohnFCreep/Phase-G#funktion" class="gitM" target="_blank">Github (Funktion, Lizenz, ...)</a>
+      </div>
+      <span class="open" id="button">
+        <button class="currentclose" onClick="toggleMenu(this)" id="buttoninner">
+          ☰
+        </button>
+      </span>
+    </div>
+<script>
+  function toggleMenu(button) { 
+    if ( button.className === 'currentclose' ) {
+      document.getElementById('menuM').style.marginRight = '0px';
+      document.getElementById('buttoninner').style.right = '280px';
+      document.getElementById('one').style.left = '-250px';
+      button.className = '';
+    } else {
+      document.getElementById('menuM').style.marginRight = '-250px';
+      document.getElementById('buttoninner').style.right = '30px';
+      document.getElementById('one').style.left = '0px';
+      button.className = 'currentclose';
+    }
+  }
+</script>
+
 <?php
       
     //─────────────────────Prüfung─────────────────────
     if($_GET["post"] == 1){
 ?>
-        <div class="one"><div class="two"><div class="login"><p style="text-align: center; padding-top: 70px;">
+        <div class="one" id="one"><div class="two"><div class="login"><p style="text-align: center; padding-top: 70px;">
 <?php
       if ($_COOKIE["last"] == -1) {
         echo "Bitte klicke auf weiter!";
@@ -182,7 +224,7 @@
         $tmp3 = $mysqlday;
         $nextday = substr($tmp1, 6) . "-" . substr($tmp2, 4, 2) . "-" . substr($tmp3, 0, 5);
 ?>
-  <div class="one"><div class="two"><div class="login">Du hast bereits alle Vokabeln für heute abgearbeitet. Der <?php echo $nextday;?> ist dein nächster Lerntag.</div></div></div>
+  <div class="one" id="one"><div class="two"><div class="login">Du hast bereits alle Vokabeln für heute abgearbeitet. Der <?php echo $nextday;?> ist dein nächster Lerntag.</div></div></div>
 <?php
       }else{
         setcookie("last", $row['id'], 0);
@@ -192,7 +234,7 @@
         $counttoday = mysqli_num_rows($statssql);
         
 ?>
-  <div class="one"><div class="two"><div class="answer">
+  <div class="one" id="one"><div class="two"><div class="answer">
     <table cellspacing="0" cellpadding="0">
       <tr>
         <td>
@@ -200,10 +242,10 @@
             <source src="./video/<?php echo $row['link']; ?>.mp4" type="video/mp4">
           </video>
         </td>
-        <td style="padding-left: 160px;">
-          Vokabellevel: <?php echo $row['level']; ?><br>
+        <td class="padleft">
+          <p class="mobilep">Vokabellevel: <?php echo $row['level']; ?><br>
           Vokalen heute fällig: <?php echo $counttoday; ?>
-          <br><br>
+          <br><br></p>
           <form class="formone" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>?post=1">
             <textarea name="wort" placeholder="Antwort" required><?php if($row['level'] == 0){echo $row['name'];} ?></textarea>
             <input type="submit" name="login" value="Senden" />
@@ -230,12 +272,12 @@
       //$_SESSION['login_user'] = $_POST['uname'];
       setcookie('login_user', $myusername, time() + (86400 * 30));
 ?>
-  <div class="one"><div class="two"><div class="login"><p style="text-align: center; padding: 70px 0;">Bitte warten, du wirst automatisch weitergeleitet.</p></div></div></div>
+  <div class="one" id="one"><div class="two"><div class="login"><p style="text-align: center; padding: 70px 20px;">Bitte warten, du wirst automatisch weitergeleitet.</p></div></div></div>
 <?php
       header("Refresh:2");
     }else{
 ?>
-  <div class="one"><div class="two"><div class="login"><br>
+  <div class="one" id="one"><div class="two"><div class="login"><br>
     
     <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
       <input type="text" name="uname" placeholder="Benutzername" required /><br><br>
@@ -248,17 +290,18 @@
     }
   }else{
 ?>
-  <div class="one"><div class="two"><div class="login"><br>
+  <div class="one" id="one"><div class="two"><div class="login"><br>
     <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
       <input type="text" name="uname" placeholder="Benutzername" required /><br><br>
       <input type="password" name="pass" placeholder="Passwort" required /><br><br>
       <input type="submit" name="login" value="Senden" />
     </form>
   </div></div></div>
+  <a href="https://github.com/JohnFCreep/Phase-G#funktion" class="gitL" target="_blank">Github (Funktion, Lizenz, ...)</a>
 <?php
   } 
 ?>
-<a href="https://github.com/JohnFCreep/Phase-G#funktion" class="git" target="_blank">Github (Funktion, Lizenz, ...)</a><br>
+  <a href="https://github.com/JohnFCreep/Phase-G#funktion" class="git" target="_blank">Github (Funktion, Lizenz, ...)</a>
 </body>
 
 </html>
