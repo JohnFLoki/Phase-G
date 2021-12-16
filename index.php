@@ -6,7 +6,7 @@
     //session_unset();
     // destroy the session
     //session_destroy();
-    setcookie("login_user", "", time() - 3600);
+    setcookie("login_user", "", time() - 3600, '', '', true);
     echo $_COOKIE['login_user'];
     sleep(2);
     header("location: ./index.php");
@@ -25,13 +25,13 @@
   include './database.php';
   if($account == 1){
     
-    //─────────────────────Account─────────────────────
+    //─────────────────────Account-PC─────────────────────
 ?>
   <div class="middle"><div class="hello">
   <table cellspacing="0" cellpadding="0">
       <tr>
-        <td class="hallo"><b>Hallo <?php /*echo $_SESSION['login_user'];*/ echo $_COOKIE['login_user'] ?>!</b></td>
-        <td class="hallob" ><b><a href="./index.php?logout=1">Ausloggen</a></b></td>
+        <td class="hallo"><b>Hallo <?php /*echo $_SESSION['login_user'];*/ echo $_COOKIE['login_user'] ?>! <img src="settings.svg" alt="Settings" height="15px" onclick="location.href='./settings.php'" style="cursor: pointer;"></b></td>
+        <td class="hallob" onclick="location.href='./index.php?logout=1'"><b>Ausloggen</b></td>
     </tr>
   </table>
   </div></div>
@@ -70,13 +70,13 @@
         echo "<td>Level 7: &nbsp;" . $count7 . "</td>";
 ?>
         <td>
-            <a href="#" id="clicker2" onClick="closeStats()"><<</a>
+            <a id="clicker2" style="cursor: pointer;" onClick="closeStats()"><<</a>
         </td>
       </tr>
     </table>
   </div>
   <span class="auf" id="clicker" style="transition: 0.0s;">
-    <a style="color: #81a1c1 !important;" href="#" id="clicker2" onClick="openStats()">>></a>
+    <a id="clicker2" style="color: #81a1c1 !important; cursor: pointer;" onClick="openStats()">>></a>
   </span>
   <script id="rendered-js" >
     function openStats() {
@@ -95,9 +95,9 @@
     <!---─────────────────────Handy─────────────────────--->
     <div id="sidebar">
       <div id="menuM" class="nav">
-      <b>&nbsp;&nbsp;Hallo <?php /*echo $_SESSION['login_user'];*/ echo $_COOKIE['login_user'] ?>!<br>
-      <a href="./index.php?logout=1">&nbsp;&nbsp;Ausloggen</a></b><a href=""></a><br><br>
-      &nbsp;&nbsp;Deine Stats:<br>
+        <b>&nbsp;&nbsp;Hallo <?php /*echo $_SESSION['login_user'];*/ echo $_COOKIE['login_user'] ?>! <img src="settings.svg" alt="Settings" height="26px" onclick="location.href='./settings.php'" style="cursor: pointer;"><br>
+        <a href="./index.php?logout=1" style="color:#8497a8; text-decoration: none !important;">&nbsp;&nbsp;Ausloggen</a></b><br><br>
+        &nbsp;&nbsp;Deine Stats:<br>
 <?php
         echo "&nbsp;&nbsp;Level 0: &nbsp;&nbsp;" . $count0 . "<br>";
         echo "&nbsp;&nbsp;Level 1: &nbsp;&nbsp;" . $count1 . "<br>";
@@ -136,12 +136,10 @@
       
     //─────────────────────Prüfung─────────────────────
     if($_GET["post"] == 1){
+      if($_COOKIE["richtung"] == "norm"){
 ?>
         <div class="one" id="one"><div class="two"><div class="login"><p style="text-align: center; padding-top: 70px;">
 <?php
-      if ($_COOKIE["last"] == -1) {
-        echo "Bitte klicke auf weiter!";
-      }else{
         $lastid = $_COOKIE["last"];
         $lastcurrent = mysqli_query($dbw, "SELECT * FROM words WHERE `id` = '$lastid'");
         $lastrow = mysqli_fetch_assoc($lastcurrent);
@@ -196,15 +194,87 @@
         $newdate = date_format($res, "Ymd");
         $sql = "UPDATE words SET date='$newdate' WHERE id='$lastid'";
         mysqli_query($dbw, $sql);
-        setcookie("last", -1, 0);
-      }
+        setcookie("last", -1, 0, '', '', true);
 ?>
-</p>
-    <form method="post" action="./index.php">
-      <input type="submit" name="" value="Weiter" />
-    </form>
-</div></div></div>
+        </p>
+            <form method="post" action="./index.php">
+              <input type="submit" name="" value="Weiter" />
+            </form>
+        </div></div></div>
 <?php
+      }elseif ($_COOKIE["richtung"] == "back") {
+        $lastid = $_COOKIE["last"];
+        $lastcurrent = mysqli_query($dbw, "SELECT * FROM words WHERE `id` = '$lastid'");
+        $lastrow = mysqli_fetch_assoc($lastcurrent);
+?>
+        <div class="one" id="one"><div class="two"><div class="backlogin"><p style="text-align: center;">
+            <video height="480" width="640" controls loop autoplay>
+              <source src="./video/<?php echo $lastrow['link']; ?>.mp4" type="video/mp4">
+            </video></p>
+            <form method="post" action="./index.php?back=1">
+            <label class="form-control" style="margin:0 0 20px 0;">
+              <input type="checkbox" name="selfcheck" />Ich habe die Gebärde richtig.
+            </label>
+              <input type="submit" name="" value="Weiter" />
+            </form>
+        </div></div></div>
+<?php
+      }
+    }elseif($_GET["back"] == 1){
+      $lastid = $_COOKIE["last"];
+      $lastcurrent = mysqli_query($dbw, "SELECT * FROM words WHERE `id` = '$lastid'");
+      $lastrow = mysqli_fetch_assoc($lastcurrent);
+      $newlevel = $lastrow["backlevel"];
+      if($_POST["selfcheck"] == "on"){
+        //─────────────────────richtig─────────────────────
+        if($lastrow["backlevel"] < 7){
+          $newlevel = $newlevel + 1;
+          $sql = "UPDATE words SET backlevel='$newlevel' WHERE id='$lastid'";
+          mysqli_query($dbw, $sql);
+        }
+      }else{
+        //─────────────────────falsch─────────────────────
+        if($lastrow["backlevel"] != 0){
+          $newlevel = $newlevel - 1;
+          $sql = "UPDATE words SET backlevel='$newlevel' WHERE id='$lastid'";
+          mysqli_query($dbw, $sql);
+        }
+      }
+      $date2 = date("d-m-Y");
+      $date = date_create($date2);
+      switch ($newlevel) {
+        case "0":
+          $interval = date_interval_create_from_date_string('0 days');
+          break;
+        case "1":
+          $interval = date_interval_create_from_date_string('5 days');
+          break;
+        case "2":
+          $interval = date_interval_create_from_date_string('20 days');
+          break;
+        case "3":
+          $interval = date_interval_create_from_date_string('40 days');
+          break;
+        case "4":
+          $interval = date_interval_create_from_date_string('80 days');
+          break;
+        case "5":
+          $interval = date_interval_create_from_date_string('160 days');
+          break;
+        case "6":
+          $interval = date_interval_create_from_date_string('320 days');
+          break;
+        case "7":
+          $interval = date_interval_create_from_date_string('15 months');
+          break;
+      }
+      $date = date_create(date("d-m-Y"));
+      $res = date_add($date, $interval);   
+      $newdate = date_format($res, "Ymd");
+      $sql = "UPDATE words SET backdate='$newdate' WHERE id='$lastid'";
+      mysqli_query($dbw, $sql);
+      setcookie("last", -1, 0, '', '', true);
+      header('Location: ./index.php');
     }else{
       
       //─────────────────────Zufallswahl─────────────────────
@@ -213,12 +283,33 @@
       $time = date("Ymd");
       //https://www.mysqltutorial.org/select-random-records-database-table.aspx
       //https://stackoverflow.com/questions/7060439/mysql-select-row-where-field-is-smaller-than-other
+
       $current = mysqli_query($dbw, "SELECT * FROM words WHERE `date` <= '$time' ORDER BY RAND() LIMIT 1");
       $row = mysqli_fetch_assoc($current);
       $count = mysqli_num_rows($current);
-      if($count == 0){
+      $backcurrent = mysqli_query($dbw, "SELECT * FROM words WHERE `level` > '1' AND `backdate` <= '$time' ORDER BY RAND() LIMIT 1");
+      $backrow = mysqli_fetch_assoc($backcurrent);
+      $backcount = mysqli_num_rows($backcurrent);
+      $check = "0";
+      $mysqlday = "0";
+      $backmysqlday = "0";
+
+      if($count != 0 && $accrow['backwards'] != 100){
+        $check = $check . "1";
+      }elseif($accrow['backwards'] != 100){
         $mysqlday = mysqli_fetch_assoc(mysqli_query($dbw, "SELECT MIN(date) FROM words"));
-        echo $mysqlday;
+      }
+
+      if($backcount != 0 && $accrow['backwards'] != 0){
+        $check = $check . "2";
+      }elseif($accrow['backwards'] != 0){
+        $backmysqlday = mysqli_fetch_assoc(mysqli_query($dbw, "SELECT MIN(backdate) FROM words WHERE `level` > '1'"));
+      }
+
+      if($check == "0"){
+        if(($backmysqlday <= $mysqlday && $backmysqlday != "0") || ($backmysqlday <= $mysqlday && $mysqlday == "0")){
+          $mysqlday =  $backmysqlday;
+        }
         $tmp1 = $mysqlday;
         $tmp2 = $mysqlday;
         $tmp3 = $mysqlday;
@@ -227,37 +318,75 @@
   <div class="one" id="one"><div class="two"><div class="login">Du hast bereits alle Vokabeln für heute abgearbeitet. Der <?php echo $nextday;?> ist dein nächster Lerntag.</div></div></div>
 <?php
       }else{
-        setcookie("last", $row['id'], 0);
+        $randbackwards = rand(1, 100);
+        if($check == "01"){ 
+          $randbackwards = 101;
+        }elseif ($check == "02") {
+          $randbackwards = 0;
+        }
       
         //─────────────────────Antwort─────────────────────
-        $statssql = mysqli_query($dbw, "SELECT * FROM words WHERE `date` <= '$time'");
-        $counttoday = mysqli_num_rows($statssql);
+        if($randbackwards <= $accrow['backwards']){
+
+          //─────────────────────backwards─────────────────────
+          $statssql = mysqli_query($dbw, "SELECT * FROM words WHERE `level` > '1' AND `backdate` <= '$time'");
+          $counttoday = mysqli_num_rows($statssql);
+          setcookie("richtung", "back", 0, '', '', true);
+          setcookie("last", $backrow['id'], 0, '', '', true);
+?>
+  <div class="one" id="one"><div class="two"><div class="backanswer">
+    <table cellspacing="0" cellpadding="0">
+      <tr>
+        <td class="backpadleft">
+          <p class="mobilep">Vokabellevel: <?php echo $backrow['backlevel']; ?><br>
+          Text zu Gebärde heute fällig: <?php echo $counttoday; ?></p>
+          <form class="<?php if($accrow['github'] != "on"){echo 'nogit';} ?> formone" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>?post=1">
+            <textarea name="wort" placeholder="Antwort" disabled><?php echo $backrow['name']; ?></textarea>
+            <input type="submit" name="login" value="Zeige die Gebärde" />
+          </form>
+        </td>
+      </tr>
+    </table>
+  </div></div></div>
+<?php
+        }else{
+          //─────────────────────normal─────────────────────
+          $statssql = mysqli_query($dbw, "SELECT * FROM words WHERE `date` <= '$time'");
+          $counttoday = mysqli_num_rows($statssql);
+          setcookie("richtung", "norm", 0, '', '', true);
+          setcookie("last", $row['id'], 0, '', '', true);
         
 ?>
   <div class="one" id="one"><div class="two"><div class="answer">
     <table cellspacing="0" cellpadding="0">
       <tr>
         <td>
-          <video height="480" width="640" controls loop autoplay>
+          <video <?php if($accrow['github'] != "on"){echo 'class="nogitvideo"';} ?> height="480" width="640" controls loop autoplay>
             <source src="./video/<?php echo $row['link']; ?>.mp4" type="video/mp4">
           </video>
         </td>
         <td class="padleft">
           <p class="mobilep">Vokabellevel: <?php echo $row['level']; ?><br>
-          Vokalen heute fällig: <?php echo $counttoday; ?>
-          <br><br></p>
-          <form class="formone" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>?post=1">
+          Gebärde zu Text Vokalen heute fällig: <?php echo $counttoday; ?></p>
+          <form class="<?php if($accrow['github'] != "on"){echo 'nogit';} ?> formone" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>?post=1">
             <textarea name="wort" placeholder="Antwort" required><?php if($row['level'] == 0){echo $row['name'];} ?></textarea>
             <input type="submit" name="login" value="Senden" />
           </form>
         </td>
       </tr>
     </table>
+<?php
+        if($accrow['github'] == "on"){
+?>
     <a class="formtwo" href="https://github.com/JohnFCreep/Phase-G/issues/new?assignees=&labels=&template=vokabel-fehlerhaft.md&title=Vokabel fehlerhaft&body=Name: <?php echo $row['name']; ?> %40 Link: <?php echo $row['link']; ?>" target="_blank">Sollte das Wort komisch sein, oder das Video nicht laden klicke hier (Github).</a>
+<?php
+        }
+?>
   </div></div></div>
 <?php
       }
     }
+  }
   }elseif($_SERVER["REQUEST_METHOD"] == "POST") {
     //─────────────────────Authentification─────────────────────
     
@@ -270,7 +399,7 @@
 		
     if($count == 1) {
       //$_SESSION['login_user'] = $_POST['uname'];
-      setcookie('login_user', $myusername, time() + (86400 * 30));
+      setcookie('login_user', $myusername, time() + (86400 * 30), '', '', true);
 ?>
   <div class="one" id="one"><div class="two"><div class="login"><p style="text-align: center; padding: 70px 20px;">Bitte warten, du wirst automatisch weitergeleitet.</p></div></div></div>
 <?php
@@ -297,7 +426,7 @@
       <input type="submit" name="login" value="Senden" />
     </form>
   </div></div></div>
-  <a href="https://github.com/JohnFCreep/Phase-G#funktion" class="gitL" target="_blank">Github (Funktion, Lizenz, ...)</a>
+  <a href="https://github.com/JohnFCreep/Phase-G#funktion" class="gitL gitM" target="_blank">Github (Funktion, Lizenz, ...)</a>
 <?php
   } 
 ?>

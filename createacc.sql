@@ -14,11 +14,13 @@ USE `phase_g_acc`;
 CREATE TABLE `accounts` (
   `id` int(11) NOT NULL,
   `username` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` text COLLATE utf8mb4_unicode_ci NOT NULL
+  `password` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `backwards` int(11) NOT NULL,
+  `github` text COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-INSERT INTO `accounts` (`id`, `username`, `password`) VALUES
-(1, '///Accountname', '///Accountpasswort');
+INSERT INTO `accounts` (`id`, `username`, `password`, `backwards`, `github`) VALUES
+(1, 'user', 'password', 0, 'on');
 
 
 ALTER TABLE `accounts`
