@@ -41,6 +41,7 @@ phase-g<br>
  │   └ alle .mp4 Dateien aus der Zip<br>
  ┝ database.php<br>
  ┝ index.php<br>
+ ┝ settings.php<br>
  └ style.css<br>
 
 Hier sind alle Hinweise auf gefundene fehlerhafte Daten:
