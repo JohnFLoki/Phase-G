@@ -11,7 +11,7 @@ Da alle Vokabeln auf Level 0 anfangen, wir im Eingabefeld schon die richtige Ant
 Insgesamt sind es ca. 3694 Wörter also hab ich nicht jedes Wort auf seine Richtigkeit überprüft. Folglich entstehen Fehler wie das nicht laden eines Video-Links oder die falsche Angabe einer Lösung. In diesem Fall, eröffent bitte über die Schaltfläche hier ein Issue.<br>
 Zusätzlich kommt noch, dass Worte wie "einsetzen (in eine Formel - Mathematik)" oder "8:25 Uhr (Variante1)" einfach so einzutippen sind, wie sie angegeben werden, denn alle Antworten sind direkt aus dem Wörterbuch genommen und aufgrund der Menge nicht kontrollierbar.<br><br>
 Accounts können nur über MySQL erstellt werden und nicht über die Website, da Phase-G für den privaten Gebrauch gedacht ist. Auf Anfrage werde ich den Code aber gerne noch erweitern.<br>
-Außerdem muss für jede Account eine neue Datenbank erstellt werden, was vielleicht irgendwann behoben wird, jedoch generell eigentlich auch keine schlechte Lösung ist.
+Außerdem muss für jede Account eine neue words-Datenbank erstellt werden, was vielleicht irgendwann behoben wird, jedoch generell eigentlich auch keine schlechte Lösung ist.
 
 
 
