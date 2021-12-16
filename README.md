@@ -12,6 +12,8 @@ Wenn sie nicht richtig beantwortet wird sinkt das Level um 1 (außer bei Level 0
 Da alle Vokabeln auf Level 0 anfangen, wir im Eingabefeld schon die richtige Antwort gezeigt, damit man die Vokabel lernen kann.<br>
 Insgesamt sind es ca. 3694 Wörter also hab ich nicht jedes Wort und jedes Video auf seine Richtigkeit überprüft. Folglich entstehen Fehler wie das nicht-laden eines Video-Links oder die falsche Angabe einer Lösung. In diesem Fall, eröffnet bitte über die Schaltfläche ein Issue (eine Fehlermeldung).<br>
 Zusätzlich kommt noch, dass Worte wie "einsetzen (in eine Formel - Mathematik)" oder "8:25 Uhr (Variante1)" exakt so einzutippen sind, wie sie angegeben werden, denn alle Antworten sind direkt aus dem/den Wörterbuch/Wörterbüchern genommen und aufgrund der Menge nicht kontrollierbar.<br><br>
+
+
 Text zu Gebärde (TtG)
 ---
 Um diese Funktion zu aktivieren muss man in die Einstellungen seiner Account gehen (Zahnrad in der Sidebar). Dort befindet sich ein Regler der angibt wie häufig Text zu Gebärde abgefragt wird.<br>
