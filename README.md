@@ -54,7 +54,6 @@ Hier sind alle Hinweise auf gefundene fehlerhafte Daten:
 - (Docker)
 - (Acccount Playback Speed https://www.w3schools.com/Tags/tryit.asp?filename=tryhtml5_av_prop_playbackrate)
 - (Hashed Passwords)
-- Reports in TtG
 - Create User Seite
 # Copyright
 Alle Inhalte dieser Repository stehen unter einer Creative Commons Namensnennung - Nicht-kommerziell - Weitergabe unter gleichen Bedingungen 3.0 Deutschland Lizenz (https://creativecommons.org/licenses/by-nc-sa/3.0/de/) und die Vokabellisten sind von der Website https://gebaerdenlernen.de/index.php von Henrike Maria Bartsch welche auch unter der Lizenz Creative Commons Namensnennung - Nicht-kommerziell - Weitergabe unter gleichen Bedingungen 3.0 Deutschland steht (Stand 25.10.2021).
