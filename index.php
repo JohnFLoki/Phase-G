@@ -24,7 +24,6 @@
 <?php
   include './database.php';
   if($account == 1){
-    
     //─────────────────────Account-PC─────────────────────
 ?>
   <div class="middle"><div class="hello">
@@ -36,86 +35,65 @@
   </table>
   </div></div>
   <!---─────────────────────Stats─────────────────────--->
-  <!---──────────────────────PC───────────────────────--->
-  <div class="stats">
-    <table cellspacing="10" id="menu" style="width:100%; transition: 0.7s; margin: 0 0 0 -120%;">
-      <tr>
-        <td>
-          Deine Statistik:
-        </td>
+  <!---─────────────────────Sidebar-PC─────────────────────--->
+  <div id="dmenuM" class="dnav">
+  <img src="back.svg" alt="Zurück" class="dback" height="18px">
+    <b>&nbsp;&nbsp;Hallo <?php /*echo $_SESSION['login_user'];*/ echo $_COOKIE['login_user'] ?>! <img src="settings.svg" alt="Settings" height="18px" onclick="location.href='./settings.php'" style="cursor: pointer;"><br>
+    <a href="./index.php?logout=1" style="color:#8497a8; text-decoration: none !important;">&nbsp;&nbsp;Ausloggen</a></b><br><br>
+    &nbsp;&nbsp;Deine Stats:<br>
 <?php
-        $statssql0 = mysqli_query($dbw, "SELECT * FROM words_$DB_UNAME WHERE `level` = '0'");
-        $statssql1 = mysqli_query($dbw, "SELECT * FROM words_$DB_UNAME WHERE `level` = '1'");
-        $statssql2 = mysqli_query($dbw, "SELECT * FROM words_$DB_UNAME WHERE `level` = '2'");
-        $statssql3 = mysqli_query($dbw, "SELECT * FROM words_$DB_UNAME WHERE `level` = '3'");
-        $statssql4 = mysqli_query($dbw, "SELECT * FROM words_$DB_UNAME WHERE `level` = '4'");
-        $statssql5 = mysqli_query($dbw, "SELECT * FROM words_$DB_UNAME WHERE `level` = '5'");
-        $statssql6 = mysqli_query($dbw, "SELECT * FROM words_$DB_UNAME WHERE `level` = '6'");
-        $statssql7 = mysqli_query($dbw, "SELECT * FROM words_$DB_UNAME WHERE `level` = '7'");
-        $count0 = mysqli_num_rows($statssql0);
-        $count1 = mysqli_num_rows($statssql1);
-        $count2 = mysqli_num_rows($statssql2);
-        $count3 = mysqli_num_rows($statssql3);
-        $count4 = mysqli_num_rows($statssql4);
-        $count5 = mysqli_num_rows($statssql5);
-        $count6 = mysqli_num_rows($statssql6);
-        $count7 = mysqli_num_rows($statssql7);
-        echo "<td>Level 0: &nbsp;" . $count0 . "</td>";
-        echo "<td>Level 1: &nbsp;" . $count1 . "</td>";
-        echo "<td>Level 2: &nbsp;" . $count2 . "</td>";
-        echo "<td>Level 3: &nbsp;" . $count3 . "</td>";
-        echo "<td>Level 4: &nbsp;" . $count4 . "</td>";
-        echo "<td>Level 5: &nbsp;" . $count5 . "</td>";
-        echo "<td>Level 6: &nbsp;" . $count6 . "</td>";
-        echo "<td>Level 7: &nbsp;" . $count7 . "</td>";
+    $statssql0 = mysqli_query($dbw, "SELECT * FROM words_$DB_UNAME WHERE `level` = '0'");
+    $statssql1 = mysqli_query($dbw, "SELECT * FROM words_$DB_UNAME WHERE `level` = '1'");
+    $statssql2 = mysqli_query($dbw, "SELECT * FROM words_$DB_UNAME WHERE `level` = '2'");
+    $statssql3 = mysqli_query($dbw, "SELECT * FROM words_$DB_UNAME WHERE `level` = '3'");
+    $statssql4 = mysqli_query($dbw, "SELECT * FROM words_$DB_UNAME WHERE `level` = '4'");
+    $statssql5 = mysqli_query($dbw, "SELECT * FROM words_$DB_UNAME WHERE `level` = '5'");
+    $statssql6 = mysqli_query($dbw, "SELECT * FROM words_$DB_UNAME WHERE `level` = '6'");
+    $statssql7 = mysqli_query($dbw, "SELECT * FROM words_$DB_UNAME WHERE `level` = '7'");
+    $count0 = mysqli_num_rows($statssql0);
+    $count1 = mysqli_num_rows($statssql1);
+    $count2 = mysqli_num_rows($statssql2);
+    $count3 = mysqli_num_rows($statssql3);
+    $count4 = mysqli_num_rows($statssql4);
+    $count5 = mysqli_num_rows($statssql5);
+    $count6 = mysqli_num_rows($statssql6);
+    $count7 = mysqli_num_rows($statssql7);
+    echo "&nbsp;&nbsp;Level 0: &nbsp;&nbsp;" . $count0 . "<br>";
+    echo "&nbsp;&nbsp;Level 1: &nbsp;&nbsp;" . $count1 . "<br>";
+    echo "&nbsp;&nbsp;Level 2: &nbsp;&nbsp;" . $count2 . "<br>";
+    echo "&nbsp;&nbsp;Level 3: &nbsp;&nbsp;" . $count3 . "<br>";
+    echo "&nbsp;&nbsp;Level 4: &nbsp;&nbsp;" . $count4 . "<br>";
+    echo "&nbsp;&nbsp;Level 5: &nbsp;&nbsp;" . $count5 . "<br>";
+    echo "&nbsp;&nbsp;Level 6: &nbsp;&nbsp;" . $count6 . "<br>";
+    echo "&nbsp;&nbsp;Level 7: &nbsp;&nbsp;" . $count7 . "";
 ?>
-        <td>
-            <a id="clicker2" style="cursor: pointer;" onClick="closeStats()"><<</a>
-        </td>
-      </tr>
-    </table>
+<a href="https://github.com/JohnFCreep/Phase-G#funktion" class="dgitM" target="_blank">Github (Funktion, Lizenz, ...)</a>
   </div>
-  <span class="auf" id="clicker" style="transition: 0.0s;">
-    <a id="clicker2" style="color: #81a1c1 !important; cursor: pointer;" onClick="openStats()">>></a>
-  </span>
-  <script id="rendered-js" >
-    function openStats() {
-      document.getElementById('menu').style.margin = '0px';
-      document.getElementById('clicker').style.visibility = 'hidden';
-    }
-    
-    function closeStats() {
-      document.getElementById('menu').style.margin = '0 0 0 -120%';
-      setTimeout(function() {
-        document.getElementById('clicker').style.visibility = 'visible';
-      }, 500);
-    }
-  </script>
 
-    <!---─────────────────────Handy─────────────────────--->
-    <div id="sidebar">
-      <div id="menuM" class="nav">
-        <b>&nbsp;&nbsp;Hallo <?php /*echo $_SESSION['login_user'];*/ echo $_COOKIE['login_user'] ?>! <img src="settings.svg" alt="Settings" height="26px" onclick="location.href='./settings.php'" style="cursor: pointer;"><br>
-        <a href="./index.php?logout=1" style="color:#8497a8; text-decoration: none !important;">&nbsp;&nbsp;Ausloggen</a></b><br><br>
-        &nbsp;&nbsp;Deine Stats:<br>
+  <!---─────────────────────Sidebar-Handy─────────────────────--->
+  <div id="sidebar">
+    <div id="menuM" class="nav">
+      <b>&nbsp;&nbsp;Hallo <?php echo $_COOKIE['login_user'] ?>! <img src="settings.svg" alt="Settings" height="26px" onclick="location.href='./settings.php'" style="cursor: pointer;"><br>
+      <a href="./index.php?logout=1" style="color:#8497a8; text-decoration: none !important;">&nbsp;&nbsp;Ausloggen</a></b><br><br>
+      &nbsp;&nbsp;Deine Stats:<br>
 <?php
-        echo "&nbsp;&nbsp;Level 0: &nbsp;&nbsp;" . $count0 . "<br>";
-        echo "&nbsp;&nbsp;Level 1: &nbsp;&nbsp;" . $count1 . "<br>";
-        echo "&nbsp;&nbsp;Level 2: &nbsp;&nbsp;" . $count2 . "<br>";
-        echo "&nbsp;&nbsp;Level 3: &nbsp;&nbsp;" . $count3 . "<br>";
-        echo "&nbsp;&nbsp;Level 4: &nbsp;&nbsp;" . $count4 . "<br>";
-        echo "&nbsp;&nbsp;Level 5: &nbsp;&nbsp;" . $count5 . "<br>";
-        echo "&nbsp;&nbsp;Level 6: &nbsp;&nbsp;" . $count6 . "<br>";
-        echo "&nbsp;&nbsp;Level 7: &nbsp;&nbsp;" . $count7 . "";
+      echo "&nbsp;&nbsp;Level 0: &nbsp;&nbsp;" . $count0 . "<br>";
+      echo "&nbsp;&nbsp;Level 1: &nbsp;&nbsp;" . $count1 . "<br>";
+      echo "&nbsp;&nbsp;Level 2: &nbsp;&nbsp;" . $count2 . "<br>";
+      echo "&nbsp;&nbsp;Level 3: &nbsp;&nbsp;" . $count3 . "<br>";
+      echo "&nbsp;&nbsp;Level 4: &nbsp;&nbsp;" . $count4 . "<br>";
+      echo "&nbsp;&nbsp;Level 5: &nbsp;&nbsp;" . $count5 . "<br>";
+      echo "&nbsp;&nbsp;Level 6: &nbsp;&nbsp;" . $count6 . "<br>";
+      echo "&nbsp;&nbsp;Level 7: &nbsp;&nbsp;" . $count7 . "";
 ?>
-        <a href="https://github.com/JohnFCreep/Phase-G#funktion" class="gitM" target="_blank">Github (Funktion, Lizenz, ...)</a>
-      </div>
-      <span class="open" id="button">
-        <button class="currentclose" onClick="toggleMenu(this)" id="buttoninner">
-          ☰
-        </button>
-      </span>
+      <a href="https://github.com/JohnFCreep/Phase-G#funktion" class="gitM" target="_blank">Github (Funktion, Lizenz, ...)</a>
     </div>
+    <span class="open" id="button">
+      <button class="currentclose" onClick="toggleMenu(this)" id="buttoninner">
+        ☰
+      </button>
+    </span>
+  </div>
 <script>
   function toggleMenu(button) { 
     if ( button.className === 'currentclose' ) {
@@ -207,16 +185,34 @@
         $lastcurrent = mysqli_query($dbw, "SELECT * FROM words_$DB_UNAME WHERE `id` = '$lastid'");
         $lastrow = mysqli_fetch_assoc($lastcurrent);
 ?>
-        <div class="one" id="one"><div class="two"><div class="backlogin"><p style="text-align: center;">
-            <video height="480" width="640" controls loop autoplay>
-              <source src="./video/<?php echo $lastrow['link']; ?>.mp4" type="video/mp4">
-            </video></p>
-            <form method="post" action="./index.php?back=1">
-            <label class="form-control" style="margin:0 0 20px 0;">
-              <input type="checkbox" name="selfcheck" />Ich habe die Gebärde richtig.
-            </label>
-              <input type="submit" name="" value="Weiter" />
-            </form>
+        <div class="one" id="one"><div class="two"><div class="answer"><p style="text-align: center;">
+            <table cellspacing="0" cellpadding="0">
+              <tr>
+                <td>
+                <video height="480" width="640" controls loop autoplay>
+                  <source src="./video/<?php echo $lastrow['link']; ?>.mp4" type="video/mp4">
+                </video></p>
+                </td>
+                <td class="rebackpadleft">
+                  <div class="rebackrahmen">
+                    <p class="mobilep">Die Vokabel war "<?php echo $lastrow['name']; ?>".</p>
+                    <form method="post" action="./index.php?back=1" class="<?php if($accrow['github'] == "on"){echo 'backnogit';} ?>">
+                      <label class="form-control" style="margin:0 0 20px 0;">
+                        <input type="checkbox" name="selfcheck" />Ich habe die Gebärde richtig.
+                      </label>
+                      <input type="submit" name="" value="Weiter" />
+                    </form>
+                  </div>
+                </td>
+              </tr>
+            </table>
+<?php
+        if($accrow['github'] == "on"){
+?>
+    <a class="backformtwo rebackformtwo" href="https://github.com/JohnFCreep/Phase-G/issues/new?assignees=&labels=&template=vokabel-fehlerhaft.md&title=Vokabel fehlerhaft TtG&body=Link: <?php echo $lastrow['link']; ?>" target="_blank">Sollte das Video nicht laden, klicke hier (Github).</a>
+<?php
+        }
+?>
         </div></div></div>
 <?php
       }
@@ -276,7 +272,6 @@
       setcookie("last", -1, 0, '', '', true);
       header('Location: ./index.php');
     }else{
-      
       //─────────────────────Zufallswahl─────────────────────
       //4660 einträge
       //date-calc
@@ -340,13 +335,20 @@
         <td class="backpadleft">
           <p class="mobilep">Vokabellevel: <?php echo $backrow['backlevel']; ?><br>
           Text zu Gebärde heute fällig: <?php echo $counttoday; ?></p>
-          <form class="<?php if($accrow['github'] != "on"){echo 'nogit';} ?> formone" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>?post=1">
+          <form class="<?php if($accrow['github'] == "on"){echo 'backnogit';} ?> formone" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>?post=1">
             <textarea name="wort" placeholder="Antwort" disabled><?php echo $backrow['name']; ?></textarea>
             <input type="submit" name="login" value="Zeige die Gebärde" />
           </form>
         </td>
       </tr>
     </table>
+<?php
+        if($accrow['github'] == "on"){
+?>
+    <a class="backformtwo" href="https://github.com/JohnFCreep/Phase-G/issues/new?assignees=&labels=&template=vokabel-fehlerhaft.md&title=Vokabel fehlerhaft TtG&body=Name: <?php echo $backrow['name']; ?>" target="_blank">Sollte das Wort komisch sein, klicke hier (Github).</a>
+<?php
+        }
+?>
   </div></div></div>
 <?php
         }else{
@@ -378,7 +380,7 @@
 <?php
         if($accrow['github'] == "on"){
 ?>
-    <a class="formtwo" href="https://github.com/JohnFCreep/Phase-G/issues/new?assignees=&labels=&template=vokabel-fehlerhaft.md&title=Vokabel fehlerhaft&body=Name: <?php echo $row['name']; ?> %40 Link: <?php echo $row['link']; ?>" target="_blank">Sollte das Wort komisch sein, oder das Video nicht laden klicke hier (Github).</a>
+    <a class="formtwo" href="https://github.com/JohnFCreep/Phase-G/issues/new?assignees=&labels=&template=vokabel-fehlerhaft.md&title=Vokabel fehlerhaft GtT&body=Name: <?php echo $row['name']; ?> %40 Link: <?php echo $row['link']; ?>" target="_blank">Sollte das Wort komisch sein, oder das Video nicht laden klicke hier (Github).</a>
 <?php
         }
 ?>

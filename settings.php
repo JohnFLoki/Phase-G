@@ -13,14 +13,12 @@
     
     //─────────────────────Account-PC─────────────────────
 ?>
-  <div class="middle"><div class="hello">
-    <table cellspacing="0" cellpadding="0">
-        <tr>
-          <td class="hallo"><b>Hallo <?php /*echo $_SESSION['login_user'];*/ echo $_COOKIE['login_user'] ?>!</b></td>
-          <td class="hallob" onclick="location.href='./index.php?logout=1'"><b>Ausloggen</b></td>
-      </tr>
-    </table>
-  </div></div>
+<div id="dmenuM" class="dnav">
+<img src="back.svg" alt="Zurück" class="dback" height="18px">
+  <b>&nbsp;&nbsp;Hallo <?php /*echo $_SESSION['login_user'];*/ echo $_COOKIE['login_user'] ?>!<br>
+  <a href="./index.php?logout=1" style="color:#8497a8; text-decoration: none !important;">&nbsp;&nbsp;Ausloggen</a></b>
+<a href="https://github.com/JohnFCreep/Phase-G#funktion" class="dgitM" target="_blank">Github (Funktion, Lizenz, ...)</a>
+</div>
   <!---─────────────────────Handy─────────────────────--->
   <div id="sidebar">
     <div id="menuM" class="nav">
@@ -99,7 +97,7 @@
         <input type="checkbox" name="github" <?php if($row['github'] == "on"){echo "checked";} ?> />Github Fehlermeldung
       </label>
       <label style="width: 100%; height:40px;"></label>
-      <input style="margin-top: 75px;" type="password" name="newpass" placeholder="Neues Passwort" /><br><br>
+      <input class="settingspass" type="password" name="newpass" placeholder="Neues Passwort" /><br><br>
       <input type="password" name="renewpass" placeholder="Neues Passwort wiederholen" /><br>
       <?php echo $error; ?><br><br>
       <input type="submit" name="login" value="Speichern" />
