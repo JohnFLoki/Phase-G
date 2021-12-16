@@ -30,8 +30,8 @@ Level 7: 15 Monate<br>
 Vorraussetzungen: Funktionierende WebServer, PHP (getestet auf 7.3) und MySQL (inklusive Benutzer für database.php) Instanzen.
 1. Erstelle einen Ordner für die Index-Seite
 2. Kopiere hier die Dateien index.php, database.php und style.css rein.
-3. Ersetze alle Variablen (markiert mit ///) in den createacc.sql, createwords.sql und database.php Dateien nach deinen Wünschen (Importieren auf eigenes Riskiko).
-4. Erstelle in MySQL Datenbanken mit den createacc.sql und createwords.sql Dateien und bearbeite die database.php Datei entsprechend deiner MySQL-login Daten.
+3. Ersetze alle Variablen (markiert mit ///) in den createacc.sql, createwords-(Wörterbuch Ihrer Wahl).sql und database.php Dateien nach deinen Wünschen (Importieren auf eigenes Riskiko).
+4. Erstelle in MySQL Datenbanken mit den createacc.sql und createwords-(Wörterbuch Ihrer Wahl).sql Dateien und bearbeite die database.php Datei entsprechend deiner MySQL-login Daten.
 5. Erstelle einen Unterordner video und ziehe hier alle Dateien rein, die du bei der Website unter Download -> Wörterbuch gesamt -> video findest.
 
 Ordner-Struktur:
