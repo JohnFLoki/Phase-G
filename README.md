@@ -1,7 +1,8 @@
 # Phase-G
 Karteikartensystem basierend auf HTML, PHP und MySQL.
 # Videos
-Die Videos bekommst du nicht hier sondern bei der Quelle: https://gebaerdenlernen.de/index.php
+Die Videos bekommst du nicht hier sondern bei der Quelle: 
+- Berliner Dialekt: https://gebaerdenlernen.de/index.php
 # Funktion
 Gebärde zu Text (GtT)
 ---
