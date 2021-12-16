@@ -3,7 +3,8 @@ Karteikartensystem basierend auf HTML, PHP und MySQL.
 # Videos
 Die Videos bekommst du nicht hier sondern bei der Quelle: https://gebaerdenlernen.de/index.php
 # Funktion
----Gebärde zu Text (GtT)---<br>
+Gebärde zu Text (GtT)
+---
 Jede Vokabel hat in der Datenbank einen Eintrag, der über die Eigenschaften Datum und Level verfügt.<br>
 Man bekommt nur Vokabeln per Zufall abgefragt, wo der Datum-Eintrag vor dem heutigen Tag liegt.<br>
 Sollte eine Vokabel richtig beantwortet werden, wir das Level +1 gesetzt (außer bei Level 7 da bleibt es dabei) und das Datum wird um den Wert des Levels erhöht (siehe unten).<br>
@@ -11,7 +12,8 @@ Wenn sie nicht richtig beantwortet wird sinkt das Level um 1 (außer bei Level 0
 Da alle Vokabeln auf Level 0 anfangen, wir im Eingabefeld schon die richtige Antwort gezeigt, damit man die Vokabel lernen kann.<br>
 Insgesamt sind es ca. 3694 Wörter also hab ich nicht jedes Wort und jedes Video auf seine Richtigkeit überprüft. Folglich entstehen Fehler wie das nicht-laden eines Video-Links oder die falsche Angabe einer Lösung. In diesem Fall, eröffnet bitte über die Schaltfläche ein Issue (eine Fehlermeldung).<br>
 Zusätzlich kommt noch, dass Worte wie "einsetzen (in eine Formel - Mathematik)" oder "8:25 Uhr (Variante1)" exakt so einzutippen sind, wie sie angegeben werden, denn alle Antworten sind direkt aus dem/den Wörterbuch/Wörterbüchern genommen und aufgrund der Menge nicht kontrollierbar.<br><br>
----Text zu Gebärde (TtG)---<br>
+Text zu Gebärde (TtG)
+---
 Um diese Funktion zu aktivieren muss man in die Einstellungen seiner Account gehen (Zahnrad in der Sidebar). Dort befindet sich ein Regler der angibt wie häufig Text zu Gebärde abgefragt wird.<br>
 Null steht für nie, 100 für immer.<br>
 Da man am Anfang noch keine Gebärden kennt und man erst auf Level 2 weiß, ob man sich die Vokabel richtig gemerkt hat, wird TtG erst ab Level 2 mit in die zufällige Auswahl genommen. Eine Funktion die diese Beschränkung deaktiviert (z.B. für "Muttergebärder"), kommt noch.<br>
