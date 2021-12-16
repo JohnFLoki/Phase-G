@@ -6,13 +6,13 @@
    $db = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
    
   //─────────────────────eingeloggt?─────────────────────
-  $usernametest = $_SESSION["login_user"];
+  $usernametest = $_COOKIE["login_user"];
   $sql = "SELECT * FROM accounts WHERE username = '$usernametest'";
   $accresult = mysqli_query($db, $sql);
   $accrow = mysqli_fetch_assoc($accresult);
   $account = mysqli_num_rows($accresult);
    
-  $DB_DATABASE2 = "phase_g_";
-  $DB_DATABASE2 .= $_SESSION["login_user"];
+  $DB_DATABASE2 = "phase_g";
+  $DB_UNAME = $_COOKIE["login_user"];
   $dbw = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, $DB_DATABASE2);
 ?>

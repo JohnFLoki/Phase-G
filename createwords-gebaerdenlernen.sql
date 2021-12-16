@@ -8,10 +8,10 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
-CREATE DATABASE IF NOT EXISTS `phase_g_///Accountname` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE `phase_g_///Accountname`;
+CREATE DATABASE IF NOT EXISTS `phase_g_words` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE `phase_g_words`;
 
-CREATE TABLE `words` (
+CREATE TABLE `words_///gleicher Benutzername wie in createacc.sql` (
   `id` int(11) NOT NULL,
   `link` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `name` text COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -1254,7 +1254,7 @@ INSERT INTO `words` (`id`, `link`, `name`, `date`, `level`, `backdate`, `backlev
 (1233, 'gluehwein', 'Glühwein', 0, 0, 0, 0),
 (1234, 'gold', 'Gold', 0, 0, 0, 0),
 (1235, 'google', 'Google', 0, 0);
-INSERT INTO `words` (`id`, `link`, `name`, `date`, `level`) VALUES
+INSERT INTO `words` (`id`, `link`, `name`, `date`, `level`, `backdate`, `backlevel`) VALUES
 (1236, 'gorilla', 'Gorilla', 0, 0, 0, 0),
 (1237, 'gott', 'Gott', 0, 0, 0, 0),
 (1238, 'gottesdienst', 'Gottesdienst', 0, 0, 0, 0),
@@ -2446,7 +2446,7 @@ INSERT INTO `words` (`id`, `link`, `name`, `date`, `level`) VALUES
 (2425, 'playstation', 'Playstation', 0, 0, 0, 0),
 (2426, 'ploetzlich', 'plötzlich', 0, 0, 0, 0),
 (2427, 'ploetzlich_sehen', 'plötzlich etwas sehen', 0, 0);
-INSERT INTO `words` (`id`, `link`, `name`, `date`, `level`) VALUES
+INSERT INTO `words` (`id`, `link`, `name`, `date`, `level`, `backdate`, `backlevel`) VALUES
 (2428, 'ploetzlich_weinen', 'plötzlich weinen', 0, 0, 0, 0),
 (2429, 'plus', 'plus', 0, 0, 0, 0),
 (2430, 'po', 'Po', 0, 0, 0, 0),
@@ -3696,7 +3696,7 @@ INSERT INTO `words` (`id`, `link`, `name`, `date`, `level`) VALUES
 (3674, 'zusammen_person_ich', 'zusammen (er/sie und ich)', 0, 0, 0, 0),
 (3675, 'zusammenfassen', 'zusammenfassen', 0, 0, 0, 0),
 (3676, 'zusammenhang', 'Zusammenhang', 0, 0);
-INSERT INTO `words` (`id`, `link`, `name`, `date`, `level`) VALUES
+INSERT INTO `words` (`id`, `link`, `name`, `date`, `level`, `backdate`, `backlevel`) VALUES
 (3677, 'zusammen_gruppe', 'zusammen (in der Gruppe)', 0, 0, 0, 0),
 (3678, 'zusammenrechnen', 'zusammenrechnen', 0, 0, 0, 0),
 (3679, 'zusammensitzen', 'zusammensitzen', 0, 0, 0, 0),

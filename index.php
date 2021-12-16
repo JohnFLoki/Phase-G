@@ -44,14 +44,14 @@
           Deine Statistik:
         </td>
 <?php
-        $statssql0 = mysqli_query($dbw, "SELECT * FROM words WHERE `level` = '0'");
-        $statssql1 = mysqli_query($dbw, "SELECT * FROM words WHERE `level` = '1'");
-        $statssql2 = mysqli_query($dbw, "SELECT * FROM words WHERE `level` = '2'");
-        $statssql3 = mysqli_query($dbw, "SELECT * FROM words WHERE `level` = '3'");
-        $statssql4 = mysqli_query($dbw, "SELECT * FROM words WHERE `level` = '4'");
-        $statssql5 = mysqli_query($dbw, "SELECT * FROM words WHERE `level` = '5'");
-        $statssql6 = mysqli_query($dbw, "SELECT * FROM words WHERE `level` = '6'");
-        $statssql7 = mysqli_query($dbw, "SELECT * FROM words WHERE `level` = '7'");
+        $statssql0 = mysqli_query($dbw, "SELECT * FROM words_$DB_UNAME WHERE `level` = '0'");
+        $statssql1 = mysqli_query($dbw, "SELECT * FROM words_$DB_UNAME WHERE `level` = '1'");
+        $statssql2 = mysqli_query($dbw, "SELECT * FROM words_$DB_UNAME WHERE `level` = '2'");
+        $statssql3 = mysqli_query($dbw, "SELECT * FROM words_$DB_UNAME WHERE `level` = '3'");
+        $statssql4 = mysqli_query($dbw, "SELECT * FROM words_$DB_UNAME WHERE `level` = '4'");
+        $statssql5 = mysqli_query($dbw, "SELECT * FROM words_$DB_UNAME WHERE `level` = '5'");
+        $statssql6 = mysqli_query($dbw, "SELECT * FROM words_$DB_UNAME WHERE `level` = '6'");
+        $statssql7 = mysqli_query($dbw, "SELECT * FROM words_$DB_UNAME WHERE `level` = '7'");
         $count0 = mysqli_num_rows($statssql0);
         $count1 = mysqli_num_rows($statssql1);
         $count2 = mysqli_num_rows($statssql2);
@@ -141,7 +141,7 @@
         <div class="one" id="one"><div class="two"><div class="login"><p style="text-align: center; padding-top: 70px;">
 <?php
         $lastid = $_COOKIE["last"];
-        $lastcurrent = mysqli_query($dbw, "SELECT * FROM words WHERE `id` = '$lastid'");
+        $lastcurrent = mysqli_query($dbw, "SELECT * FROM words_$DB_UNAME WHERE `id` = '$lastid'");
         $lastrow = mysqli_fetch_assoc($lastcurrent);
         $newlevel = $lastrow["level"];
         if($_POST["wort"] == $lastrow["name"]){
@@ -149,7 +149,7 @@
           echo "Richtig das Wort war \"" . $lastrow["name"] . "\".";
           if($lastrow["level"] < 7){
             $newlevel = $newlevel + 1;
-            $sql = "UPDATE words SET level='$newlevel' WHERE id='$lastid'";
+            $sql = "UPDATE words_$DB_UNAME SET level='$newlevel' WHERE id='$lastid'";
             mysqli_query($dbw, $sql);
           }
         }else{
@@ -157,7 +157,7 @@
           echo "Falsch! Das Wort war \"" . $lastrow['name'] . "\".";
           if($lastrow["level"] != 0){
             $newlevel = $newlevel - 1;
-            $sql = "UPDATE words SET level='$newlevel' WHERE id='$lastid'";
+            $sql = "UPDATE words_$DB_UNAME SET level='$newlevel' WHERE id='$lastid'";
             mysqli_query($dbw, $sql);
           }
         }
@@ -192,7 +192,7 @@
         $date = date_create(date("d-m-Y"));
         $res = date_add($date, $interval);   
         $newdate = date_format($res, "Ymd");
-        $sql = "UPDATE words SET date='$newdate' WHERE id='$lastid'";
+        $sql = "UPDATE words_$DB_UNAME SET date='$newdate' WHERE id='$lastid'";
         mysqli_query($dbw, $sql);
         setcookie("last", -1, 0, '', '', true);
 ?>
@@ -204,7 +204,7 @@
 <?php
       }elseif ($_COOKIE["richtung"] == "back") {
         $lastid = $_COOKIE["last"];
-        $lastcurrent = mysqli_query($dbw, "SELECT * FROM words WHERE `id` = '$lastid'");
+        $lastcurrent = mysqli_query($dbw, "SELECT * FROM words_$DB_UNAME WHERE `id` = '$lastid'");
         $lastrow = mysqli_fetch_assoc($lastcurrent);
 ?>
         <div class="one" id="one"><div class="two"><div class="backlogin"><p style="text-align: center;">
@@ -222,21 +222,21 @@
       }
     }elseif($_GET["back"] == 1){
       $lastid = $_COOKIE["last"];
-      $lastcurrent = mysqli_query($dbw, "SELECT * FROM words WHERE `id` = '$lastid'");
+      $lastcurrent = mysqli_query($dbw, "SELECT * FROM words_$DB_UNAME WHERE `id` = '$lastid'");
       $lastrow = mysqli_fetch_assoc($lastcurrent);
       $newlevel = $lastrow["backlevel"];
       if($_POST["selfcheck"] == "on"){
         //─────────────────────richtig─────────────────────
         if($lastrow["backlevel"] < 7){
           $newlevel = $newlevel + 1;
-          $sql = "UPDATE words SET backlevel='$newlevel' WHERE id='$lastid'";
+          $sql = "UPDATE words_$DB_UNAME SET backlevel='$newlevel' WHERE id='$lastid'";
           mysqli_query($dbw, $sql);
         }
       }else{
         //─────────────────────falsch─────────────────────
         if($lastrow["backlevel"] != 0){
           $newlevel = $newlevel - 1;
-          $sql = "UPDATE words SET backlevel='$newlevel' WHERE id='$lastid'";
+          $sql = "UPDATE words_$DB_UNAME SET backlevel='$newlevel' WHERE id='$lastid'";
           mysqli_query($dbw, $sql);
         }
       }
@@ -271,7 +271,7 @@
       $date = date_create(date("d-m-Y"));
       $res = date_add($date, $interval);   
       $newdate = date_format($res, "Ymd");
-      $sql = "UPDATE words SET backdate='$newdate' WHERE id='$lastid'";
+      $sql = "UPDATE words_$DB_UNAME SET backdate='$newdate' WHERE id='$lastid'";
       mysqli_query($dbw, $sql);
       setcookie("last", -1, 0, '', '', true);
       header('Location: ./index.php');
@@ -284,10 +284,10 @@
       //https://www.mysqltutorial.org/select-random-records-database-table.aspx
       //https://stackoverflow.com/questions/7060439/mysql-select-row-where-field-is-smaller-than-other
 
-      $current = mysqli_query($dbw, "SELECT * FROM words WHERE `date` <= '$time' ORDER BY RAND() LIMIT 1");
+      $current = mysqli_query($dbw, "SELECT * FROM words_$DB_UNAME WHERE `date` <= '$time' ORDER BY RAND() LIMIT 1");
       $row = mysqli_fetch_assoc($current);
       $count = mysqli_num_rows($current);
-      $backcurrent = mysqli_query($dbw, "SELECT * FROM words WHERE `level` > '1' AND `backdate` <= '$time' ORDER BY RAND() LIMIT 1");
+      $backcurrent = mysqli_query($dbw, "SELECT * FROM words_$DB_UNAME WHERE `level` > '1' AND `backdate` <= '$time' ORDER BY RAND() LIMIT 1");
       $backrow = mysqli_fetch_assoc($backcurrent);
       $backcount = mysqli_num_rows($backcurrent);
       $check = "0";
@@ -297,13 +297,13 @@
       if($count != 0 && $accrow['backwards'] != 100){
         $check = $check . "1";
       }elseif($accrow['backwards'] != 100){
-        $mysqlday = mysqli_fetch_assoc(mysqli_query($dbw, "SELECT MIN(date) FROM words"));
+        $mysqlday = mysqli_fetch_assoc(mysqli_query($dbw, "SELECT MIN(date) FROM words_$DB_UNAME"));
       }
 
       if($backcount != 0 && $accrow['backwards'] != 0){
         $check = $check . "2";
       }elseif($accrow['backwards'] != 0){
-        $backmysqlday = mysqli_fetch_assoc(mysqli_query($dbw, "SELECT MIN(backdate) FROM words WHERE `level` > '1'"));
+        $backmysqlday = mysqli_fetch_assoc(mysqli_query($dbw, "SELECT MIN(backdate) FROM words_$DB_UNAME WHERE `level` > '1'"));
       }
 
       if($check == "0"){
@@ -329,7 +329,7 @@
         if($randbackwards <= $accrow['backwards']){
 
           //─────────────────────backwards─────────────────────
-          $statssql = mysqli_query($dbw, "SELECT * FROM words WHERE `level` > '1' AND `backdate` <= '$time'");
+          $statssql = mysqli_query($dbw, "SELECT * FROM words_$DB_UNAME WHERE `level` > '1' AND `backdate` <= '$time'");
           $counttoday = mysqli_num_rows($statssql);
           setcookie("richtung", "back", 0, '', '', true);
           setcookie("last", $backrow['id'], 0, '', '', true);
@@ -351,7 +351,7 @@
 <?php
         }else{
           //─────────────────────normal─────────────────────
-          $statssql = mysqli_query($dbw, "SELECT * FROM words WHERE `date` <= '$time'");
+          $statssql = mysqli_query($dbw, "SELECT * FROM words_$DB_UNAME WHERE `date` <= '$time'");
           $counttoday = mysqli_num_rows($statssql);
           setcookie("richtung", "norm", 0, '', '', true);
           setcookie("last", $row['id'], 0, '', '', true);

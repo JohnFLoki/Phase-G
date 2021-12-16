@@ -20,7 +20,7 @@ CREATE TABLE `accounts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO `accounts` (`id`, `username`, `password`, `backwards`, `github`) VALUES
-(1, 'user', 'password', 0, 'on');
+(1, '///Benutzername', '///Passwort', 0, 'on');
 
 
 ALTER TABLE `accounts`
