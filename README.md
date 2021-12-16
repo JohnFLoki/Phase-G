@@ -3,19 +3,24 @@ Karteikartensystem basierend auf HTML, PHP und MySQL.
 # Videos
 Die Videos bekommst du nicht hier sondern bei der Quelle: https://gebaerdenlernen.de/index.php
 # Funktion
-Jede Vokabel hat in der Datenbank einen Eintrag der über die Eigenschaften Datum und Level verfügt.<br>
+---Gebärde zu Text (GtT)---
+Jede Vokabel hat in der Datenbank einen Eintrag, der über die Eigenschaften Datum und Level verfügt.<br>
 Man bekommt nur Vokabeln per Zufall abgefragt, wo der Datum-Eintrag vor dem heutigen Tag liegt.<br>
 Sollte eine Vokabel richtig beantwortet werden, wir das Level +1 gesetzt (außer bei Level 7 da bleibt es dabei) und das Datum wird um den Wert des Levels erhöht (siehe unten).<br>
 Wenn sie nicht richtig beantwortet wird sinkt das Level um 1 (außer bei Level 0).<br>
 Da alle Vokabeln auf Level 0 anfangen, wir im Eingabefeld schon die richtige Antwort gezeigt, damit man die Vokabel lernen kann.<br>
-Insgesamt sind es ca. 3694 Wörter also hab ich nicht jedes Wort auf seine Richtigkeit überprüft. Folglich entstehen Fehler wie das nicht laden eines Video-Links oder die falsche Angabe einer Lösung. In diesem Fall, eröffent bitte über die Schaltfläche hier ein Issue.<br>
-Zusätzlich kommt noch, dass Worte wie "einsetzen (in eine Formel - Mathematik)" oder "8:25 Uhr (Variante1)" einfach so einzutippen sind, wie sie angegeben werden, denn alle Antworten sind direkt aus dem Wörterbuch genommen und aufgrund der Menge nicht kontrollierbar.<br><br>
-Accounts können nur über MySQL erstellt werden und nicht über die Website, da Phase-G für den privaten Gebrauch gedacht ist. Auf Anfrage werde ich den Code aber gerne noch erweitern.<br>
-Außerdem muss für jede Account eine neue words-Datenbank erstellt werden, was vielleicht irgendwann behoben wird, jedoch generell eigentlich auch keine schlechte Lösung ist.
+Insgesamt sind es ca. 3694 Wörter also hab ich nicht jedes Wort und jedes Video auf seine Richtigkeit überprüft. Folglich entstehen Fehler wie das nicht-laden eines Video-Links oder die falsche Angabe einer Lösung. In diesem Fall, eröffnet bitte über die Schaltfläche ein Issue (eine Fehlermeldung).<br>
+Zusätzlich kommt noch, dass Worte wie "einsetzen (in eine Formel - Mathematik)" oder "8:25 Uhr (Variante1)" exakt so einzutippen sind, wie sie angegeben werden, denn alle Antworten sind direkt aus dem/den Wörterbuch/Wörterbüchern genommen und aufgrund der Menge nicht kontrollierbar.<br><br>
+---Text zu Gebärde (TtG)---
+Um diese Funktion zu aktivieren muss man in die Einstellungen seiner Account gehen (Zahnrad in der Sidebar). Dort befindet sich ein Regler der angibt wie häufig Text zu Gebärde abgefragt wird.<br>
+Null steht für nie, 100 für immer.<br>
+Da man am Anfang noch keine Gebärden kennt und man erst auf Level 2 weiß, ob man sich die Vokabel richtig gemerkt hat, wird TtG erst ab Level 2 mit in die zufällige Auswahl genommen. Eine Funktion die diese Beschränkung deaktiviert (z.B. für "Muttergebärder"), kommt noch.<br>
+Es bietet sich an am Anfang den Regler hoch einzustellen, da immer die paar Vokabeln auf Level 2+ abgefragt werden (vom Zufall abhängig) und man dann dirket getestet wird. Später sollte man den Regler eher mittig einstellen, um auch noch die GtT Vokabeln auf ein hohes Level zu bekommen (aber keinen Stress das pendelt sich auch fast automatisch ein).<br><br>
+Accounts können vorerst nur über MySQL erstellt werden und nicht über die Website, da Phase-G für den privaten Gebrauch gedacht ist. Der Code dazu ist aber in Vorbereitung.<br>
+Außerdem muss für jede Account eine neue words_(Benutzername) Tabelle in phase_g_words erstellt werden, da ja jeder seinen eigenen Vortschritt haben will.
 
 
-
-Level-Abstände (frei wählbar durch bearbeiten der Datei):
+Level-Abstände (momentan frei wählbar durch bearbeiten der index.php Datei):
 ---
 Die Abstände sind unterschiedlich, da man die Vokabel besser kann je öfter man sie richtig hat und demnach muss man sie auch erstmal nicht beantworten.<br><br>
 Level 0: 0 Tage<br>
@@ -50,7 +55,9 @@ Hier sind alle Hinweise auf gefundene fehlerhafte Daten:
 ---
 # ToDo
 - Demo Page
-- TtG erklären
+- Admin Account zum erstellen von Usern
+- Settings Abstände
+- Muttergebärder
 - Code verschönern/zerupfen
 - (Datenbanken Verbesserungen s.o.)
 - (Accountsystem Verbesserungen s.o.)
