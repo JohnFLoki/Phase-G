@@ -40,7 +40,7 @@
   <img src="back.svg" alt="Zurück" class="dback" height="18px">
     <b>&nbsp;&nbsp;Hallo <?php /*echo $_SESSION['login_user'];*/ echo $_COOKIE['login_user'] ?>! <img src="settings.svg" alt="Settings" height="18px" onclick="location.href='./settings.php'" style="cursor: pointer;"><br>
     <a href="./index.php?logout=1" style="color:#8497a8; text-decoration: none !important;">&nbsp;&nbsp;Ausloggen</a></b><br><br>
-    &nbsp;&nbsp;Deine Stats:<br>
+    &nbsp;&nbsp;Deine Statistik:<br>
 <?php
     $statssql0 = mysqli_query($dbw, "SELECT * FROM words_$DB_UNAME WHERE `level` = '0'");
     $statssql1 = mysqli_query($dbw, "SELECT * FROM words_$DB_UNAME WHERE `level` = '1'");
@@ -75,7 +75,7 @@
     <div id="menuM" class="nav">
       <b>&nbsp;&nbsp;Hallo <?php echo $_COOKIE['login_user'] ?>! <img src="settings.svg" alt="Settings" height="26px" onclick="location.href='./settings.php'" style="cursor: pointer;"><br>
       <a href="./index.php?logout=1" style="color:#8497a8; text-decoration: none !important;">&nbsp;&nbsp;Ausloggen</a></b><br><br>
-      &nbsp;&nbsp;Deine Stats:<br>
+      &nbsp;&nbsp;Deine Statistik:<br>
 <?php
       echo "&nbsp;&nbsp;Level 0: &nbsp;&nbsp;" . $count0 . "<br>";
       echo "&nbsp;&nbsp;Level 1: &nbsp;&nbsp;" . $count1 . "<br>";
@@ -286,31 +286,28 @@
       $backrow = mysqli_fetch_assoc($backcurrent);
       $backcount = mysqli_num_rows($backcurrent);
       $check = "0";
-      $mysqlday = "0";
-      $backmysqlday = "0";
 
       if($count != 0 && $accrow['backwards'] != 100){
         $check = $check . "1";
-      }elseif($accrow['backwards'] != 100){
-        $mysqlday = mysqli_fetch_assoc(mysqli_query($dbw, "SELECT MIN(date) FROM words_$DB_UNAME"));
       }
-
       if($backcount != 0 && $accrow['backwards'] != 0){
         $check = $check . "2";
-      }elseif($accrow['backwards'] != 0){
-        $backmysqlday = mysqli_fetch_assoc(mysqli_query($dbw, "SELECT MIN(backdate) FROM words_$DB_UNAME WHERE `level` > '1'"));
       }
-
       if($check == "0"){
-        if(($backmysqlday <= $mysqlday && $backmysqlday != "0") || ($backmysqlday <= $mysqlday && $mysqlday == "0")){
-          $mysqlday =  $backmysqlday;
+        $normmysqlday = mysqli_fetch_assoc(mysqli_query($dbw, "SELECT MIN(date) AS date FROM words_$DB_UNAME"));
+        $backmysqlday = mysqli_fetch_assoc(mysqli_query($dbw, "SELECT MIN(backdate) AS backdate FROM words_luci WHERE `level` >= '2'"));
+        $mysqlday = $backmysqlday['backdate'];
+        if($accrow['backwards'] == 0){
+          $mysqlday = $normmysqlday['date'];
+        }elseif($normmysqlday['date'] < $backmysqlday['backdate'] && $accrow['backwards'] != 100){
+          $mysqlday = $normmysqlday['date'];
         }
         $tmp1 = $mysqlday;
         $tmp2 = $mysqlday;
         $tmp3 = $mysqlday;
-        $nextday = substr($tmp1, 6) . "-" . substr($tmp2, 4, 2) . "-" . substr($tmp3, 0, 5);
+        $nextday = substr($tmp1, 6) . "-" . substr($tmp2, 4, 2) . "-" . substr($tmp3, 0, 4);
 ?>
-  <div class="one" id="one"><div class="two"><div class="login">Du hast bereits alle Vokabeln für heute abgearbeitet. Der <?php echo $nextday;?> ist dein nächster Lerntag.</div></div></div>
+  <div class="one" id="one"><div class="two"><div class="login"><p style="text-align: center; padding: 70px 20px;">Du hast bereits alle Vokabeln für heute abgearbeitet. Der <?php echo $nextday; ?> ist dein nächster Lerntag.</p></div></div></div>
 <?php
       }else{
         $randbackwards = rand(1, 100);
@@ -369,7 +366,7 @@
         </td>
         <td class="padleft">
           <p class="mobilep">Vokabellevel: <?php echo $row['level']; ?><br>
-          Gebärde zu Text Vokalen heute fällig: <?php echo $counttoday; ?></p>
+          Gebärde zu Text heute fällig: <?php echo $counttoday; ?></p>
           <form class="<?php if($accrow['github'] != "on"){echo 'nogit';} ?> formone" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>?post=1">
             <textarea name="wort" placeholder="Antwort" required><?php if($row['level'] == 0){echo $row['name'];} ?></textarea>
             <input type="submit" name="login" value="Senden" />
@@ -409,7 +406,6 @@
     }else{
 ?>
   <div class="one" id="one"><div class="two"><div class="login"><br>
-    
     <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
       <input type="text" name="uname" placeholder="Benutzername" required /><br><br>
       <input type="password" name="pass" placeholder="Passwort" required /><br><br>
