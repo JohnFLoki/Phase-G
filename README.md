@@ -47,6 +47,7 @@ Hier sind alle Hinweise auf gefundene fehlerhafte Daten:
 ---
 # ToDo
 - Demo Page
+- TtG erklären
 - Code verschönern/zerupfen
 - (Datenbanken Verbesserungen s.o.)
 - (Accountsystem Verbesserungen s.o.)
