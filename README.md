@@ -39,9 +39,11 @@ Ordner-Struktur:
 phase-g<br>
  ┝ video<br>
  │   └ alle .mp4 Dateien aus der Zip<br>
+ ┝ back.svg<br>
  ┝ database.php<br>
  ┝ index.php<br>
  ┝ settings.php<br>
+ ┝ settings.svg<br>
  └ style.css<br>
 
 Hier sind alle Hinweise auf gefundene fehlerhafte Daten:
