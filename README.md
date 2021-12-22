@@ -79,6 +79,7 @@ Es wäre gut wenn das Wörterbuch eine Struktur hat, wo man den Namen der Datei 
 Hierzu kann man gerne ein Issue erstellen.
 # Copyright
 Alle Inhalte dieser Repository stehen unter einer Creative Commons Namensnennung - Nicht-kommerziell - Weitergabe unter gleichen Bedingungen 3.0 Deutschland Lizenz (https://creativecommons.org/licenses/by-nc-sa/3.0/de/)
+
 Wörterbücher
 ---
 Vokabellisten sind von der Website https://gebaerdenlernen.de/index.php von Henrike Maria Bartsch welche auch unter der Lizenz Creative Commons Namensnennung - Nicht-kommerziell - Weitergabe unter gleichen Bedingungen 3.0 Deutschland steht (Stand 25.10.2021).
