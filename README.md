@@ -65,7 +65,7 @@ Hier sind alle Hinweise auf gefundene fehlerhafte Daten:
 - Admin Account zum erstellen von Usern und Tabellen
 - Settings Abstände
 - Muttergebärder (Installer)
-- Code verschönern/zerupfen
+- Code verschönern
 - (Datenbanken Verbesserungen s.o.)
 - (Accountsystem Verbesserungen s.o.)
 - (Docker)
