@@ -64,7 +64,7 @@ Hier sind alle Hinweise auf gefundene fehlerhafte Daten:
 - Demo Page
 - Admin Account zum erstellen von Usern und Tabellen
 - Settings Abstände
-- Muttergebärder
+- Muttergebärder (Installer)
 - Code verschönern/zerupfen
 - (Datenbanken Verbesserungen s.o.)
 - (Accountsystem Verbesserungen s.o.)
