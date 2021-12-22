@@ -71,11 +71,13 @@ Hier sind alle Hinweise auf gefundene fehlerhafte Daten:
 - (Docker)
 - (Acccount Playback Speed https://www.w3schools.com/Tags/tryit.asp?filename=tryhtml5_av_prop_playbackrate)
 - (Hashed Passwords)
-# Copyright
-Alle Inhalte dieser Repository stehen unter einer Creative Commons Namensnennung - Nicht-kommerziell - Weitergabe unter gleichen Bedingungen 3.0 Deutschland Lizenz (https://creativecommons.org/licenses/by-nc-sa/3.0/de/) und die Vokabellisten sind von der Website https://gebaerdenlernen.de/index.php von Henrike Maria Bartsch welche auch unter der Lizenz Creative Commons Namensnennung - Nicht-kommerziell - Weitergabe unter gleichen Bedingungen 3.0 Deutschland steht (Stand 25.10.2021).
 # Dialekte
 Da es in der Deutschen Gebärden Sprache mehrere Dialekte gibt, ist diese Webanwendung aufgebaut auf Wörterbüchern die zur Verfügung stehen.
 Dies ist im Moment nur das von gebaerdenlernen.de, welches nur den Berliner Dialekt abbildet.
 Sobald ich ein anderes Wörterbuch finde, welches Open Source und kostenlos ist, werde ich das gerne auch implementieren.
 Es wäre gut wenn das Wörterbuch eine Struktur hat, wo man den Namen der Datei und die zugehörige Vokabel einfach implementieren kannn (z.B. katze.mp4 ist Katze).
 Hierzu kann man gerne ein Issue erstellen.
+# Copyright
+Alle Inhalte dieser Repository stehen unter einer Creative Commons Namensnennung - Nicht-kommerziell - Weitergabe unter gleichen Bedingungen 3.0 Deutschland Lizenz (https://creativecommons.org/licenses/by-nc-sa/3.0/de/)
+---
+Vokabellisten sind von der Website https://gebaerdenlernen.de/index.php von Henrike Maria Bartsch welche auch unter der Lizenz Creative Commons Namensnennung - Nicht-kommerziell - Weitergabe unter gleichen Bedingungen 3.0 Deutschland steht (Stand 25.10.2021).
