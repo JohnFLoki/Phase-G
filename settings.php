@@ -1,3 +1,7 @@
+<?php
+  
+//─────────────────────HTML─────────────────────
+echo '
 <html>
 <head>
   <title>Einstellungen</title>
@@ -7,47 +11,49 @@
 </head>
 
 <body>
-<?php
+';
   include './database.php';
   if($account == 1){
     
     //─────────────────────Account-PC─────────────────────
-?>
-<div id="dmenuM" class="dnav">
-<img src="back.svg" alt="Zurück" class="dback" height="18px">
-  <b>&nbsp;&nbsp;Hallo <?php /*echo $_SESSION['login_user'];*/ echo $_COOKIE['login_user'] ?>!<br>
-  <a href="./index.php?logout=1" style="color:#8497a8; text-decoration: none !important;">&nbsp;&nbsp;Ausloggen</a></b>
-<a href="https://github.com/JohnFCreep/Phase-G#funktion" class="dgitM" target="_blank">Github (Funktion, Lizenz, ...)</a>
-</div>
-  <!---─────────────────────Handy─────────────────────--->
-  <div id="sidebar">
-    <div id="menuM" class="nav">
-      <b>&nbsp;&nbsp;Hallo <?php /*echo $_SESSION['login_user'];*/ echo $_COOKIE['login_user'] ?>!<br>
-      <a href="./index.php?logout=1" style="color:#8497a8; text-decoration: none !important;">&nbsp;&nbsp;Ausloggen</a></b><a href=""></a>
-      <a href="https://github.com/JohnFCreep/Phase-G#funktion" class="gitM" target="_blank">Github (Funktion, Lizenz, ...)</a>
+  
+    //─────────────────────HTML─────────────────────
+    echo '
+    <div id="dmenuM" class="dnav">
+    <img src="back.svg" alt="Zurück" class="dback" height="18px">
+      <b>&nbsp;&nbsp;Hallo ' . $_COOKIE["login_user"] . '!<br>
+      <a href="./index.php?logout=1" style="color:#8497a8; text-decoration: none !important;">&nbsp;&nbsp;Ausloggen</a></b>
+    <a href="https://github.com/JohnFCreep/Phase-G#funktion" class="dgitM" target="_blank">Github (Funktion, Lizenz, ...)</a>
     </div>
-    <span class="open" id="button">
-      <button class="currentclose" onClick="toggleMenu(this)" id="buttoninner">
-        ☰
-      </button>
-    </span>
-  </div>
-<script>
-  function toggleMenu(button) { 
-    if ( button.className === 'currentclose' ) {
-      document.getElementById('menuM').style.marginRight = '0px';
-      document.getElementById('buttoninner').style.right = '280px';
-      document.getElementById('one').style.left = '-250px';
-      button.className = '';
-    } else {
-      document.getElementById('menuM').style.marginRight = '-250px';
-      document.getElementById('buttoninner').style.right = '30px';
-      document.getElementById('one').style.left = '0px';
-      button.className = 'currentclose';
-    }
-  }
-</script>
-<?php
+      <!---─────────────────────Handy─────────────────────--->
+      <div id="sidebar">
+        <div id="menuM" class="nav">
+          <b>&nbsp;&nbsp;Hallo ' . $_COOKIE["login_user"] . '!<br>
+          <a href="./index.php?logout=1" style="color:#8497a8; text-decoration: none !important;">&nbsp;&nbsp;Ausloggen</a></b><a href=""></a>
+          <a href="https://github.com/JohnFCreep/Phase-G#funktion" class="gitM" target="_blank">Github (Funktion, Lizenz, ...)</a>
+        </div>
+        <span class="open" id="button">
+          <button class="currentclose" onClick="toggleMenu(this)" id="buttoninner">
+            ☰
+          </button>
+        </span>
+      </div>
+    <script>
+      function toggleMenu(button) { 
+        if ( button.className === "currentclose" ) {
+          document.getElementById("menuM").style.marginRight = "0px";
+          document.getElementById("buttoninner").style.right = "280px";
+          document.getElementById("one").style.left = "-250px";
+          button.className = "";
+        } else {
+          document.getElementById("menuM").style.marginRight = "-250px";
+          document.getElementById("buttoninner").style.right = "30px";
+          document.getElementById("one").style.left = "0px";
+          button.className = "currentclose";
+        }
+      }
+    </script>
+';
   if($_SERVER["REQUEST_METHOD"] == "POST") {
     $error = "";
 
@@ -82,11 +88,16 @@
   $sql = "SELECT * FROM accounts WHERE username = '$usernametest'";
   $accresult = mysqli_query($db, $sql);
   $row = mysqli_fetch_assoc($accresult);
-?>
+  
+  //─────────────────────HTML─────────────────────
+  echo '
   <div class="one" id="one"><div class="two"><div class="settingslogin"><br>
-  <img src="back.svg" alt="Zurück" height="18px" onclick="location.href='./index.php'" style="cursor: pointer; margin-left: 19px;"><br>
-  <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
-      <input id="backwards" type="range" min="0" max="100" value="<?php echo $row['backwards']; ?>" name="backwards" <?php if($row['backwards'] == "on"){echo "checked";} ?> class="regler" />
+  <img src="back.svg" alt="Zurück" height="18px" onclick="location.href=\'./index.php\'" style="cursor: pointer; margin-left: 19px;"><br>
+  <form method="post" action="' . htmlspecialchars($_SERVER["PHP_SELF"]) . '">
+      <input id="backwards" type="range" min="0" max="100" value="' . $row["backwards"] . '" name="backwards"';
+      if($row["backwards"] == "on"){echo "checked";}
+      echo '
+      class="regler" />
       <span id="currentrange" style="width:3ch;"></span>
       <div class="popup" onclick="myFunction()">Gebärdenabfrage (Klicke für Hilfe)
         <span class="popuptext" id="myPopup">Hier kannst du die Wahrscheinlichkeit angeben, mit der du nach den Gebärden gefragt wirst (100 = immer bietet sich an wenn man sehr weit ist, 0 = nie). Da man das in dieser Umgebung nicht kontrollieren kann, ist deine Ehrlichkeit gefragt.
@@ -94,12 +105,17 @@
       <br><br>Klicke hier um das Popup zu schließen</span></div>
       <label style="width: 100%; height:30px;"></label>
       <label class="form-control">
-        <input type="checkbox" name="github" <?php if($row['github'] == "on"){echo "checked";} ?> />Github Fehlermeldung
+        <input type="checkbox" name="github"';
+        if($row['github'] == "on"){echo "checked";}
+        echo '/>Github Fehlermeldung
       </label>
       <label style="width: 100%; height:40px;"></label>
       <input class="settingspass" type="password" name="newpass" placeholder="Neues Passwort" /><br><br>
       <input type="password" name="renewpass" placeholder="Neues Passwort wiederholen" /><br>
-      <?php echo $error; ?><br><br>
+      ';
+      echo $error;
+      echo '
+      <br><br>
       <input type="submit" name="login" value="Speichern" />
     </form>
   </div></div></div>
@@ -117,15 +133,17 @@
       var popup = document.getElementById("myPopup");
       popup.classList.toggle("show");
     }
-</script>
-<?php
+  </script>
+  ';
   }else{
-?>
+    echo '
     <div class="one" id="one"><div class="two"><div class="login"><p style="text-align: center; padding: 70px 20px;"><a href="./index.php" style="color: #b7c7e2">Bitte logge dich erst hier ein!</a></p></div></div></div>
-<?php
+    ';
   }
-?>
+  echo '
   <a href="https://github.com/JohnFCreep/Phase-G#funktion" class="git" target="_blank">Github (Funktion, Lizenz, ...)</a>
 </body>
 
 </html>
+';
+?>
