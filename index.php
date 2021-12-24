@@ -290,11 +290,10 @@ echo '
       header('Location: ./index.php');
     }else{
       //─────────────────────Zufallswahl─────────────────────
-      //4660 einträge
       //date-calc
       $time = date("Ymd");
-      //https://www.mysqltutorial.org/select-random-records-database-table.aspx
-      //https://stackoverflow.com/questions/7060439/mysql-select-row-where-field-is-smaller-than-other
+
+      //Hilfe: https://www.mysqltutorial.org/select-random-records-database-table.aspx
 
       $current = mysqli_query($dbw, "SELECT * FROM words_$DB_UNAME WHERE `date` <= '$time' AND `level` >= '1' ORDER BY RAND() LIMIT 1");
       $row = mysqli_fetch_assoc($current);
