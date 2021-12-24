@@ -17,11 +17,11 @@ CREATE TABLE `accounts` (
   `password` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `backwards` int(11) NOT NULL,
   `github` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `playback` decimal(10,0) NOT NULL DEFAULT 1
+  `playback` float NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO `accounts` (`id`, `username`, `password`, `backwards`, `github`, `playback`) VALUES
-(1, '///Benutzername', '///Passwort', 0, 'on', '1');
+(1, '///Benutzername', '///Passwort', 0, 'on', 1.0);
 
 
 ALTER TABLE `accounts`
