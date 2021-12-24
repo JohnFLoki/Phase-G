@@ -63,7 +63,6 @@ Hier sind alle Hinweise auf gefundene fehlerhafte Daten:
 # ToDo
 - Demo Page
 - Admin Account zum erstellen von Usern und Tabellen
-- Settings Abstände
 - Muttergebärder (Installer)
 - (Datenbanken Verbesserungen s.o.)
 - (Accountsystem Verbesserungen s.o.)
