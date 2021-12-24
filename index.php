@@ -303,7 +303,7 @@ echo '
       //date-calc
       $time = date("Ymd");
 
-      $current = mysqli_query($dbw, "SELECT * FROM words_$DB_UNAME WHERE `date` <= '$time' AND `level` >= '1' ORDER BY RAND() LIMIT 1");
+      $current = mysqli_query($dbw, "SELECT * FROM words_$DB_UNAME WHERE `date` <= '$time' ORDER BY RAND() LIMIT 1");
       $row = mysqli_fetch_assoc($current);
       $count = mysqli_num_rows($current);
       $backcurrent = mysqli_query($dbw, "SELECT * FROM words_$DB_UNAME WHERE `level` > '1' AND `backdate` <= '$time' ORDER BY RAND() LIMIT 1");
