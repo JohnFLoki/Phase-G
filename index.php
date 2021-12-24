@@ -1,5 +1,10 @@
 <!-----https://gebaerdenlernen.de/index.php----->
 <?php
+
+  //Hilfen:
+  //      https://www.mysqltutorial.org/select-random-records-database-table.aspx
+  //      Playback Speed: https://www.w3schools.com/Tags/tryit.asp?filename=tryhtml5_av_prop_playbackrate
+
   //session_start();
   if($_GET['logout'] == 1){
     // remove all session variables
@@ -31,6 +36,7 @@ echo '
 
   if($account == 1){
     //─────────────────────Account-PC─────────────────────
+    
     //─────────────────────HTML─────────────────────
     echo '
     <div class="middle"><div class="hello">
@@ -206,7 +212,7 @@ echo '
           <table cellspacing="0" cellpadding="0">
             <tr>
               <td>
-              <video height="480" width="640" controls loop autoplay>
+              <video height="480" width="640" controls loop autoplay id="playback">
                 <source src="./video/' . $lastrow['link']  . '.mp4" type="video/mp4">
               </video></p>
               </td>
@@ -231,6 +237,10 @@ echo '
           }
         echo '
         </div></div></div>
+        <script>
+          var vid = document.getElementById("playback");
+          vid.playbackRate = ' . $accrow['playback'] . ';
+        </script>
         ';
       }
     }elseif($_GET["back"] == 1){
@@ -292,8 +302,6 @@ echo '
       //─────────────────────Zufallswahl─────────────────────
       //date-calc
       $time = date("Ymd");
-
-      //Hilfe: https://www.mysqltutorial.org/select-random-records-database-table.aspx
 
       $current = mysqli_query($dbw, "SELECT * FROM words_$DB_UNAME WHERE `date` <= '$time' AND `level` >= '1' ORDER BY RAND() LIMIT 1");
       $row = mysqli_fetch_assoc($current);
@@ -386,7 +394,7 @@ echo '
           <table cellspacing="0" cellpadding="0">
             <tr>
               <td>
-                <video ' . $nogitvideo . ' height="480" width="640" controls loop autoplay>
+                <video ' . $nogitvideo . ' height="480" width="640" controls loop autoplay id="playback">
                   <source src="./video/' . $row['link'] . '.mp4" type="video/mp4">
                 </video>
               </td>
@@ -408,6 +416,10 @@ echo '
           }
           echo '
           </div></div></div>
+          <script>
+            var vid = document.getElementById("playback");
+            vid.playbackRate = ' . $accrow['playback'] . ';
+          </script>
           ';
       }
     }

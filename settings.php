@@ -84,6 +84,9 @@ echo '
             $error = $error .  "Die Passwörter stimmen nicht überein!<br>";
         }
     }
+    $newplayback = $_POST['speed'];
+    $sql = "UPDATE accounts SET playback='$newplayback' WHERE username='$uname'";
+    mysqli_query($db, $sql);
   }
   $sql = "SELECT * FROM accounts WHERE username = '$usernametest'";
   $accresult = mysqli_query($db, $sql);
@@ -109,6 +112,17 @@ echo '
         if($row['github'] == "on"){echo "checked";}
         echo '/>Github Fehlermeldung
       </label>
+      <label style="width: 100%; height:40px;"></label>
+      Wiedergabegeschwindigkeit:&nbsp;&nbsp;
+      <select name="speed" required>
+        <option '; if($row["playback"] == 0.25){echo "selected";} echo ' value="0.25">0,25</option>
+        <option '; if($row["playback"] == 0.5){echo "selected";} echo ' value="0.5">0,5</option>
+        <option '; if($row["playback"] == 1){echo "selected";} echo ' value="1">1</option>
+        <option '; if($row["playback"] == 1.25){echo "selected";} echo ' value="1.25">1,25</option>
+        <option '; if($row["playback"] == 1.5){echo "selected";} echo ' value="1.5">1,5</option>
+        <option '; if($row["playback"] == 1.75){echo "selected";} echo ' value="1.75">1,75</option>
+        <option '; if($row["playback"] == 2){echo "selected";} echo ' value="2">2</option>
+      </select>
       <label style="width: 100%; height:40px;"></label>
       <input class="settingspass" type="password" name="newpass" placeholder="Neues Passwort" /><br><br>
       <input type="password" name="renewpass" placeholder="Neues Passwort wiederholen" /><br>
