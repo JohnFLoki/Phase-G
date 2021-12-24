@@ -94,14 +94,15 @@ echo '
   
   //─────────────────────HTML─────────────────────
   echo '
-  <div class="one" id="one"><div class="two"><div class="settingslogin"><br>
-  <img src="back.svg" alt="Zurück" height="18px" onclick="location.href=\'./index.php\'" style="cursor: pointer; margin-left: 19px;"><br>
+  <div class="one" id="one"><div class="two"><div class="settingslogin">
+  <img src="back1.svg" alt="Zurück" onclick="location.href=\'./index.php\'" class="settingsback"><br>
   <form method="post" action="' . htmlspecialchars($_SERVER["PHP_SELF"]) . '">
       <input id="backwards" type="range" min="0" max="100" value="' . $row["backwards"] . '" name="backwards"';
       if($row["backwards"] == "on"){echo "checked";}
       echo '
       class="regler" />
       <span id="currentrange" style="width:3ch;"></span>
+      <label class="labelhide"></label>
       <div class="popup" onclick="myFunction()">Gebärdenabfrage (Klicke für Hilfe)
         <span class="popuptext" id="myPopup">Hier kannst du die Wahrscheinlichkeit angeben, mit der du nach den Gebärden gefragt wirst (100 = immer bietet sich an wenn man sehr weit ist, 0 = nie). Da man das in dieser Umgebung nicht kontrollieren kann, ist deine Ehrlichkeit gefragt.
           Du musst es wirklich exakt genau richtig machen, damit die Vokabel ein Level hoch kommt. Es werden nur Vokabeln genommen, die du auf Level 2 hast (also einmal richtig eingegeben).
@@ -113,8 +114,8 @@ echo '
         echo '/>Github Fehlermeldung
       </label>
       <label style="width: 100%; height:40px;"></label>
-      Wiedergabegeschwindigkeit:&nbsp;&nbsp;
-      <select name="speed" required>
+      <p class="selectclass">Wiedergabegeschwindigkeit:&nbsp;&nbsp;</p>
+      <select name="speed" required class="selectclass">
         <option '; if($row["playback"] == 0.25){echo "selected";} echo ' value="0.25">0,25</option>
         <option '; if($row["playback"] == 0.5){echo "selected";} echo ' value="0.5">0,5</option>
         <option '; if($row["playback"] == 1){echo "selected";} echo ' value="1">1</option>

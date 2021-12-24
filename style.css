@@ -206,7 +206,16 @@ textarea {
 .login p{
 	padding: 70px 30px 0 30px;
 }
-
+.wrong {
+	color: #df813b;
+	font-size: 18px;
+}
+.settingsback {
+	cursor: pointer;
+	margin-left: 25px;
+	margin-top: 25px;
+	height: 25px;
+}
 
 .answer{
 	border-radius: 25px !important;
@@ -431,6 +440,10 @@ textarea:hover {
 	box-shadow: inset 1em 1em black;
 }
 
+.selectclass {
+	margin: 0 !important;
+}
+
 input[type=checkbox]:checked::before {
 	transform: scale(1);
 }
@@ -555,7 +568,8 @@ input[type=checkbox]:checked::before {
 .git,
 .stats,
 .middle,
-.hello {
+.hello,
+.labelhide {
 	visibility: hidden !important;
 	font-size: 0px;
 	width: 0px;
@@ -586,6 +600,7 @@ input[type=checkbox]:checked::before {
 	}
 }
 @media (max-width: 1370px) {
+	
 	.middle {
 		width: 0px;
 		margin: auto auto auto 53.2%;
@@ -707,6 +722,10 @@ input[type=checkbox]:checked::before {
 		font-size: 50px;
 		padding: 70px 30px 0 30px;
 	}
+	.wrong {
+		color: #df813b !important;
+		font-size: 45px;
+	}
 
 	.gitL {
 		position: absolute;
@@ -826,6 +845,13 @@ input[type=checkbox]:checked::before {
 	}
 	.settingslogin span {
 		font-size: 35px;
+		line-height: 25px;
+	}
+	.settingsback {
+		margin-left: 40px;
+		margin-top: 40px;
+		margin-bottom: -10px;
+		height: 60px;
 	}
 	.popup {
 		position: relative;
@@ -922,9 +948,18 @@ input[type=checkbox]:checked::before {
 		  transition: 120ms transform ease-in-out;
 		  box-shadow: inset 1em 1em black;
 	  }
+
+	  .selectclass {
+		  font-size: 35px;
+	  }
 	  
 	  input[type=checkbox]:checked::before {
 		  transform: scale(1);
+	  }
+
+	  .labelhide {
+		  width: 100%;
+		  height:40px;
 	  }
 
 	  .regler {
