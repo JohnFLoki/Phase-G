@@ -68,7 +68,6 @@ Hier sind alle Hinweise auf gefundene fehlerhafte Daten:
 - (Datenbanken Verbesserungen s.o.)
 - (Accountsystem Verbesserungen s.o.)
 - (Docker)
-- (Acccount Playback Speed https://www.w3schools.com/Tags/tryit.asp?filename=tryhtml5_av_prop_playbackrate)
 - (Hashed Passwords)
 # Dialekte
 Da es in der Deutschen Gebärden Sprache mehrere Dialekte gibt, ist diese Webanwendung aufgebaut auf Wörterbüchern die zur Verfügung stehen.
