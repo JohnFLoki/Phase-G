@@ -87,7 +87,6 @@ Wörterbücher
 ---
 Vokabelliste Berliner Dialekt sind von der Website https://gebaerdenlernen.de/index.php von Henrike Maria Bartsch welche auch unter der Lizenz Creative Commons Namensnennung - Nicht-kommerziell - Weitergabe unter gleichen Bedingungen 3.0 Deutschland steht (Stand 25.10.2021).
 
-
-# Notes
 ---
+# Notes
 Update script: UPDATE words_name SET link = CONCAT('berlin1/', link)
