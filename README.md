@@ -3,7 +3,8 @@ Karteikartensystem für Gebärdensprache basierend auf HTML, PHP und MySQL.
 
 # Videos
 Die Videos bekommst du nicht hier sondern bei der Quelle: 
-- Berliner Dialekt: https://gebaerdenlernen.de/index.php 3694 Wörter Ordnername in video (siehe unten): berlin1
+- Berliner Dialekt: https://gebaerdenlernen.de/index.php 3694 Wörter
+  **Ordnername in video (siehe unten): berlin1**
 
 # Funktion
 Gebärde zu Text (GtT)
