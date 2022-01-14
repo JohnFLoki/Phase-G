@@ -98,6 +98,9 @@ echo '
             if($_POST['dict'] == "berlin1"){
               $sqlScript = file('https://raw.githubusercontent.com/JohnFCreep/Phase-G/main/sql-berlin1.sql');
             }
+            if($_POST['dict'] == "demo1"){
+              $sqlScript = file('https://raw.githubusercontent.com/JohnFCreep/Phase-G/main/sql-demo1.sql');
+            }
             foreach ($sqlScript as $line)	{
 
               $startWith = substr(trim($line), 0 ,2);
