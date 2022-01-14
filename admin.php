@@ -96,7 +96,7 @@ echo '
             //─────────────────────neue Karteikarten─────────────────────
             $query = 'INSERT INTO `words_' . $newusername  . '` (`id`, `link`, `name`, `date`, `level`, `backdate`, `backlevel`) VALUES ';
             if($_POST['dict'] == "berlin1"){
-              $sqlScript = file('sql-berlin1.sql');
+              $sqlScript = file('https://raw.githubusercontent.com/JohnFCreep/Phase-G/main/sql-berlin1.sql');
             }
             foreach ($sqlScript as $line)	{
 
@@ -144,21 +144,6 @@ echo '
       <input type="submit" name="login" value="Speichern" />
     </form>
   </div></div></div>
-  <script>
-    var slider = document.getElementById("backwards");
-    var output = document.getElementById("currentrange");
-    output.innerHTML = slider.value; // Display the default slider value
-    
-    // Update the current slider value (each time you drag the slider handle)
-    slider.oninput = function() {
-      output.innerHTML = this.value;
-    }
-
-    function myFunction() {
-      var popup = document.getElementById("myPopup");
-      popup.classList.toggle("show");
-    }
-  </script>
   ';
     } else {
         echo '
