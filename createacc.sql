@@ -21,8 +21,7 @@ CREATE TABLE `accounts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO `accounts` (`id`, `username`, `password`, `backwards`, `github`, `playback`) VALUES
-(1, '///Admin-Benutzername', '///Admin-Passwort', 0, 'on', 1.0),
-(2, '///Benutzername', '///Passwort', 0, 'on', 1.0);
+(1, '///Admin-Benutzername', '///Admin-Passwort', 0, 'on', 1.0);
 
 
 ALTER TABLE `accounts`
@@ -30,7 +29,7 @@ ALTER TABLE `accounts`
 
 
 ALTER TABLE `accounts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
