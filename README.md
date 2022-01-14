@@ -1,8 +1,10 @@
 # Phase-G
 Karteikartensystem für Gebärdensprache basierend auf HTML, PHP und MySQL.
+
 # Videos
 Die Videos bekommst du nicht hier sondern bei der Quelle: 
 - Berliner Dialekt: https://gebaerdenlernen.de/index.php 3694 Wörter
+
 # Funktion
 Gebärde zu Text (GtT)
 ---
@@ -10,7 +12,7 @@ Jede Vokabel hat in der Datenbank einen Eintrag, der über die Eigenschaften Dat
 Man bekommt nur Vokabeln per Zufall abgefragt, wo der Datum-Eintrag vor dem heutigen Tag liegt.<br>
 Sollte eine Vokabel richtig beantwortet werden, wir das Level +1 gesetzt (außer bei Level 7 da bleibt es dabei) und das Datum wird um den Wert des Levels erhöht (siehe unten).<br>
 Wenn sie nicht richtig beantwortet wird sinkt das Level um 1 (außer bei Level 0).<br>
-Da alle Vokabeln auf Level 0 anfangen, wir im Eingabefeld schon die richtige Antwort gezeigt, damit man die Vokabel lernen kann.<br>
+**Da alle Vokabeln auf Level 0 anfangen, wir im Eingabefeld schon die richtige Antwort gezeigt, damit man die Vokabel lernen kann.<br>**
 Insgesamt sind es bei gebaerdenlernen.de ca. 3694 Wörter also hab ich nicht jedes Wort und jedes Video auf seine Richtigkeit überprüft. Folglich entstehen Fehler wie das nicht-laden eines Video-Links oder die falsche Angabe einer Lösung. In diesem Fall, eröffnet bitte über die Schaltfläche ein Issue (eine Fehlermeldung).<br>
 Zusätzlich kommt noch, dass Worte wie "einsetzen (in eine Formel - Mathematik)" oder "8:25 Uhr (Variante1)" exakt so einzutippen sind, wie sie angegeben werden, denn alle Antworten sind direkt aus dem/den Wörterbuch/Wörterbüchern genommen und aufgrund der Menge nicht kontrollierbar.<br><br>
 
@@ -68,6 +70,7 @@ Hier sind alle Hinweise auf gefundene fehlerhafte Daten:
 - (Accountsystem Verbesserungen s.o.)
 - (Docker)
 - (Hashed Passwords)
+
 # Dialekte
 Da es in der Deutschen Gebärden Sprache mehrere Dialekte gibt, ist diese Webanwendung aufgebaut auf Wörterbüchern die zur Verfügung stehen.
 Dies ist im Moment nur das von gebaerdenlernen.de, welches nur den Berliner Dialekt abbildet.
