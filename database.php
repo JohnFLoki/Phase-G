@@ -11,7 +11,8 @@
   $accresult = mysqli_query($db, $sql);
   $accrow = mysqli_fetch_assoc($accresult);
   $account = mysqli_num_rows($accresult);
-
+  
+  //─────────────────────admin?─────────────────────
   $sql = "SELECT * FROM accounts WHERE username = '$usernametest'";
   $adminresult = mysqli_query($db, $sql);
   $adminrow = mysqli_fetch_assoc($adminresult);
