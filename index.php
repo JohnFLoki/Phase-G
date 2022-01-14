@@ -34,7 +34,7 @@ echo '
 
   if($accrow['github'] == "on"){$backnogit = 'backnogit'; $nogitvideo = ''; $nogit = '';}else{$backnogit = ''; $nogitvideo = 'class="nogitvideo"'; $nogit = 'nogit';}
 
-  if ($adminrow['id'] == "1") {
+  if ($adminrow['id'] == 1) {
     echo '
     <div class="one" id="one"><div class="two"><div class="login"><p style="text-align: center; padding: 70px 20px;"><a href="./admin.php" style="color: #b7c7e2">Hier kommst du zum Admin-Panel.</a></p></div></div></div>
     ';

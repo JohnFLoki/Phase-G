@@ -55,28 +55,29 @@ echo '
     </script>
 ';
   if($_SERVER["REQUEST_METHOD"] == "POST") {
+    $uname = $_COOKIE['login_user'];
     $error = "";
-
-    if($_POST['backwards'] <= "101" && $_POST['backwards'] >= "0"){
-      $newbackwards = $_POST['backwards'];
-      $uname = $_COOKIE['login_user'];
-      $sql = "UPDATE accounts SET backwards='$newbackwards' WHERE username='$uname'";
-      mysqli_query($db, $sql);
-    }else {
-      $error = $error . "Zahl liegt nicht im erlaubten Bereich!<br>";
-    }
-
-    if($_POST['github'] == "" || $_POST['github'] == "on"){
-      $newgithub = $_POST['github'];
-      $sql = "UPDATE accounts SET github='$newgithub' WHERE username='$uname'";
-      mysqli_query($db, $sql);
-    }else {
-      $error = $error . "Github liegt nicht im erlaubten Bereich!<br>";
+    if ($adminrow['id'] != 1) {
+      if($_POST['backwards'] <= "101" && $_POST['backwards'] >= "0"){
+        $newbackwards =  htmlspecialchars($_POST['backwards']);
+        $sql = "UPDATE accounts SET backwards='$newbackwards' WHERE username='$uname'";
+        mysqli_query($db, $sql);
+      }else {
+        $error = $error . "Zahl liegt nicht im erlaubten Bereich!<br>";
+      }
+  
+      if($_POST['github'] == "" || $_POST['github'] == "on"){
+        $newgithub =  htmlspecialchars($_POST['github']);
+        $sql = "UPDATE accounts SET github='$newgithub' WHERE username='$uname'";
+        mysqli_query($db, $sql);
+      }else {
+        $error = $error . "Github liegt nicht im erlaubten Bereich!<br>";
+      }
     }
 
     if(!empty($_POST['newpass'])){
         if($_POST['newpass'] == $_POST['renewpass']){
-            $newpass = $_POST['newpass'];
+            $newpass =  htmlspecialchars($_POST['newpass']);
             $sql = "UPDATE accounts SET password='$newpass' WHERE username='$uname'";
             mysqli_query($db, $sql);
             $error = $error .  "Neues Passwort wurde gespeichert!";
@@ -84,9 +85,11 @@ echo '
             $error = $error .  "Die Passwörter stimmen nicht überein!<br>";
         }
     }
-    $newplayback = $_POST['speed'];
-    $sql = "UPDATE accounts SET playback='$newplayback' WHERE username='$uname'";
-    mysqli_query($db, $sql);
+    if ($adminrow['id'] != 1) {
+      $newplayback =  htmlspecialchars($_POST['speed']);
+      $sql = "UPDATE accounts SET playback='$newplayback' WHERE username='$uname'";
+      mysqli_query($db, $sql);
+    }
   }
   $sql = "SELECT * FROM accounts WHERE username = '$usernametest'";
   $accresult = mysqli_query($db, $sql);
@@ -95,9 +98,18 @@ echo '
   //─────────────────────HTML─────────────────────
   echo '
   <div class="one" id="one"><div class="two"><div class="settingslogin">
-  <img src="back1.svg" alt="Zurück" onclick="location.href=\'./index.php\'" class="settingsback"><br>
-  <form method="post" action="' . htmlspecialchars($_SERVER["PHP_SELF"]) . '">
-      <input id="backwards" type="range" min="0" max="100" value="' . $row["backwards"] . '" name="backwards"';
+  ';
+  if ($adminrow['id'] == 1) {
+    echo '
+    <img src="back1.svg" alt="Zurück" onclick="location.href=\'./admin.php\'" class="settingsback"><br>
+    <form method="post" action="' . htmlspecialchars($_SERVER["PHP_SELF"]) . '">
+      ';
+  }elseif ($adminrow['id'] != 1) {
+    echo '
+    <img src="back1.svg" alt="Zurück" onclick="location.href=\'./index.php\'" class="settingsback"><br>
+    <form method="post" action="' . htmlspecialchars($_SERVER["PHP_SELF"]) . '">
+      <input id="backwards" type="range" min="0" max="100" value="' . $row["backwards"] . '" name="backwards"
+      ';
       if($row["backwards"] == "on"){echo "checked";}
       echo '
       class="regler" />
@@ -124,8 +136,11 @@ echo '
         <option '; if($row["playback"] == 1.75){echo "selected";} echo ' value="1.75">1,75</option>
         <option '; if($row["playback"] == 2){echo "selected";} echo ' value="2">2</option>
       </select>
+      ';
+      }
+      echo '
       <label style="width: 100%; height:40px;"></label>
-      <input class="settingspass" type="password" name="newpass" placeholder="Neues Passwort" /><br><br>
+      <input class="settingspass" type="password" name="newpass" placeholder="Neues Passwort (optional)" /><br><br>
       <input type="password" name="renewpass" placeholder="Neues Passwort wiederholen" /><br>
       ';
       echo $error;
