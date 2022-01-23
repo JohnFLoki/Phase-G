@@ -68,11 +68,12 @@ Hier sind alle Hinweise auf gefundene fehlerhafte Daten:
 ---
 # ToDo
 - Demo Page
-- Muttergebärder (Installer)
+- Muttergebärder
+- Installer
 - (Datenbanken Verbesserungen s.o.)
 - (Accountsystem Verbesserungen s.o.)
-- (Docker)
-- (Hashed Passwords)
+- Docker
+- Hashed Passwords
 
 # Dialekte
 Da es in der Deutschen Gebärden Sprache mehrere Dialekte gibt, ist diese Webanwendung aufgebaut auf Wörterbüchern die zur Verfügung stehen.
