@@ -39,7 +39,6 @@ echo '
     
     //─────────────────────HTML─────────────────────
     echo '<div id="sidebar-head">
-    <!---─────────────────────Stats─────────────────────--->
     <!---─────────────────────Sidebar-PC─────────────────────--->
     <div class="dNav">
       <img src="back.svg" alt="Zurück" class="dback" height="18px">
