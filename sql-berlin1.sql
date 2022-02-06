@@ -21,7 +21,6 @@
 (24, 'berlin1/vierundzwanzig', '24', 0, 0, 0, 0),
 (25, 'berlin1/drei', '3', 0, 0, 0, 0),
 (26, 'berlin1/dreissig', '30', 0, 0, 0, 0),
-(27, 'berlin1/dreihundert', '300', 0, 0, 0, 0),
 (28, 'berlin1/dreiunddreissig', '33', 0, 0, 0, 0),
 (29, 'berlin1/vier', '4', 0, 0, 0, 0),
 (30, 'berlin1/vierzig', '40', 0, 0, 0, 0),
