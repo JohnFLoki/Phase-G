@@ -1,66 +1,32 @@
+:root {
+	--white-color: #ECEFF4;
+	--light-blue-color: #9db3dd;
+	--blue-color: #2868c7;
+	--grey-blue-color: #434c5e;
+	--body-color: #292e39;
 
+}
+.test{
+	border-color: #252a33; /*textarea bg 1*/
+	background-color: #1b1f26; /*Navbg*/
+		color: #232831; /*sidebarMbutt color*/
+		background-color: #1b1f26;/*Navbg*/
+}
 
 * {
 	box-sizing: border-box;
 	font-family: -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif;
 	font-size: 20px;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
 }
 
 body {
-	background-color: #292e39;
-	color: #ECEFF4;
+	background-color: var(--body-color);
+	color: var(--white-color);
 }
 
-input,
-textarea {
-	color: #ECEFF4;
+input, textarea {
+	color: var(--white-color);
 }
-
-/* .middle {
-	width: 17%;
-	margin: auto;
-}
-
-.hello {
-	top: 20px;
-	text-align: center;
-	position: absolute;
-	z-index: 1;
-}
-
-.hello table {
-	border: none;
-	color: #b7c7e2;
-}
-
-.hallo {
-	background-color: #3b4252;
-	border-top-left-radius: 25px;
-	border-bottom-left-radius: 25px;
-	padding: 10px 15px 15px 15px;
-}
-
-.hallob {
-	background-color: #485266;
-	border-top-right-radius: 25px;
-	border-bottom-right-radius: 25px;
-	padding: 10px 15px 15px 15px;
-	cursor: pointer;
-}
-
-.hallob a:visited,
-.hallob a {
-	text-decoration: none;
-	color: #b7c7e2;
-	margin: 10px 15px 15px 15px;
-	height: 100%;
-}
-
-.hello button:hover {
-	background-color: #5e81ac;
-} */
 
 .stats {
 	margin: auto;
@@ -75,8 +41,8 @@ textarea {
 
 .stats table {
 	width: 100%;
-	box-shadow: 0 0 0 3px #4C566A;
-	color: #81a1c1;
+	box-shadow: 0 0 0 3px var(--grey-blue-color);
+	color: var(--light-blue-color);
 	font-weight: bold;
 }
 
@@ -84,7 +50,7 @@ textarea {
 	position: absolute;
 	bottom: 22px;
 	z-index: 1;
-	color: #81a1c1 !important;
+	color: var(--light-blue-color) !important;
 	font-weight: bold;
 }
 
@@ -122,7 +88,7 @@ textarea {
 	width: 400px;
 	margin-left: auto;
 	margin-right: auto;
-	background-color: #292e39;
+	background-color: #292e39; /**/
 	box-shadow: 0px 0px 30px 10px rgba(0, 0, 0, 0.5) !important;
 	z-index: 1;
 }
@@ -145,7 +111,7 @@ textarea {
 	width: 310px;
 	border-radius: 25px;
 	height: 50px;
-	border: 1px solid #dee0e4;
+	border: 1px solid var(--white-color);
 	color: black;
 	margin-bottom: 20px;
 	padding: 0 15px;
@@ -154,7 +120,7 @@ textarea {
 	width: 100%;
 	padding: 15px;
 	border-radius: 0 0 25px 25px !important;
-	background-color: #434c5e;
+	background-color: var(--grey-blue-color);
 	border: 0;
 	cursor: pointer;
 	font-weight: bold;
@@ -173,7 +139,7 @@ textarea {
 	border-radius: 25px !important;
 	border-top-right-radius: 0px !important;
 	border-top-left-radius: 0px !important;
-	background-color: #434c5e;
+	background-color: var(--grey-blue-color);
 	border: 0;
 	cursor: pointer;
 	font-weight: bold;
@@ -189,7 +155,7 @@ textarea {
 	border-radius: 25px !important;
 	border-top-right-radius: 0px !important;
 	border-top-left-radius: 0px !important;
-	background-color: #434c5e;
+	background-color: var(--grey-blue-color);
 	border: 0;
 	cursor: pointer;
 	font-weight: bold;
@@ -200,7 +166,7 @@ textarea {
 .settingslogin form input[type="submit"]:hover,
 .backanswer form input[type="submit"]:hover,
 .rebackpadleft input[type="submit"]:hover {
-	background-color: #2868c7; /* or #3b4252*/
+	background-color: var(--blue-color);
 	transition: 0.2s;
 }
 .login p{
@@ -245,14 +211,14 @@ table {
 	flex-wrap: wrap;
 	margin: 0;
 	border-radius: 25px;
-	box-shadow: 0 0 0 4px #2868c7; /* oder #0060df*/
+	box-shadow: 0 0 0 4px var(--blue-color);
 }
 
 .formone input[type="submit"] {
 	width: 320px;
 	height: auto;
 	padding: 15px;
-	background-color: #485266;
+	background-color: var(--grey-blue-color);
 	border: 0;
 	cursor: pointer;
 	font-weight: bold;
@@ -262,7 +228,7 @@ table {
 }
 
 .formone input[type="submit"]:hover {
-	background-color: #2868c7;/* or #3b4252*/
+	background-color: var(--blue-color);
 }
 
 .mobilep {
@@ -275,7 +241,7 @@ textarea {
 	height: 200px;
 	margin: 0px;
 	padding: 10px;
-	background-color: #252a33 !important;
+	background-color: #252a33 !important; /**/
 	resize: none;
 	transition: 0.3s;
 	border-radius: 25px;
@@ -300,7 +266,7 @@ textarea:hover {
 	width: 1280px;
 	border-bottom-left-radius: 25px;
 	border-bottom-right-radius: 25px;
-	background-color: #485266;
+	background-color: var(--grey-blue-color);
 	height: auto;
 	padding: 15px;
 	border: 0;
@@ -311,10 +277,10 @@ textarea:hover {
 	text-align: center;
 	display: block;
 	text-decoration: none;
-	color: #b7c7e2;
+	color: var(--light-blue-color);
 }
 .formtwo:hover {
-	background-color: #2868c7;/* or #3b4252*/
+	background-color: var(--blue-color);
 }
 .backformtwo {
 	flex-wrap: wrap;
@@ -323,7 +289,7 @@ textarea:hover {
 	width: 100%;
 	border-bottom-left-radius: 25px;
 	border-bottom-right-radius: 25px;
-	background-color: #485266;
+	background-color: var(--grey-blue-color);
 	height: auto;
 	padding: 15px;
 	border: 0;
@@ -334,32 +300,17 @@ textarea:hover {
 	text-align: center;
 	display: block;
 	text-decoration: none;
-	color: #b7c7e2;
+	color: var(--light-blue-color);
 }
 .backformtwo:hover {
-	background-color: #2868c7;/* or #3b4252*/
+	background-color: var(--blue-color);
 }
 .rebackformtwo{
 	margin-top: 0px;
 }
 .rebackrahmen{
 	border-radius: 25px;
-	box-shadow: 0 0 0 4px #2868c7; /* oder #0060df*/;
-}
-
-.git {
-	position: absolute;
-	z-index: 1;
-	right: 5px;
-	font-size: 14px;
-	text-align: center;
-	text-decoration: none;
-	color: #b7c7e2;
-}
-
-.git:hover {
-	color: #fff !important;
-	transition: 0.4s;
+	box-shadow: 0 0 0 4px var(--blue-color);
 }
 
 .padleft {
@@ -372,7 +323,7 @@ textarea:hover {
 	width: 100%;
 	height: auto;
 	padding: 15px;
-	background-color: #485266;
+	background-color: var(--grey-blue-color);
 	border: 0;
 	cursor: pointer;
 	font-weight: bold;
@@ -403,13 +354,13 @@ textarea:hover {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
-	background-color: #ECEFF4;
+	background-color: var(--white-color);
 	margin: 0;
 	margin-left: 10px;
-	color: #9db3dd;
+	color: var(--light-blue-color);
 	width: 1.15em;
 	height: 1.15em;
-	border: 0.15em solid #9db3dd;
+	border: 0.15em solid var(--light-blue-color);
 	border-radius: 0.15em;
 	display: grid;
 	place-content: center;
@@ -418,12 +369,12 @@ textarea:hover {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
-	background-color: #ECEFF4;
+	background-color: var(--white-color);
 	margin: 0;
-	color: #9db3dd;
+	color: var(--light-blue-color);
 	width: 1.15em;
 	height: 1.15em;
-	border: 0.15em solid #9db3dd;
+	border: 0.15em solid var(--light-blue-color);
 	border-radius: 0.15em;
 	display: grid;
 	place-content: center;
@@ -464,8 +415,8 @@ input[type=checkbox]:checked::before {
 	visibility: hidden;
 	width: 500px;
 	height: inherit;
-	background-color: #2868c7;
-	color: #ECEFF4;
+	background-color: var(--blue-color);
+color: var(--white-color);
 	text-align: center;
 	border-radius: 6px;
 	padding: 50px 10px;
@@ -487,7 +438,7 @@ input[type=checkbox]:checked::before {
 	margin-left: -10px;
 	border-width: 10px;
 	border-style: solid;
-	border-color: #2868c7 transparent transparent transparent;
+	border-color: var(--blue-color) transparent transparent transparent;
   }
   
   /* Toggle this class - hide and show the popup */
@@ -513,20 +464,20 @@ input[type=checkbox]:checked::before {
 	margin-right:15px;
 }
 
-.dnav {
+.dNav {
 	height: 100%;
 	width: 250px;
 	position: fixed;
 	z-index: 1;
 	top: 0;
 	left: 40px;
-	background-color: #1b1f26;
+	background-color: #1b1f26; /**/
 	opacity: 1;
 	overflow: hidden;
 	padding-top: 17px;
 	transition: ease-in-out 0.3s;
 	margin-left: -250px;
-	color: #81a1c1;
+	color: var(--light-blue-color);
 }
 .dback{
 	margin-left: 220px;
@@ -534,19 +485,19 @@ input[type=checkbox]:checked::before {
 	transition: ease-in-out 0.3s;
 	transform: rotate(0deg);
 }
-.dnav:hover{
+.dNav:hover{
 	margin-left: 0px;
 	left: 0px;
 }
-.dnav:hover .dback{
+.dNav:hover .dback{
 	transition: ease-in-out 0.3s;
 	transform: rotate(-180deg);
 }
-.dnav b, .dnav b a{
+.dNav b, .dNav b a{
 	font-size: 25px;
-	color: #b7c7e2;;
+	color: var(--light-blue-color);;
 }
-.dgitM {
+.dGit {
 	position: absolute;
 	z-index: 1;
 	bottom: 5%;
@@ -555,17 +506,17 @@ input[type=checkbox]:checked::before {
 	text-align: center;
 	width: 100%;
 	text-decoration: none;
-	color: #b7c7e2;
+	color: var(--light-blue-color);
 }
-.dgitM a:hover {
-	color: #fff;
+
+.mGit:hover, .dGit:hover {
+	color: var(--white-color) !important;
 	transition: 0.4s;
 }
 
 
 /*─────────────────────Für ohne Hello─────────────────────*/
 .auf,
-.git,
 .stats,
 .middle,
 .hello,
@@ -583,13 +534,12 @@ input[type=checkbox]:checked::before {
 /*─────────────────────Handy─────────────────────*/
 
 @media (min-width: 1371px) {
-	.nav,
-	.nav a,
-	.nav .close,
+	.mNav,
+	.mNav a,
+	.mNav .close,
 	.open a,
-	#sidebar,
-	.gitM,
-	.gitL {
+	#sidebarM,
+	.mGit {
 		visibility: hidden !important;
 		font-size: 0px;
 		width: 0px;
@@ -609,11 +559,10 @@ input[type=checkbox]:checked::before {
 		margin: 0px;
 	}
 	.auf,
-	.git,
 	.stats,
 	.middle,
 	.hello,
-	.dnav {
+	.dNav {
 		visibility: hidden !important;
 		font-size: 0px;
 		width: 0px;
@@ -625,20 +574,20 @@ input[type=checkbox]:checked::before {
 	.answer table td {
 		display: flex;
 	}
-	#sidebar {
+	#sidebarM {
 		padding: 30px;
 		z-index: 1;
 		transition: margin-left 0.7s;
 		overflow: hidden;
 		position: absolute;
-		color: #81a1c1;
+		color: var(--light-blue-color);
 		text-decoration: none;
 	}
-	#sidebar button {
-		background-color: #485266;
+	#sidebarM button {
+		background-color: var(--grey-blue-color);
 		border-color: rgba(0, 0, 0, 0);
 		cursor: pointer;
-		color: #232831;
+		color: #232831; /**/
 		border-radius: 25px;
 		font-size: 50px !important;
 		height: 75px;
@@ -647,21 +596,21 @@ input[type=checkbox]:checked::before {
 		position: fixed;
 		transition: 0.7s;
 	}
-	#sidebar b {
+	#sidebarM b {
 		font-size: 35px;
-		color: #b7c7e2;
+		color: var(--light-blue-color);
 	}
-	#sidebar a {
+	#sidebarM a {
 		font-size: 35px;
 	}
-	.nav {
+	.mNav {
 		height: 100%;
 		width: 250px;
 		position: fixed;
 		z-index: 1;
 		top: 0;
 		right: 0;
-		background-color: #1b1f26;
+		background-color: #1b1f26;/**/
 		opacity: 1;
 		overflow: hidden;
 		padding-top: 60px;
@@ -672,14 +621,14 @@ input[type=checkbox]:checked::before {
 	.open {
 		font-size: 30px;
 	}
-	.nav .close {
+	.mNav .close {
 		position: absolute;
 		top: 0;
 		right: 22px;
 		margin-left: 50px;
 		font-size: 30px;
 	}
-	.gitM {
+	.mGit {
 		position: absolute;
 		z-index: 1;
 		bottom: 5%;
@@ -688,10 +637,10 @@ input[type=checkbox]:checked::before {
 		text-align: center;
 		width: 100%;
 		text-decoration: none;
-		color: #b7c7e2;
+		color: var(--light-blue-color);
 	}
-	.gitM a:hover {
-		color: #fff;
+	.mGit a:hover {
+		color: var(--white-color);
 		transition: 0.4s;
 	}
 	#one {
@@ -711,7 +660,7 @@ input[type=checkbox]:checked::before {
 	}
 	.login input[type="text"]:focus,
 	.login input[type="password"]:focus {
-		outline: blue solid 5px;
+		outline: var(--blue-color) solid 5px;
 	}
 	.login input[type="submit"] {
 		width: 100% !important;
@@ -723,21 +672,10 @@ input[type=checkbox]:checked::before {
 		padding: 70px 30px 0 30px;
 	}
 	.wrong {
-		color: #df813b !important;
-		font-size: 45px;
+		font-size: 35px;
+		padding: 0 40px 0 40px;
 	}
 
-	.gitL {
-		position: absolute;
-		z-index: 1;
-		bottom: 2%;
-		right: 4%;
-		font-size: 14px !important;
-		display: block;
-		text-align: right;
-		width: 100%;
-		visibility: visible;
-	}
 	.answer, .backanswer {
 		width: 640px;
 	}
@@ -788,7 +726,7 @@ input[type=checkbox]:checked::before {
 		border-radius: 0px;
 		border-style: solid;
 		border-bottom-width: 3px;
-		border-color: #252a33;
+		border-color: var(--body-color);
 		font-size: 32px !important;
 	}
 	.nogit input[type="submit"] {
@@ -833,7 +771,7 @@ input[type=checkbox]:checked::before {
 	}
 	.settingslogin input[type="text"]:focus,
 	.settingslogin input[type="password"]:focus {
-		outline: blue solid 5px;
+		outline: var(--blue-color) solid 5px;
 	}
 	.settingslogin input[type="submit"] {
 		width: 100% !important;
@@ -869,8 +807,8 @@ input[type=checkbox]:checked::before {
 	  visibility: hidden;
 		width: 80vw;
 		height: inherit;
-		background-color: #2868c7;
-		color: #ECEFF4;
+		background-color: var(--blue-color);
+	color: var(--white-color);
 		text-align: center;
 		border-radius: 6px;
 		padding: 50px 10px;
@@ -893,7 +831,7 @@ input[type=checkbox]:checked::before {
 		font-size: 35px;
 		border-width: 10px;
 		border-style: solid;
-		border-color: #2868c7 transparent transparent transparent;
+		border-color: var(--blue-color) transparent transparent transparent;
 	  }
 	  
 	  .form-control {
@@ -912,13 +850,13 @@ input[type=checkbox]:checked::before {
 		-webkit-appearance: none;
 		-moz-appearance: none;
 		appearance: none;
-		background-color: #ECEFF4;
+		background-color: var(--white-color);
 		margin: 0;
 		margin-left: 40px;
-		color: #9db3dd;
+		color: var(--light-blue-color);
 		width: 45px;
 		height: 45px;
-		border: 0.15em solid #9db3dd;
+		border: 0.15em solid var(--light-blue-color);
 		border-radius: 0.15em;
 		display: grid;
 		place-content: center;
@@ -927,12 +865,12 @@ input[type=checkbox]:checked::before {
 		-webkit-appearance: none;
 		-moz-appearance: none;
 		appearance: none;
-		background-color: #ECEFF4;
+		background-color: var(--white-color);
 		margin: 0;
-		color: #9db3dd;
+		color: var(--light-blue-color);
 		width: 45px;
 		height: 45px;
-		border: 0.15em solid #9db3dd;
+		border: 0.15em solid var(--light-blue-color);
 		border-radius: 0.15em;
 		display: grid;
 		place-content: center;
@@ -967,7 +905,7 @@ input[type=checkbox]:checked::before {
 		width: 75%;
 		height: 25px;
 		border-radius: 20px;  
-		background: #e9e9ed;
+		background: var(--white-color);
 		outline: none;
 		-webkit-transition: .2s;
 		transition: opacity .2s;
@@ -979,7 +917,7 @@ input[type=checkbox]:checked::before {
 		width: 40px;
 		height: 40px;
 		border-radius: 50%; 
-		background: #2868c7;
+		background: var(--blue-color);
 		cursor: pointer;
 	  }
 	  
@@ -987,7 +925,7 @@ input[type=checkbox]:checked::before {
 		width: 40px;
 		height: 40px;
 		border-radius: 20px;
-		background: #2868c7;
+		background: var(--blue-color);
 		cursor: pointer;
 	  }
 	  .settingspass{

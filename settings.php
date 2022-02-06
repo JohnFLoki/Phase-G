@@ -1,5 +1,5 @@
 <?php
-  
+
 //─────────────────────HTML─────────────────────
 echo '
 <html>
@@ -19,18 +19,20 @@ echo '
   
     //─────────────────────HTML─────────────────────
     echo '
-    <div id="dmenuM" class="dnav">
+    <!---─────────────────────Stats─────────────────────--->
+    <!---─────────────────────Sidebar-PC─────────────────────--->
+    <div id="dmenuM" class="dNav">
     <img src="back.svg" alt="Zurück" class="dback" height="18px">
       <b>&nbsp;&nbsp;Hallo ' . $_COOKIE["login_user"] . '!<br>
       <a href="./index.php?logout=1" style="color:#8497a8; text-decoration: none !important;">&nbsp;&nbsp;Ausloggen</a></b>
-    <a href="https://github.com/JohnFCreep/Phase-G#funktion" class="dgitM" target="_blank">Github (Funktion, Lizenz, ...)</a>
+    <a href="https://github.com/JohnFCreep/Phase-G#funktion" class="dGit" target="_blank">Github (Funktion, Lizenz, ...)</a>
     </div>
-      <!---─────────────────────Handy─────────────────────--->
-      <div id="sidebar">
-        <div id="menuM" class="nav">
+      <!---─────────────────────Sidebar-Handy─────────────────────--->
+      <div id="sidebarM">
+        <div id="menuM" class="mNav">
           <b>&nbsp;&nbsp;Hallo ' . $_COOKIE["login_user"] . '!<br>
           <a href="./index.php?logout=1" style="color:#8497a8; text-decoration: none !important;">&nbsp;&nbsp;Ausloggen</a></b><a href=""></a>
-          <a href="https://github.com/JohnFCreep/Phase-G#funktion" class="gitM" target="_blank">Github (Funktion, Lizenz, ...)</a>
+          <a href="https://github.com/JohnFCreep/Phase-G#funktion" class="mGit" target="_blank">Github (Funktion, Lizenz, ...)</a>
         </div>
         <span class="open" id="button">
           <button class="currentclose" onClick="toggleMenu(this)" id="buttoninner">
@@ -118,7 +120,7 @@ echo '
       <div class="popup" onclick="myFunction()">Gebärdenabfrage (Klicke für Hilfe)
         <span class="popuptext" id="myPopup">Hier kannst du die Wahrscheinlichkeit angeben, mit der du nach den Gebärden gefragt wirst (100 = immer bietet sich an wenn man sehr weit ist, 0 = nie). Da man das in dieser Umgebung nicht kontrollieren kann, ist deine Ehrlichkeit gefragt.
           Du musst es wirklich exakt genau richtig machen, damit die Vokabel ein Level hoch kommt. Es werden nur Vokabeln genommen, die du auf Level 2 hast (also einmal richtig eingegeben).
-      <br><br>Klicke hier um das Popup zu schließen</span></div>
+      <br><br><em>Klicke hier um das Popup zu schließen</em></span></div>
       <label style="width: 100%; height:30px;"></label>
       <label class="form-control">
         <input type="checkbox" name="github"';
@@ -171,7 +173,6 @@ echo '
     ';
   }
   echo '
-  <a href="https://github.com/JohnFCreep/Phase-G#funktion" class="git" target="_blank">Github (Funktion, Lizenz, ...)</a>
 </body>
 
 </html>

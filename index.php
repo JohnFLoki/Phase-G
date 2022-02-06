@@ -1,16 +1,12 @@
-<!-----https://gebaerdenlernen.de/index.php----->
 <?php
 
-  //Hilfen:
+  //Quellen:
   //      https://www.mysqltutorial.org/select-random-records-database-table.aspx
   //      Playback Speed: https://www.w3schools.com/Tags/tryit.asp?filename=tryhtml5_av_prop_playbackrate
+  //      https://gebaerdenlernen.de/index.php
 
   //session_start();
   if($_GET['logout'] == 1){
-    // remove all session variables
-    //session_unset();
-    // destroy the session
-    //session_destroy();
     setcookie("login_user", "", time() - 3600, '', '', true);
     echo $_COOKIE['login_user'];
     sleep(1);
@@ -42,18 +38,10 @@ echo '
     //─────────────────────Account-PC─────────────────────
     
     //─────────────────────HTML─────────────────────
-    echo '
-    <div class="middle"><div class="hello">
-      <table cellspacing="0" cellpadding="0">
-        <tr>
-          <td class="hallo"><b>Hallo ' . $_COOKIE['login_user'] . '! <img src="settings.svg" alt="Settings" height="15px" onclick="location.href=\'./settings.php\'" style="cursor: pointer;"></b></td>
-          <td class="hallob" onclick="location.href=\'./index.php?logout=1\'"><b>Ausloggen</b></td>
-        </tr>
-      </table>
-    </div></div>
+    echo '<div id="sidebar-head">
     <!---─────────────────────Stats─────────────────────--->
     <!---─────────────────────Sidebar-PC─────────────────────--->
-    <div id="dmenuM" class="dnav">
+    <div class="dNav">
       <img src="back.svg" alt="Zurück" class="dback" height="18px">
       <b>&nbsp;&nbsp;Hallo ' . $_COOKIE['login_user'] . '! <img src="settings.svg" alt="Settings" height="18px" onclick="location.href=\'./settings.php\'" style="cursor: pointer;"><br>
       <a href="./index.php?logout=1" style="color:#8497a8; text-decoration: none !important;">&nbsp;&nbsp;Ausloggen</a></b><br><br>
@@ -86,12 +74,12 @@ echo '
 
       //─────────────────────HTML─────────────────────
       echo '
-      <a href="https://github.com/JohnFCreep/Phase-G#funktion" class="dgitM" target="_blank">Github (Funktion, Lizenz, ...)</a>
+      <a href="https://github.com/JohnFCreep/Phase-G#funktion" class="dGit" target="_blank">Github (Funktion, Lizenz, ...)</a>
     </div>
 
     <!---─────────────────────Sidebar-Handy─────────────────────--->
-    <div id="sidebar">
-      <div id="menuM" class="nav">
+    <div id="sidebarM">
+      <div id="menuM" class="mNav">
         <b>&nbsp;&nbsp;Hallo ' . $_COOKIE['login_user'] . '! <img src="settings.svg" alt="Settings" height="26px" onclick="location.href=\'./settings.php\'" style="cursor: pointer;"><br>
         <a href="./index.php?logout=1" style="color:#8497a8; text-decoration: none !important;">&nbsp;&nbsp;Ausloggen</a></b><br><br>
         &nbsp;&nbsp;Deine Statistik:<br>
@@ -107,7 +95,7 @@ echo '
         
         //─────────────────────HTML─────────────────────
         echo '
-        <a href="https://github.com/JohnFCreep/Phase-G#funktion" class="gitM" target="_blank">Github (Funktion, Lizenz, ...)</a>
+        <a href="https://github.com/JohnFCreep/Phase-G#funktion" class="mGit" target="_blank">Github (Funktion, Lizenz, ...)</a>
       </div>
       <span class="open" id="button">
         <button class="currentclose" onClick="toggleMenu(this)" id="buttoninner">
@@ -130,9 +118,9 @@ echo '
         }
       }
     </script>
-    ';
-    //─────────────────────Prüfung─────────────────────
+    </div>';
     if($_GET["post"] == 1){
+      //─────────────────────forward test─────────────────────
       if($_COOKIE["richtung"] == "norm"){
 
         //─────────────────────HTML─────────────────────
@@ -206,6 +194,7 @@ echo '
           ';
 
       }elseif ($_COOKIE["richtung"] == "back") {
+        //─────────────────────backward question─────────────────────
         $lastid = $_COOKIE["last"];
         $lastcurrent = mysqli_query($dbw, "SELECT * FROM words_$DB_UNAME WHERE `id` = '$lastid'");
         $lastrow = mysqli_fetch_assoc($lastcurrent);
@@ -248,6 +237,7 @@ echo '
         ';
       }
     }elseif($_GET["back"] == 1){
+      //─────────────────────backward test─────────────────────
       $lastid = $_COOKIE["last"];
       $lastcurrent = mysqli_query($dbw, "SELECT * FROM words_$DB_UNAME WHERE `id` = '$lastid'");
       $lastrow = mysqli_fetch_assoc($lastcurrent);
@@ -334,100 +324,101 @@ echo '
         $tmp2 = $mysqlday;
         $tmp3 = $mysqlday;
         $nextday = substr($tmp1, 6) . "-" . substr($tmp2, 4, 2) . "-" . substr($tmp3, 0, 4);
+        //─────────────────────Vokabeln leer─────────────────────
 
         //─────────────────────HTML─────────────────────
         echo '
         <div class="one" id="one"><div class="two"><div class="login"><p style="text-align: center; padding: 70px 20px;">Du hast bereits alle Vokabeln für heute abgearbeitet. Der ' . $nextday . ' ist dein nächster Lerntag.</p></div></div></div>
         ';
 
-    }else{
-      $randbackwards = rand(1, 100);
-      if($check == "01"){ 
-        $randbackwards = 101;
-      }elseif ($check == "02") {
-        $randbackwards = 0;
-      }
-    
-      //─────────────────────Antwort─────────────────────
-      if($randbackwards <= $accrow['backwards']){
-
-        //─────────────────────backwards─────────────────────
-        $statssql = mysqli_query($dbw, "SELECT * FROM words_$DB_UNAME WHERE `level` > '1' AND `backdate` <= '$time'");
-        $counttoday = mysqli_num_rows($statssql);
-        setcookie("richtung", "back", 0, '', '', true);
-        setcookie("last", $backrow['id'], 0, '', '', true);
-
-        //─────────────────────HTML─────────────────────
-        echo '
-        <div class="one" id="one"><div class="two"><div class="backanswer">
-          <table cellspacing="0" cellpadding="0">
-            <tr>
-              <td class="backpadleft">
-                <p class="mobilep">Vokabellevel: ' . $backrow['backlevel'] . '<br>
-                Text zu Gebärde heute fällig: ' . $counttoday . '</p>
-                <form class="' . $backnogit . ' formone" method="post" action="' . htmlspecialchars($_SERVER["PHP_SELF"]) . '?post=1">
-                  <textarea name="wort" placeholder="Antwort" disabled>' . $backrow['name'] . '</textarea>
-                  <input type="submit" name="login" value="Zeige die Gebärde" />
-                </form>
-              </td>
-            </tr>
-          </table>
-          ';
-          if($accrow['github'] == "on"){
-            echo '
-            <a class="backformtwo" href="https://github.com/JohnFCreep/Phase-G/issues/new?assignees=&labels=&template=vokabel-fehlerhaft.md&title=Vokabel fehlerhaft TtG&body=Name: ' . $backrow['name'] . '" target="_blank">Sollte das Wort komisch sein, klicke hier (Github).</a>
-            ';
-          }
-        echo '
-        </div></div></div>
-        ';
-
       }else{
-        //─────────────────────normal─────────────────────
-        $statssql = mysqli_query($dbw, "SELECT * FROM words_$DB_UNAME WHERE `date` <= '$time'");
-        $counttoday = mysqli_num_rows($statssql);
-        setcookie("richtung", "norm", 0, '', '', true);
-        setcookie("last", $row['id'], 0, '', '', true);
-        if($row['level'] == 0){
-          $rowecho = $row['name'];
+        $randbackwards = rand(1, 100);
+        if($check == "01"){ 
+          $randbackwards = 101;
+        }elseif ($check == "02") {
+          $randbackwards = 0;
         }
-
-        //─────────────────────HTML─────────────────────
-        echo '
-        <div class="one" id="one"><div class="two"><div class="answer">
-          <table cellspacing="0" cellpadding="0">
-            <tr>
-              <td>
-                <video ' . $nogitvideo . ' height="480" width="640" controls loop autoplay id="playback">
-                  <source src="./video/' . $row['link'] . '.mp4" type="video/mp4">
-                </video>
-              </td>
-              <td class="padleft">
-                <p class="mobilep">Vokabellevel: ' . $row['level'] . '<br>
-                Gebärde zu Text heute fällig: ' . $counttoday . '</p>
-                <form class="' . $nogit . ' formone" method="post" action="' . htmlspecialchars($_SERVER["PHP_SELF"]) . '?post=1">
-                  <textarea name="wort" placeholder="Antwort" required autocomplete="off">' . $rowecho . '</textarea>
-                  <input type="submit" name="login" value="Senden" />
-                </form>
-              </td>
-            </tr>
-          </table>
-          ';
-          if($accrow['github'] == "on"){
-            echo '
-            <a class="formtwo" href="https://github.com/JohnFCreep/Phase-G/issues/new?assignees=&labels=&template=vokabel-fehlerhaft.md&title=Vokabel fehlerhaft GtT&body=Name: ' . $row["name"] . ' %40 Link: ' . $row["link"] . ' target="_blank">Sollte das Wort komisch sein, oder das Video nicht laden klicke hier (Github).</a>
+      
+        //─────────────────────Antwort─────────────────────
+        if($randbackwards <= $accrow['backwards']){
+  
+          //─────────────────────backwards─────────────────────
+          $statssql = mysqli_query($dbw, "SELECT * FROM words_$DB_UNAME WHERE `level` > '1' AND `backdate` <= '$time'");
+          $counttoday = mysqli_num_rows($statssql);
+          setcookie("richtung", "back", 0, '', '', true);
+          setcookie("last", $backrow['id'], 0, '', '', true);
+  
+          //─────────────────────HTML─────────────────────
+          echo '
+          <div class="one" id="one"><div class="two"><div class="backanswer">
+            <table cellspacing="0" cellpadding="0">
+              <tr>
+                <td class="backpadleft">
+                  <p class="mobilep">Vokabellevel: ' . $backrow['backlevel'] . '<br>
+                  Text zu Gebärde heute fällig: ' . $counttoday . '</p>
+                  <form class="' . $backnogit . ' formone" method="post" action="' . htmlspecialchars($_SERVER["PHP_SELF"]) . '?post=1">
+                    <textarea name="wort" placeholder="Antwort" disabled>' . $backrow['name'] . '</textarea>
+                    <input type="submit" name="login" value="Zeige die Gebärde" />
+                  </form>
+                </td>
+              </tr>
+            </table>
             ';
-          }
+            if($accrow['github'] == "on"){
+              echo '
+              <a class="backformtwo" href="https://github.com/JohnFCreep/Phase-G/issues/new?assignees=&labels=&template=vokabel-fehlerhaft.md&title=Vokabel fehlerhaft TtG&body=Name: ' . $backrow['name'] . '" target="_blank">Sollte das Wort komisch sein, klicke hier (Github).</a>
+              ';
+            }
           echo '
           </div></div></div>
-          <script>
-            var vid = document.getElementById("playback");
-            vid.playbackRate = ' . $accrow['playback'] . ';
-          </script>
           ';
+  
+        }else{
+          //─────────────────────normal─────────────────────
+          $statssql = mysqli_query($dbw, "SELECT * FROM words_$DB_UNAME WHERE `date` <= '$time'");
+          $counttoday = mysqli_num_rows($statssql);
+          setcookie("richtung", "norm", 0, '', '', true);
+          setcookie("last", $row['id'], 0, '', '', true);
+          if($row['level'] == 0){
+            $rowecho = $row['name'];
+          }
+  
+          //─────────────────────HTML─────────────────────
+          echo '
+          <div class="one" id="one"><div class="two"><div class="answer">
+            <table cellspacing="0" cellpadding="0">
+              <tr>
+                <td>
+                  <video ' . $nogitvideo . ' height="480" width="640" controls loop autoplay id="playback">
+                    <source src="./video/' . $row['link'] . '.mp4" type="video/mp4">
+                  </video>
+                </td>
+                <td class="padleft">
+                  <p class="mobilep">Vokabellevel: ' . $row['level'] . '<br>
+                  Gebärde zu Text heute fällig: ' . $counttoday . '</p>
+                  <form class="' . $nogit . ' formone" method="post" action="' . htmlspecialchars($_SERVER["PHP_SELF"]) . '?post=1">
+                    <textarea name="wort" placeholder="Antwort" required autocomplete="off">' . $rowecho . '</textarea>
+                    <input type="submit" name="login" value="Senden" />
+                  </form>
+                </td>
+              </tr>
+            </table>
+            ';
+            if($accrow['github'] == "on"){
+              echo '
+              <a class="formtwo" href="https://github.com/JohnFCreep/Phase-G/issues/new?assignees=&labels=&template=vokabel-fehlerhaft.md&title=Vokabel fehlerhaft GtT&body=Name: ' . $row["name"] . ' %40 Link: ' . $row["link"] . ' target="_blank">Sollte das Wort komisch sein, oder das Video nicht laden klicke hier (Github).</a>
+              ';
+            }
+            echo '
+            </div></div></div>
+            <script>
+              var vid = document.getElementById("playback");
+              vid.playbackRate = ' . $accrow['playback'] . ';
+            </script>
+            ';
+        }
       }
     }
-  }
   }elseif($_SERVER["REQUEST_METHOD"] == "POST") {
     //─────────────────────Authentification─────────────────────
     
@@ -473,8 +464,6 @@ echo '
     ';
   }
   echo '
-  <!---<a href="https://github.com/JohnFCreep/Phase-G#funktion" class="gitL gitM" target="_blank">Github (Funktion, Lizenz, ...)</a>--->
-  <!---<a href="https://github.com/JohnFCreep/Phase-G#funktion" class="git" target="_blank">Github (Funktion, Lizenz, ...)</a>--->
 </body>
 </html>
 ';
