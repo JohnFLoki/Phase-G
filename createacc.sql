@@ -15,13 +15,14 @@ CREATE TABLE `accounts` (
   `id` int(11) NOT NULL,
   `username` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `backwards` int(11) NOT NULL,
-  `github` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `playback` float NOT NULL DEFAULT 1
+  `backwards` int(11) NOT NULL DEFAULT 0,
+  `github` text COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'on',
+  `playback` float NOT NULL DEFAULT 1,
+  `backstart` int(11) NOT NULL DEFAULT 2
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-INSERT INTO `accounts` (`id`, `username`, `password`, `backwards`, `github`, `playback`) VALUES
-(1, '///Admin-Benutzername', '///Admin-Passwort', 0, 'on', 1.0);
+INSERT INTO `accounts` (`id`, `username`, `password`) VALUES
+(1, '///Admin-Benutzername', '///Admin-Passwort');
 
 
 ALTER TABLE `accounts`
