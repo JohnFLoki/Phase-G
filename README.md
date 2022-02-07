@@ -72,6 +72,7 @@ Bitte unter den Issues gucken!<br>
 Updates werden mit einem Update script gepostet.
 
 # ToDo
+- Specials aus berlin1
 - Weitere Wörterbücher
 - Englische Version
 - (Installer)
