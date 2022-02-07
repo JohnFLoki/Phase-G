@@ -72,11 +72,8 @@ Bitte unter den Issues gucken!<br>
 Updates werden mit einem Update script gepostet.
 
 # ToDo
-- Demo Page
-- Muttergebärder
-- Installer
-- Docker
-- Hashed Passwords
+- (Installer)
+- (Docker)
 
 # Dialekte
 Da es in der Deutschen Gebärden Sprache mehrere Dialekte gibt, ist diese Webanwendung aufgebaut auf Wörterbüchern die zur Verfügung stehen.
