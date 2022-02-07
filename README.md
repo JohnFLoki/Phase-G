@@ -56,8 +56,8 @@ Ordner-Struktur:
 reset_dont_use.php nur hinzufügen wenn du weißt was du tust!<br>
 📁phase-g<br>
  ┝📁video<br>
- │  └📁Ordner für jedes Wörterbuch, was man haben möchte.<br>
- │  &nbsp;&nbsp;└📝alle .mp4 Dateien aus der Quelle<br>
+ │&nbsp;&nbsp;└📁Ordner für jedes Wörterbuch, was man haben möchte.<br>
+ │&nbsp;&nbsp;&nbsp;└📝alle .mp4 Dateien aus der Quelle<br>
  ┝📝back.svg<br>
  ┝📝database.php<br>
  ┝📝index.php<br>
