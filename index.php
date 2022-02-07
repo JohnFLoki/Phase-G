@@ -237,7 +237,7 @@ echo '
           ';
           if($accrow['github'] == "on"){
             echo '
-            <a class="backgitreport rebackgitreport" href="https://github.com/JohnFCreep/Phase-G/issues/new?assignees=&labels=&template=vokabel-fehlerhaft.md&title=Vokabel fehlerhaft TtG&body=Link:' . $lastrow['link'] . '" target="_blank">Sollte das Video nicht laden, klicke hier (Github).</a>
+            <a class="backgitreport rebackgitreport" href="https://github.com/JohnFCreep/Phase-G/issues/new?assignees=&labels=&template=vokabel-fehlerhaft.md&title=Vokabel fehlerhaft TtG&body=Name: ' . $row["name"] . ' %40 Link: ' . $row["link"] . '" target="_blank">Sollte das Video nicht laden, klicke hier (Github).</a>
             ';
           }
         echo '
@@ -378,7 +378,7 @@ echo '
             ';
             if($accrow['github'] == "on"){
               echo '
-              <a class="backgitreport" href="https://github.com/JohnFCreep/Phase-G/issues/new?assignees=&labels=&template=vokabel-fehlerhaft.md&title=Vokabel fehlerhaft TtG&body=Name: ' . $backrow['name'] . '" target="_blank">Sollte das Wort komisch sein, klicke hier (Github).</a>
+              <a class="backgitreport" href="https://github.com/JohnFCreep/Phase-G/issues/new?assignees=&labels=&template=vokabel-fehlerhaft.md&title=Vokabel fehlerhaft TtG&body=Name: ' . $row["name"] . ' %40 Link: ' . $row["link"] . '" target="_blank">Sollte das Wort komisch sein, klicke hier (Github).</a>
               ';
             }
           echo '
@@ -428,7 +428,7 @@ echo '
             ';
             if($accrow['github'] == "on"){
               echo '
-              <a class="normgitreport" href="https://github.com/JohnFCreep/Phase-G/issues/new?assignees=&labels=&template=vokabel-fehlerhaft.md&title=Vokabel fehlerhaft GtT&body=Name: ' . $row["name"] . ' %40 Link: ' . $row["link"] . ' target="_blank">Sollte das Wort komisch sein, oder das Video nicht laden klicke hier (Github).</a>
+              <a class="normgitreport" href="https://github.com/JohnFCreep/Phase-G/issues/new?assignees=&labels=&template=vokabel-fehlerhaft.md&title=Vokabel fehlerhaft GtT&body=Name: ' . $row["name"] . ' %40 Link: ' . $row["link"] . '" target="_blank">Sollte das Wort komisch sein, oder das Video nicht laden klicke hier (Github).</a>
               ';
             }
             echo '
