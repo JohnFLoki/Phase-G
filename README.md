@@ -53,6 +53,7 @@ Vorraussetzungen: Funktionierende WebServer, PHP (getestet auf 7.3) und MySQL (i
 
 Ordner-Struktur:
 ---
+reset_dont_use.php nur hinzufügen wenn du weißt was du tust!<br>
 phase-g<br>
  ┝ video<br>
  │  └ Ordner für jedes Wörterbuch, was man haben möchte.<br>
