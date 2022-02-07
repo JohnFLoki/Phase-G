@@ -16,7 +16,7 @@ CREATE TABLE `accounts` (
   `username` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `backwards` int(11) NOT NULL DEFAULT 0,
-  `github` text COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'on',
+  `github` text COLLATE utf8mb4_unicode_ci DEFAULT 'on',
   `playback` float NOT NULL DEFAULT 1,
   `backstart` int(11) NOT NULL DEFAULT 2
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

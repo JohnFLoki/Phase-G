@@ -77,19 +77,20 @@ echo '
           if ($fail == 0) {
             //─────────────────────neuer Benutzer─────────────────────
             $newuserpass =  htmlspecialchars($_POST['newuserpass']);
-            $sql = "INSERT INTO `accounts` (`id`, `username`, `password`, `backwards`, `github`, `playback`) VALUES (NULL, '$newusername', '$newuserpass', '0', 'on', '1')";
+            $sql = "INSERT INTO `accounts` (`id`, `username`, `password`) VALUES (NULL, '" . $newusername . "', '" . $newuserpass . "')";
             mysqli_query($db, $sql);
             $error = $error . "Benutzer erfolgreicht erstellt!<br>";
 
             //─────────────────────neue Tabelle─────────────────────
             $sql = "CREATE TABLE `words_$newusername` (
-                `id` int(11) NOT NULL,
+                `id` int(11) NOT NULL AUTO_INCREMENT,
                 `link` text COLLATE utf8mb4_unicode_ci NOT NULL,
                 `name` text COLLATE utf8mb4_unicode_ci NOT NULL,
                 `date` int(11) NOT NULL DEFAULT 0,
                 `level` int(11) NOT NULL DEFAULT 0,
                 `backdate` int(11) NOT NULL DEFAULT 0,
-                `backlevel` int(11) NOT NULL DEFAULT 0
+                `backlevel` int(11) NOT NULL DEFAULT 0,
+                PRIMARY KEY (`id`)
               ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci";
             mysqli_query($dbw, $sql);
             $error = $error . "Tabelle erfolgreicht erstellt!<br>";
@@ -98,9 +99,11 @@ echo '
             $query = 'INSERT INTO `words_' . $newusername  . '` (`id`, `link`, `name`, `date`, `level`, `backdate`, `backlevel`) VALUES ';
             if($_POST['dict'] == "berlin1"){
               $sqlScript = file('https://raw.githubusercontent.com/JohnFCreep/Phase-G/main/sql-berlin1.sql');
+              $altertable = 'ALTER TABLE `words_' . $newusername  . '` UTO_INCREMENT=3696;';
             }
             if($_POST['dict'] == "demo1"){
               $sqlScript = file('https://raw.githubusercontent.com/JohnFCreep/Phase-G/main/sql-demo1.sql');
+              $altertable = 'ALTER TABLE `words_' . $newusername  . '` AUTO_INCREMENT=31;';
             }
             foreach ($sqlScript as $line)	{
 
