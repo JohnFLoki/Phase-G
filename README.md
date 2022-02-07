@@ -66,12 +66,13 @@ phase-g<br>
 
 Hier sind alle Hinweise auf gefundene fehlerhafte Daten:
 ---
+Bitte unter den Issues gucken!<br>
+Updates werden mit einem Update script gepostet.
+
 # ToDo
 - Demo Page
 - Muttergebärder
 - Installer
-- (Datenbanken Verbesserungen s.o.)
-- (Accountsystem Verbesserungen s.o.)
 - Docker
 - Hashed Passwords
 
