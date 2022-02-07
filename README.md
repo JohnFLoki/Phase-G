@@ -89,7 +89,7 @@ Alle Inhalte dieser Repository stehen unter einer Creative Commons Namensnennung
 
 Wörterbücher
 ---
-Vokabelliste Berliner Dialekt sind von der Website https://gebaerdenlernen.de/index.php von Henrike Maria Bartsch welche auch unter der Lizenz Creative Commons Namensnennung - Nicht-kommerziell - Weitergabe unter gleichen Bedingungen 3.0 Deutschland steht (Stand 25.10.2021).
+Vokabelliste Berliner Dialekt(berlin1)/demo1 ist von der Website https://gebaerdenlernen.de/index.php von Henrike Maria Bartsch welche auch unter der Lizenz Creative Commons Namensnennung - Nicht-kommerziell - Weitergabe unter gleichen Bedingungen 3.0 Deutschland steht (Stand 25.10.2021).
 
 ---
 # Notes
