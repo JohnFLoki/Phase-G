@@ -72,6 +72,8 @@ Bitte unter den Issues gucken!<br>
 Updates werden mit einem Update script gepostet.
 
 # ToDo
+- Weitere Wörterbücher
+- Englische Version
 - (Installer)
 - (Docker)
 
