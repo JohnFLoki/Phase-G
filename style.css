@@ -421,7 +421,7 @@ input[type=checkbox]:checked::before {
 	user-select: none;
 }
 .popup .show {
-	visibility: visible;
+	visibility: visible !important;
 	-webkit-animation: fadeIn 1s;
 	animation: fadeIn 1s;
 }
