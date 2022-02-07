@@ -6,54 +6,17 @@
 	--body-color: #292e39;
 
 }
-.test{
-	border-color: #252a33; /*textarea bg 1*/
-	background-color: #1b1f26; /*Navbg*/
-		color: #232831; /*sidebarMbutt color*/
-		background-color: #1b1f26;/*Navbg*/
-}
-
 * {
 	box-sizing: border-box;
 	font-family: -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif;
 	font-size: 20px;
 }
-
 body {
 	background-color: var(--body-color);
 	color: var(--white-color);
 }
 
-input, textarea {
-	color: var(--white-color);
-}
-
-.stats {
-	margin: auto;
-	text-align: center;
-	bottom: 10px;
-	width: 99%;
-	z-index: 1;
-	position: absolute;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.stats table {
-	width: 100%;
-	box-shadow: 0 0 0 3px var(--grey-blue-color);
-	color: var(--light-blue-color);
-	font-weight: bold;
-}
-
-.auf {
-	position: absolute;
-	bottom: 22px;
-	z-index: 1;
-	color: var(--light-blue-color) !important;
-	font-weight: bold;
-}
-
+/*─────────────────────Generell────────────────────*/
 .one {
 	display: table;
 	position: absolute;
@@ -62,191 +25,28 @@ input, textarea {
 	height: 100%;
 	width: 100%;
 }
-
 .two {
 	display: table-cell;
 	vertical-align: middle;
 }
 
-.three {
-	margin-left: auto;
-	margin-right: auto;
-	width: 400px;
-}
-.backanswer {
-	border-radius: 25px !important;
-	border-bottom-left-radius: 30px !important;
-	margin-left: auto;
-	margin-right: auto;
-	width: 400px;
-	box-shadow: 0px 0px 30px 10px rgba(0, 0, 0, 0.5) !important;
-}
-
-.login,
-.settingslogin {
-	border-radius: 25px !important;
-	width: 400px;
-	margin-left: auto;
-	margin-right: auto;
-	background-color: #292e39; /**/
-	box-shadow: 0px 0px 30px 10px rgba(0, 0, 0, 0.5) !important;
-	z-index: 1;
-}
-
-.login form,
-.settingslogin form,
-.backlogin form {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	padding-top: 20px;
-}
-
-.login form input[type="password"],
-.login form input[type="text"],
-.settingslogin form input[type="password"],
-.settingslogin form input[type="text"],
-.backanswer form input[type="password"],
-.backanswer form input[type="text"]  {
-	width: 310px;
-	border-radius: 25px;
-	height: 50px;
-	border: 1px solid var(--white-color);
-	color: black;
-	margin-bottom: 20px;
-	padding: 0 15px;
-}
-.backanswer form input[type="submit"] { 
-	width: 100%;
-	padding: 15px;
-	border-radius: 0 0 25px 25px !important;
-	background-color: var(--grey-blue-color);
-	border: 0;
-	cursor: pointer;
-	font-weight: bold;
-	transition: 0.2s;
-}
-.backanswer input[type="submit"] {
-	border-bottom-left-radius: 25px !important;
-	border-bottom-right-radius: 25px !important;
-}
-
-.login form input[type="submit"],
-.settingslogin form input[type="submit"] {
-	width: 100%;
-	padding: 15px;
-	margin-top: 20px;
-	border-radius: 25px !important;
-	border-top-right-radius: 0px !important;
-	border-top-left-radius: 0px !important;
-	background-color: var(--grey-blue-color);
-	border: 0;
-	cursor: pointer;
-	font-weight: bold;
-	transition: 0.2s;
-}
-
-.login .response,
-.settingslogin .response,
-.backanswer .response {
-	width: 100%;
-	padding: 15px;
-	margin-top: 20px;
-	border-radius: 25px !important;
-	border-top-right-radius: 0px !important;
-	border-top-left-radius: 0px !important;
-	background-color: var(--grey-blue-color);
-	border: 0;
-	cursor: pointer;
-	font-weight: bold;
-	transition: 0.2s;
-}
-
-.login form input[type="submit"]:hover,
-.settingslogin form input[type="submit"]:hover,
-.backanswer form input[type="submit"]:hover,
-.rebackpadleft input[type="submit"]:hover {
-	background-color: var(--blue-color);
-	transition: 0.2s;
-}
-.login p{
-	padding: 70px 30px 0 30px;
-}
-.wrong {
-	color: #df813b;
-	font-size: 18px;
-}
-.settingsback {
-	cursor: pointer;
-	margin-left: 25px;
-	margin-top: 25px;
-	height: 25px;
-}
-
-.answer{
-	border-radius: 25px !important;
-	border-bottom-left-radius: 30px !important;
-	margin-left: auto;
-	margin-right: auto;
-	width: 1280px;
-	box-shadow: 0px 0px 30px 10px rgba(0, 0, 0, 0.5) !important;
-}
-
-video {
-	border-top-left-radius: 25px !important;
-}
-
-.nogitvideo {
-	border-bottom-left-radius: 25px !important;
-}
-
 table {
-	border-radius: 25px !important;
+	border-radius: 25px;
 	border: none;
 	text-align: center;
 }
-
-.formone {
-	width: 320px;
-	flex-wrap: wrap;
-	margin: 0;
-	border-radius: 25px;
-	box-shadow: 0 0 0 4px var(--blue-color);
+input, textarea {
+	color: var(--white-color);
 }
-
-.formone input[type="submit"] {
-	width: 320px;
-	height: auto;
-	padding: 15px;
-	background-color: var(--grey-blue-color);
-	border: 0;
-	cursor: pointer;
-	font-weight: bold;
-	transition: 0.3s;
-	border-bottom-left-radius: 25px;
-	border-bottom-right-radius: 25px;
-}
-
-.formone input[type="submit"]:hover {
-	background-color: var(--blue-color);
-}
-
-.mobilep {
-	padding: 20px 0;
-	width: 320px;
-}
-
 textarea {
 	width: 320px;
 	height: 200px;
 	margin: 0px;
 	padding: 10px;
-	background-color: #252a33 !important; /**/
+	background-color: #252a33; /**/
 	resize: none;
 	transition: 0.3s;
-	border-radius: 25px;
-	border-bottom-left-radius: 0px;
-	border-bottom-right-radius: 0px;
+	border-radius: 25px 25px 0 0;
 	border: 5px solid transparent;
 	overflow: auto;
 	outline: none;
@@ -254,90 +54,26 @@ textarea {
 	-moz-box-shadow: none;
 	box-shadow: none;
 }
-
 textarea:hover {
-	background-color: #3b4252 !important;
+	background-color: #3b4252;
 }
-
-.formtwo {
-	flex-wrap: wrap;
-	margin: 0;
-	padding-top: 0px;
+video {
+	border-top-left-radius: 25px;
+}
+.videotable {
+	border-radius: 25px 25px 25px 25px;
+	margin-left: auto;
+	margin-right: auto;
 	width: 1280px;
-	border-bottom-left-radius: 25px;
-	border-bottom-right-radius: 25px;
-	background-color: var(--grey-blue-color);
-	height: auto;
-	padding: 15px;
-	border: 0;
-	cursor: pointer;
-	font-weight: bold;
-	transition: 0.2s;
-	transition: 0.3s;
-	text-align: center;
-	display: block;
-	text-decoration: none;
-	color: var(--light-blue-color);
+	box-shadow: 0px 0px 30px 10px rgba(0, 0, 0, 0.5);
 }
-.formtwo:hover {
-	background-color: var(--blue-color);
-}
-.backformtwo {
-	flex-wrap: wrap;
-	margin: 0;
-	margin-top: 40px;
-	width: 100%;
-	border-bottom-left-radius: 25px;
-	border-bottom-right-radius: 25px;
-	background-color: var(--grey-blue-color);
-	height: auto;
-	padding: 15px;
-	border: 0;
-	cursor: pointer;
-	font-weight: bold;
-	transition: 0.2s;
-	transition: 0.3s;
-	text-align: center;
-	display: block;
-	text-decoration: none;
-	color: var(--light-blue-color);
-}
-.backformtwo:hover {
-	background-color: var(--blue-color);
-}
-.rebackformtwo{
-	margin-top: 0px;
-}
-.rebackrahmen{
-	border-radius: 25px;
-	box-shadow: 0 0 0 4px var(--blue-color);
-}
-
 .padleft {
 	padding-left: 160px;
 }
-.rebackpadleft {
-	padding-left: 160px;
-}
-.rebackpadleft input[type="submit"] {
+.annotation {
+	padding: 20px 0;
 	width: 100%;
-	height: auto;
-	padding: 15px;
-	background-color: var(--grey-blue-color);
-	border: 0;
-	cursor: pointer;
-	font-weight: bold;
-	transition: 0.3s;
-	border-bottom-left-radius: 25px;
-	border-bottom-right-radius: 25px;
 }
-.backpadleft {
-	padding: 0 4px 0 40px;
-}
-
-
-
-/*─────────────────────Settings─────────────────────*/
 
 .form-control {
 	line-height: 1.1;
@@ -345,27 +81,10 @@ textarea:hover {
 	grid-template-columns: 1em auto;
 	gap: 0.5em;
 }
-
 .form-control+.form-control {
 	margin-top: 1em;
 }
-
-.backnogit .form-control input[type=checkbox] {
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-	background-color: var(--white-color);
-	margin: 0;
-	margin-left: 10px;
-	color: var(--light-blue-color);
-	width: 1.15em;
-	height: 1.15em;
-	border: 0.15em solid var(--light-blue-color);
-	border-radius: 0.15em;
-	display: grid;
-	place-content: center;
-}
-.settingslogin .form-control input[type=checkbox] {
+.form-control input[type=checkbox] {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
@@ -379,7 +98,6 @@ textarea:hover {
 	display: grid;
 	place-content: center;
 }
-
 .form-control input[type=checkbox]::before {
 	content: "";
 	width: 0.65em;
@@ -390,80 +108,12 @@ textarea:hover {
 	transition: 120ms transform ease-in-out;
 	box-shadow: inset 1em 1em black;
 }
-
-.selectclass {
-	margin: 0 !important;
-}
-
+/*──────Custom checkbox──────*/
 input[type=checkbox]:checked::before {
 	transform: scale(1);
 }
 
-/*─────────────────────Popup─────────────────────*/
-.popup {
-	position: relative;
-	display: inline-block;
-	cursor: help;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-  }
-  
-  /* The actual popup */
-  .popup .popuptext {
-	visibility: hidden;
-	width: 500px;
-	height: inherit;
-	background-color: var(--blue-color);
-color: var(--white-color);
-	text-align: center;
-	border-radius: 6px;
-	padding: 50px 10px;
-	position: absolute;
-	z-index: 1;
-	/*bottom: 125%;*/
-	left: 50%;
-	margin-left: -250px;
-	box-shadow: 0px 0px 30px 10px rgba(0, 0, 0, 0.5) !important;
-  }
-  
-  /* Popup arrow */
-  .popup .popuptext::after {
-	content: "";
-	transform: rotate(180deg);
-	position: absolute;
-	top: -18px;
-	left: 50%;
-	margin-left: -10px;
-	border-width: 10px;
-	border-style: solid;
-	border-color: var(--blue-color) transparent transparent transparent;
-  }
-  
-  /* Toggle this class - hide and show the popup */
-  .popup .show {
-	visibility: visible !important;
-	-webkit-animation: fadeIn 1s;
-	animation: fadeIn 1s;
-  }
-  
-  /* Add animation (fade in the popup) */
-  @-webkit-keyframes fadeIn {
-	from {opacity: 0;} 
-	to {opacity: 1;}
-  }
-  
-  @keyframes fadeIn {
-	from {opacity: 0;}
-	to {opacity:1 ;}
-  }
-
-.regler{
-	width:250px;
-	margin-right:15px;
-}
-
+/*─────────────────────Sidebar────────────────────*/
 .dNav {
 	height: 100%;
 	width: 250px;
@@ -479,102 +129,435 @@ color: var(--white-color);
 	margin-left: -250px;
 	color: var(--light-blue-color);
 }
-.dback{
+.dNav:hover {
+	margin-left: 0px;
+	left: 0px;
+}
+.dNav:hover .dNavButton {
+	transition: ease-in-out 0.3s;
+	transform: rotate(-180deg);
+}
+.dNav b, .dNav b a {
+	font-size: 25px;
+	color: var(--light-blue-color);;
+}
+.dNavButton {
 	margin-left: 220px;
 	margin-bottom: 30px;
 	transition: ease-in-out 0.3s;
 	transform: rotate(0deg);
 }
-.dNav:hover{
-	margin-left: 0px;
-	left: 0px;
-}
-.dNav:hover .dback{
-	transition: ease-in-out 0.3s;
-	transform: rotate(-180deg);
-}
-.dNav b, .dNav b a{
-	font-size: 25px;
-	color: var(--light-blue-color);;
-}
 .dGit {
 	position: absolute;
 	z-index: 1;
 	bottom: 5%;
-	font-size: 14px !important;
+	font-size: 14px;
 	display: block;
 	text-align: center;
 	width: 100%;
 	text-decoration: none;
 	color: var(--light-blue-color);
 }
-
 .mGit:hover, .dGit:hover {
-	color: var(--white-color) !important;
+	color: var(--white-color);
 	transition: 0.4s;
 }
 
+/*─────────────────────Bubble─────────────────────*/
+.bubblepasswrong {
+	color: #df813b;
+	font-size: 18px;
+}
+.bubble {
+	border-radius: 25px;
+	width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	background-color: #292e39; /**/
+	box-shadow: 0px 0px 30px 10px rgba(0, 0, 0, 0.5);
+	z-index: 1;
+}
+.bubble form {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding-top: 20px;
+}
+.bubble form input[type="password"],
+.bubble form input[type="text"] {
+	width: 310px;
+	border-radius: 25px;
+	height: 50px;
+	border: 1px solid var(--white-color);
+	color: black;
+	margin-bottom: 20px;
+	padding: 0 15px;
+}
+.bubble form input[type="submit"] {
+	width: 100%;
+	padding: 15px;
+	margin-top: 20px;
+	border-radius: 0 0 25px 25px;
+	background-color: var(--grey-blue-color);
+	border: 0;
+	cursor: pointer;
+	font-weight: bold;
+	transition: 0.2s;
+}
+.bubble .response {
+	width: 100%;
+	padding: 15px;
+	margin-top: 20px;
+	border-radius: 0 0 25px 25px;
+	background-color: var(--grey-blue-color);
+	border: 0;
+	cursor: pointer;
+	font-weight: bold;
+	transition: 0.2s;
+}
+.bubble form input[type="submit"]:hover {
+	background-color: var(--blue-color);
+	transition: 0.2s;
+}
 
-/*─────────────────────Für ohne Hello─────────────────────*/
-.auf,
-.stats,
-.middle,
-.hello,
-.labelhide {
-	visibility: hidden !important;
-	font-size: 0px;
-	width: 0px;
-	height: 0px;
-	left: -5000px !important;
-	top: 0px !important;
-	margin: unset;
-	margin: auto auto auto 53.2%;
+.notice p {
+	padding: 70px 30px 70px 30px;
+	text-align: center;
+}
+
+/*─────────────────────Normal─────────────────────*/
+.normform, .backform {
+	width: 320px;
+	flex-wrap: wrap;
+	margin: 0;
+	border-radius: 25px;
+	box-shadow: 0 0 0 4px var(--blue-color);
+}
+.normform input[type="submit"], .backform input[type="submit"] {
+	width: 320px;
+	height: auto;
+	padding: 15px;
+	background-color: var(--grey-blue-color);
+	border: 0;
+	cursor: pointer;
+	font-weight: bold;
+	transition: 0.3s;
+	border-radius: 0 0 25px 25px;
+}
+.normform input[type="submit"]:hover, .backform input[type="submit"]:hover {
+	background-color: var(--blue-color);
+}
+.normgitreport {
+	flex-wrap: wrap;
+	margin: 0;
+	padding-top: 0px;
+	width: 1280px;
+	border-radius: 0 0 25px 25px;
+	background-color: var(--grey-blue-color);
+	height: auto;
+	padding: 15px;
+	border: 0;
+	cursor: pointer;
+	font-weight: bold;
+	transition: 0.2s;
+	transition: 0.3s;
+	text-align: center;
+	display: block;
+	text-decoration: none;
+	color: var(--light-blue-color);
+}
+.normgitreport:hover {
+	background-color: var(--blue-color);
+}
+
+/*─────────────────────Backwards─────────────────────*/
+.backanswer {
+	border-radius: 25px;
+	border-bottom-left-radius: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 320px;
+	box-shadow: 0px 0px 30px 10px rgba(0, 0, 0, 0.5);
+}
+.backanswer form input[type="submit"] { 
+	width: 100%;
+	padding: 15px;
+	border-radius: 0 0 25px 25px;
+	background-color: var(--grey-blue-color);
+	border: 0;
+	cursor: pointer;
+	font-weight: bold;
+	transition: 0.2s;
+	margin-top: 0;
+}
+.backanswer input[type="submit"] {
+	border-radius: 0 0 25px 25px;
+}
+.backpadleft form {
+	padding-top: 0;
+}
+.backgitreport {
+	flex-wrap: wrap;
+	margin: 0;
+	margin-top: 40px;
+	width: 100%;
+	border-radius: 0 0 25px 25px;
+	background-color: var(--grey-blue-color);
+	height: auto;
+	padding: 15px;
+	border: 0;
+	cursor: pointer;
+	font-weight: bold;
+	transition: 0.2s;
+	transition: 0.3s;
+	text-align: center;
+	display: block;
+	text-decoration: none;
+	color: var(--light-blue-color);
+}
+.backgitreport:hover {
+	background-color: var(--blue-color);
+}
+
+/*─────────────────────Backwards response─────────────────────*/
+.rebacksubmit input[type="submit"] {
+	width: 100%;
+	height: auto;
+	padding: 15px;
+	background-color: var(--grey-blue-color);
+	border: 0;
+	cursor: pointer;
+	font-weight: bold;
+	transition: 0.3s;
+	border-radius: 0 0 25px 25px;
+}.rebacksubmit input[type="submit"]:hover {
+	background-color: var(--blue-color);
+	transition: 0.2s;
+}
+.rebackrahmen {
+	border-radius: 25px;
+	box-shadow: 0 0 0 4px var(--blue-color);
+	width: 320px;
+}
+.customcheck .form-control input[type=checkbox] {
+	margin-left: 10px;
+}
+.rebackgitreport {
+	margin-top: 0px;
+}
+
+/*─────────────────────Settings─────────────────────*/
+.settingsback {
+	cursor: pointer;
+	margin-left: 25px;
+	margin-top: 25px;
+	height: 25px;
+}
+.selectclass {
+	margin: 0;
+}
+.regler {
+	width:250px;
+	margin-right:15px;
+	margin-top: 20px;
+}
+/*──────Expandable──────*/
+.expand > input[name="collapse"] {
+	display: none;
+}
+.expand .content {
+	overflow: hidden;
+	height: 0;
+	transition: 0.4s;
+	text-align: center;
+}
+.expand > input[name="collapse"]:checked ~ .content {
+	height: 270px;
+	transition: height 0.4s;
+}
+.expandclick label {
+	display: block;
+}
+.expandclick label {
+	color: var(--white-color);
+	cursor: pointer;
+	font-weight: normal;
+	padding: 10px;
+	background: var(--grey-blue-color);
+	user-select: none;
+}
+.expand label:hover,
+.expand label:focus {
+	background: var(--blue-color);
+}
+.expandclick {
+	margin: 0;
+}
+.expand .expandclick label:before {
+	content: url(back.svg);
+	transform: rotate(180deg);
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	margin-right: 10px;
+	margin-left: 20px;
+	transition: 0.4s;
+}
+.expand > input[name="collapse"]:checked ~ .expandclick label:before {
+	  transform: rotate(270deg);
+	  transform-origin: center;
+	  transition: 0.4s;
+	  padding-bottom: 3px;
+}
+/*──────Popup──────*/
+.popup {
+	position: relative;
+	display: inline-block;
+	cursor: help;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.popup .show {
+	visibility: visible;
+	-webkit-animation: fadeIn 1s;
+	animation: fadeIn 1s;
+}
+.popup .popuptext {
+	visibility: hidden;
+	width: 500px;
+	height: inherit;
+	background-color: var(--blue-color);
+	color: var(--white-color);
+	text-align: center;
+	border-radius: 6px;
+	padding: 10px 10px;
+	position: absolute;
+	z-index: 1;
+	left: 50%;
+	margin-left: -250px;
+	box-shadow: 0px 0px 30px 10px rgba(0, 0, 0, 0.5);
+}
+/*Popup arrow*/
+.popup .popuptext::after {
+	content: "";
+	transform: rotate(180deg);
+	position: absolute;
+	top: -18px;
+	left: 50%;
+	margin-left: -10px;
+	border-width: 10px;
+	border-style: solid;
+	border-color: var(--blue-color) transparent transparent transparent;
+}
+@-webkit-keyframes fadeIn {
+	from {opacity: 0;} 
+	to {opacity: 1;}
+}
+@keyframes fadeIn {
+	from {opacity: 0;}
+	to {opacity: 1;}
+}
+
+/*─────────────────────Geräte─────────────────────*/
+@media (min-width: 1371px) {
+	.deskhide,
+	#menuM,
+	#menuM a,
+	#mSidebar,
+	.mGit {
+		visibility: hidden;
+		font-size: 0px;
+		width: 0px;
+		height: 0px;
+		left: -5000px;
+		top: 0px;
+		margin: 0;
+		padding: 0;
+	}
+	
+	/*─────────────────────Github test─────────────────────*/
+	.gitallow.backanswer {
+		width: 400px;
+	}
+	.gitallow.backanswer .backpadleft {
+		padding-left: 40px;
+	}
+	.nogitvideo {
+		border-bottom-left-radius: 25px;
+	}
 }
 
 /*─────────────────────Handy─────────────────────*/
+@media (max-width: 1370px) {
 
-@media (min-width: 1371px) {
-	.mNav,
-	.mNav a,
-	.mNav .close,
-	.open a,
-	#sidebarM,
-	.mGit {
-		visibility: hidden !important;
+	.dNav,
+	.mobhide * {
+		visibility: hidden;
 		font-size: 0px;
 		width: 0px;
 		height: 0px;
-		left: -5000px !important;
-		top: 0px !important;
-		margin: usnet;
+		left: -5000px;
+		top: 0px;
+		margin: 0;
+		padding: 0;
 	}
-}
-@media (max-width: 1370px) {
-	
-	.middle {
-		width: 0px;
-		margin: auto auto auto 53.2%;
+
+	* {
+		font-size: 35px;
 	}
+
 	body {
 		margin: 0px;
 	}
-	.auf,
-	.stats,
-	.middle,
-	.hello,
-	.dNav {
-		visibility: hidden !important;
-		font-size: 0px;
-		width: 0px;
-		height: 0px;
-		left: -5000px !important;
-		top: 0px !important;
-		margin: unset;
+
+	/*─────────────────────Generell────────────────────*/
+	#one {
+		transition: 0.7s; /* Für sidebar animation */
 	}
-	.answer table td {
-		display: flex;
+	textarea {
+		width: 100%;
+		border-radius: 0px;
+		font-size: 40px;
 	}
-	#sidebarM {
+	video {
+		border-top-right-radius: 25px;
+	}
+	.videotable {
+		width: 640px;
+	}
+	.padleft {
+		padding-left: unset;
+		display: block;
+	}
+	.annotation {
+		width: 100%;
+		font-size: 25px;
+		margin-bottom: 0px;
+	}
+
+	.form-control {
+		line-height: 1.2;
+		display: grid;
+		grid-template-columns: 1em auto;
+		gap: 0.5em;
+	}
+	.form-control+.form-control {
+		margin-top: 1em;
+	}
+	.form-control input[type=checkbox] {
+		width: 45px;
+		height: 45px;
+	}
+	.form-control input[type=checkbox]::before {
+		width: 28px;
+		height: 28px;
+	}
+
+	/*─────────────────────Sidebar────────────────────*/
+	#mSidebar {
 		padding: 30px;
 		z-index: 1;
 		transition: margin-left 0.7s;
@@ -583,27 +566,25 @@ color: var(--white-color);
 		color: var(--light-blue-color);
 		text-decoration: none;
 	}
-	#sidebarM button {
+	#mSidebar button {
 		background-color: var(--grey-blue-color);
 		border-color: rgba(0, 0, 0, 0);
 		cursor: pointer;
 		color: #232831; /**/
 		border-radius: 25px;
-		font-size: 50px !important;
+		font-size: 50px;
 		height: 75px;
 		width: 75px;
 		right: 30px;
 		position: fixed;
 		transition: 0.7s;
+		margin: 0;
+		padding: 0;
 	}
-	#sidebarM b {
-		font-size: 35px;
+	#mSidebar b {
 		color: var(--light-blue-color);
 	}
-	#sidebarM a {
-		font-size: 35px;
-	}
-	.mNav {
+	#menuM {
 		height: 100%;
 		width: 250px;
 		position: fixed;
@@ -618,21 +599,11 @@ color: var(--white-color);
 		font-size: 32px;
 		margin-right: -250px;
 	}
-	.open {
-		font-size: 30px;
-	}
-	.mNav .close {
-		position: absolute;
-		top: 0;
-		right: 22px;
-		margin-left: 50px;
-		font-size: 30px;
-	}
 	.mGit {
 		position: absolute;
 		z-index: 1;
 		bottom: 5%;
-		font-size: 25px !important;
+		font-size: 25px;
 		display: block;
 		text-align: center;
 		width: 100%;
@@ -643,264 +614,147 @@ color: var(--white-color);
 		color: var(--white-color);
 		transition: 0.4s;
 	}
-	#one {
-		transition: 0.7s;
-	}
-	.login {
+
+	/*─────────────────────Bubble─────────────────────*/
+	.bubble {
 		width: 90%;
 	}
-	.login input[type="text"],
-	.login input[type="password"] {
-		border-radius: 50px !important;
-		width: 85% !important;
-		height: 100px !important;
+	.bubble input[type="text"],
+	.bubble input[type="password"] {
+		border-radius: 50px;
+		width: 85%;
+		height: 100px;
 		font-size: 50px;
-		padding: 0 25px 0px 25px !important;
-		margin: 30px !important;
+		padding: 0 25px 0px 25px;
+		margin: 30px;
 	}
-	.login input[type="text"]:focus,
-	.login input[type="password"]:focus {
-		outline: var(--blue-color) solid 5px;
+	.bubble input[type="text"]:focus,
+	.bubble input[type="password"]:focus {
+		box-shadow: 0 0 0 5px var(--blue-color);
 	}
-	.login input[type="submit"] {
-		width: 100% !important;
+	.bubble input[type="submit"] {
+		width: 100%;
 		font-size: 50px;
 		height: 120px;
 	}
-	.login p {
+	.notice p {
 		font-size: 50px;
 		padding: 70px 30px 0 30px;
 	}
-	.wrong {
-		font-size: 35px;
+	.bubblepasswrong {
 		padding: 0 40px 0 40px;
 	}
 
-	.answer, .backanswer {
-		width: 640px;
-	}
-	.formtwo {
-		width: 100%;
-	}
-	video {
-		border-top-right-radius: 25px !important;
-	}
-	.padleft {
-		padding-left: unset;
-		display: block !important;
-	}
-	.backpadleft {
-		width: 90%;
-		padding: unset;
-	}
-	.backanswer form input[type="submit"] {
-		border-radius: 0px !important;
-	}
-	.backformtwo {
-		margin-top: 0px;
-	}
-	.rebackpadleft {
-		padding-left: unset;
-		display: block !important;
-	}
-	.rebackpadleft input[type="submit"]{
-		border-radius: 0px !important;
-		font-size: 32px !important;
-		font-weight: bold;
-	}
-	.backpadleft .mobilep {
-		width: 100% !important;
-		margin: 0 !important;
-		padding: 40px 0;
-	}
-	.nogitvideo {
-		border-bottom-left-radius: 0px !important;
-	}
-	.formone {
+	/*─────────────────────Normal─────────────────────*/
+	.normform, .backform {
 		box-shadow: unset;
 		border-radius: 0px;
 		width: 100%;
 	}
-	.formone input[type="submit"] {
+	.normform input[type="submit"], .backform input[type="submit"] {
 		width: 100%;
-		border-radius: 0px;
 		border-style: solid;
-		border-bottom-width: 3px;
 		border-color: var(--body-color);
-		font-size: 32px !important;
+		font-size: 32px;
 	}
-	.nogit input[type="submit"] {
-		border-bottom-left-radius: 25px;
-		border-bottom-right-radius: 25px;
+	.normform.gitallow input[type="submit"]{
+		border-radius: 0;
 	}
-	textarea {
+	.normgitreport {
 		width: 100%;
-		border-radius: 0px;
-		font-size: 40px;
+		margin-top: 3px;
+		font-size: 25px;
 	}
 
-	.rebackrahmen{
-		border-radius: 25px;
-		box-shadow: unset;
-	}
-	.backnogit {
-		margin-bottom: 3px;
-	}
-	.mobilep {
-		width: 600px;
-		margin-left: 20px;
-		font-size: 25px;
-		margin-bottom: 0px;
-	}
-	
-	.settingslogin {
+	/*─────────────────────Backwards─────────────────────*/
+	.backanswer {
 		width: 90%;
-		font-size: 35px;
 	}
-	.settingslogin form {
-		padding: 75px 0 0 0;
-	}
-	.settingslogin input[type="text"],
-	.settingslogin input[type="password"] {
-		border-radius: 50px !important;
-		width: 85% !important;
-		height: 100px !important;
-		font-size: 35px;
-		padding: 0 25px 0px 25px !important;
-		margin: 30px !important;
-	}
-	.settingslogin input[type="text"]:focus,
-	.settingslogin input[type="password"]:focus {
-		outline: var(--blue-color) solid 5px;
-	}
-	.settingslogin input[type="submit"] {
-		width: 100% !important;
-		font-size: 35px;
+	.backanswer form input[type="submit"] {
+		border-radius: 0px 0px 25px 25px;
 		height: 120px;
 	}
-	.settingslogin p {
-		font-size: 35px;
+	.backpadleft {
+		width: 10%;
+		padding: unset;
 	}
-	.settingslogin span {
-		font-size: 35px;
+	.backpadleft .annotation {
+		padding: 40px 0;
+	}
+	.backgitreport {
+		margin-top: 0px;
+		font-size: 25px;
+	}
+
+	/*─────────────────────Backwards response─────────────────────*/
+	.rebacksubmit input[type="submit"] {
+		font-size: 32px;
+		font-weight: bold;
+	}
+	.customcheck {
+		margin-bottom: 3px;
+	}
+	.customcheck .form-control input[type=checkbox] {
+		margin-left: 40px;
+	}
+	.rebackgitreport {
+		margin-top: 3px;
+		font-size: 25px;
+	}
+	
+	/*─────────────────────Github test─────────────────────*/
+	.nogitvideo {
+		border-bottom-left-radius: 0px;
+	}
+	.gitallow.backanswer .backpadleft input[type="submit"] {
+		border-radius: 0;
+		margin-bottom: 3px;
+	}
+	.gitallow.customcheck input[type="submit"] {
+		border-radius: 0;
+	}
+
+	/*─────────────────────Settings─────────────────────*/
+	.settingsbubble form {
+		padding: 40px 0 0 0;
+	}
+	.settingsbubble input[type="text"],
+	.settingsbubble input[type="password"] {
+		border-radius: 50px;
+		width: 85%;
+		height: 100px;
+		padding: 0 25px 0px 25px;
+		margin: 30px;
+	}
+	.settingsbubble input[type="text"]:focus,
+	.settingsbubble input[type="password"]:focus {
+		outline: var(--blue-color) solid 5px;
+	}
+	.settingsbubble input[type="submit"] {
+		width: 100%;
+		height: 120px;
+	}
+	.settingsbubble span {
 		line-height: 25px;
 	}
 	.settingsback {
 		margin-left: 40px;
 		margin-top: 40px;
-		margin-bottom: -10px;
 		height: 60px;
 	}
-	.popup {
-		position: relative;
-		display: inline-block;
-		cursor: help;
-		-webkit-user-select: none;
-		-moz-user-select: none;
-		-ms-user-select: none;
-		user-select: none;
-		font-size: 35px;
+	.settingspass {
+		margin-top: 75px;
 	}
-	  
-	/* The actual popup */
-	.popup .popuptext {
-	  visibility: hidden;
-		width: 80vw;
-		height: inherit;
-		background-color: var(--blue-color);
-	color: var(--white-color);
-		text-align: center;
-		border-radius: 6px;
-		padding: 50px 10px;
-		font-size: 35px;
-		position: absolute;
-		z-index: 1;
-		/*bottom: 125%;*/
-		margin-left: -40vw;
-		box-shadow: 0px 0px 30px 10px rgba(0, 0, 0, 0.5) !important;
-	  }
-	  
-	  /* Popup arrow */
-	  .popup .popuptext::after {
-		content: "";
-		transform: rotate(180deg);
-		position: absolute;
-		top: -18px;
-		left: 50%;
-		margin-left: -10px;
-		font-size: 35px;
-		border-width: 10px;
-		border-style: solid;
-		border-color: var(--blue-color) transparent transparent transparent;
-	  }
-	  
-	  .form-control {
-		  font-size: 35px;
-		  line-height: 1.2;
-		  display: grid;
-		  grid-template-columns: 1em auto;
-		  gap: 0.5em;
-	  }
-	  
-	  .form-control+.form-control {
-		  margin-top: 1em;
-	  }
-	  
-	  .backnogit .form-control input[type=checkbox] {
-		-webkit-appearance: none;
-		-moz-appearance: none;
-		appearance: none;
-		background-color: var(--white-color);
-		margin: 0;
-		margin-left: 40px;
-		color: var(--light-blue-color);
-		width: 45px;
-		height: 45px;
-		border: 0.15em solid var(--light-blue-color);
-		border-radius: 0.15em;
-		display: grid;
-		place-content: center;
+	/*──────Expandable──────*/
+	.expand > input[name="collapse"]:checked ~ .content {
+		height: 410px;
 	}
-	.settingslogin .form-control input[type=checkbox] {
-		-webkit-appearance: none;
-		-moz-appearance: none;
-		appearance: none;
-		background-color: var(--white-color);
-		margin: 0;
-		color: var(--light-blue-color);
-		width: 45px;
-		height: 45px;
-		border: 0.15em solid var(--light-blue-color);
-		border-radius: 0.15em;
-		display: grid;
-		place-content: center;
+	.expand .expandclick label:before {
+		width: 25px;
+		height: 25px;
 	}
-	  
-	  .form-control input[type=checkbox]::before {
-		  content: "";
-		  width: 28px;
-		  height: 28px;
-		  -webkit-clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
-		  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
-		  transform: scale(0);
-		  transition: 120ms transform ease-in-out;
-		  box-shadow: inset 1em 1em black;
-	  }
-
-	  .selectclass {
-		  font-size: 35px;
-	  }
-	  
-	  input[type=checkbox]:checked::before {
-		  transform: scale(1);
-	  }
-
-	  .labelhide {
-		  width: 100%;
-		  height:40px;
-	  }
-
-	  .regler {
+	/*──────Custom slider──────*/
+	.regler {
 		-webkit-appearance: none;
 		width: 75%;
 		height: 25px;
@@ -909,9 +763,8 @@ color: var(--white-color);
 		outline: none;
 		-webkit-transition: .2s;
 		transition: opacity .2s;
-	  }
-	  
-	  .regler::-webkit-slider-thumb {
+	}
+	.regler::-webkit-slider-thumb {
 		-webkit-appearance: none;
 		appearance: none;
 		width: 40px;
@@ -919,16 +772,27 @@ color: var(--white-color);
 		border-radius: 50%; 
 		background: var(--blue-color);
 		cursor: pointer;
-	  }
-	  
-	  .regler::-moz-range-thumb {
+	}
+	.regler::-moz-range-thumb {
 		width: 40px;
 		height: 40px;
 		border-radius: 20px;
 		background: var(--blue-color);
 		cursor: pointer;
-	  }
-	  .settingspass{
-		margin-top: 75px;
-	  }
+	}
+	/*──────Popup──────*/
+	.popup .popuptext {
+		width: 80vw;
+		border-radius: 20px;
+		padding: 50px 10px;
+		margin-left: -40vw;
+		line-height: 40px;
+		top: 20px;
+	}
+	/*Popup arrow*/
+	.popup .popuptext::after {
+		top: -58px;
+		margin-left: -30px;
+		border-width: 30px;
+	}
 }

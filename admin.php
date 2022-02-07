@@ -14,38 +14,39 @@ echo '
   include './database.php';
   if($account == 1){
     if ($adminrow['id'] == 1) {
-        echo '
-        <div id="dmenuM" class="dnav">
-        <img src="back.svg" alt="Zurück" class="dback" height="18px">
+        echo '<div id="sidebar-head">
+        <!---─────────────────────Sidebar-PC────────────────────────--->
+        <div class="dNav">
+        <img src="back.svg" alt="Zurück" class="dNavButton" height="18px">
           <b>&nbsp;&nbsp;Hallo ' . $_COOKIE["login_user"] . '! <img src="settings.svg" alt="Settings" height="18px" onclick="location.href=\'./settings.php\'" style="cursor: pointer;"><br>
           <a href="./index.php?logout=1" style="color:#8497a8; text-decoration: none !important;">&nbsp;&nbsp;Ausloggen</a></b>
-        <a href="https://github.com/JohnFCreep/Phase-G#funktion" class="dgitM" target="_blank">Github (Funktion, Lizenz, ...)</a>
+        <a href="https://github.com/JohnFCreep/Phase-G#funktion" class="dGit" target="_blank">Github (Funktion, Lizenz, ...)</a>
         </div>
-          <!---─────────────────────Handy─────────────────────--->
-          <div id="sidebar">
-            <div id="menuM" class="nav">
+        <!---─────────────────────Sidebar-Handy─────────────────────--->
+          <div id="mSidebar">
+            <div id="menuM">
               <b>&nbsp;&nbsp;Hallo ' . $_COOKIE["login_user"] . '! <img src="settings.svg" alt="Settings" height="26px" onclick="location.href=\'./settings.php\'" style="cursor: pointer;"><br>
               <a href="./index.php?logout=1" style="color:#8497a8; text-decoration: none !important;">&nbsp;&nbsp;Ausloggen</a></b><a href=""></a>
-              <a href="https://github.com/JohnFCreep/Phase-G#funktion" class="gitM" target="_blank">Github (Funktion, Lizenz, ...)</a>
+              <a href="https://github.com/JohnFCreep/Phase-G#funktion" class="mGit" target="_blank">Github (Funktion, Lizenz, ...)</a>
             </div>
-            <span class="open" id="button">
-              <button class="currentclose" onClick="toggleMenu(this)" id="buttoninner">
+            <span class="open" id="mButton">
+              <button class="currentclose" onClick="toggleMenu(this)" id="mButtoninner">
                 ☰
               </button>
             </span>
           </div>
         <script>
-          function toggleMenu(button) { 
-            if ( button.className === "currentclose" ) {
+          function toggleMenu(mButton) { 
+            if ( mButton.className === "currentclose" ) {
               document.getElementById("menuM").style.marginRight = "0px";
-              document.getElementById("buttoninner").style.right = "280px";
+              document.getElementById("mButtoninner").style.right = "280px";
               document.getElementById("one").style.left = "-250px";
-              button.className = "";
+              mButton.className = "";
             } else {
               document.getElementById("menuM").style.marginRight = "-250px";
-              document.getElementById("buttoninner").style.right = "30px";
+              document.getElementById("mButtoninner").style.right = "30px";
               document.getElementById("one").style.left = "0px";
-              button.className = "currentclose";
+              mButton.className = "currentclose";
             }
           }
         </script>
@@ -121,8 +122,7 @@ echo '
         }
   //─────────────────────HTML─────────────────────
   echo '
-  <div class="one" id="one"><div class="two"><div class="settingslogin">
-    <img src="back1.svg" alt="Zurück" onclick="location.href=\'./admin.php\'" class="settingsback"><br>
+  <div class="one" id="one"><div class="two"><div class="bubble settingsbubble">
     <form method="post" action="' . htmlspecialchars($_SERVER["PHP_SELF"]) . '">
       <p>Wörterbuch auswählen:</p>
       <label style="width: 100%; height:10px;"></label>
@@ -150,14 +150,14 @@ echo '
   ';
     } else {
         echo '
-        <div class="one" id="one"><div class="two"><div class="login"><p style="text-align: center; padding: 70px 20px;"><a href="./index.php" style="color: #b7c7e2">Du besitzt nicht die Zugriffsrechte zu dieser Seite.<br>Bitte logge dich mit der Admin Account ein!</a></p></div></div></div>
+        <div class="one" id="one"><div class="two"><div class="bubble notice"><p style="padding-bottom: 0;"><a href="./index.php" style="color: #b7c7e2">Du besitzt nicht die Zugriffsrechte zu dieser Seite.<br>Bitte logge dich mit der Admin Account ein!</a></p></div></div></div>
         ';
     }
     
     
   }else {
     echo '
-    <div class="one" id="one"><div class="two"><div class="login"><p style="text-align: center; padding: 70px 20px;"><a href="./index.php" style="color: #b7c7e2">Bitte logge dich erst hier ein!</a></p></div></div></div>
+    <div class="one" id="one"><div class="two"><div class="bubble notice"><p style="padding-bottom: 0;"><a href="./index.php" style="color: #b7c7e2">Bitte logge dich erst hier ein!</a></p></div></div></div>
     ';
   }
 ?>

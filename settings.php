@@ -18,56 +18,63 @@ echo '
     //─────────────────────Account-PC─────────────────────
   
     //─────────────────────HTML─────────────────────
-    echo '
-    <!---─────────────────────Stats─────────────────────--->
-    <!---─────────────────────Sidebar-PC─────────────────────--->
-    <div id="dmenuM" class="dNav">
-    <img src="back.svg" alt="Zurück" class="dback" height="18px">
+    echo '<div id="sidebar-head">
+    <!---─────────────────────Sidebar-PC────────────────────────--->
+    <div class="dNav">
+    <img src="back.svg" alt="Zurück" class="dNavButton" height="18px">
       <b>&nbsp;&nbsp;Hallo ' . $_COOKIE["login_user"] . '!<br>
       <a href="./index.php?logout=1" style="color:#8497a8; text-decoration: none !important;">&nbsp;&nbsp;Ausloggen</a></b>
     <a href="https://github.com/JohnFCreep/Phase-G#funktion" class="dGit" target="_blank">Github (Funktion, Lizenz, ...)</a>
     </div>
-      <!---─────────────────────Sidebar-Handy─────────────────────--->
-      <div id="sidebarM">
-        <div id="menuM" class="mNav">
-          <b>&nbsp;&nbsp;Hallo ' . $_COOKIE["login_user"] . '!<br>
-          <a href="./index.php?logout=1" style="color:#8497a8; text-decoration: none !important;">&nbsp;&nbsp;Ausloggen</a></b><a href=""></a>
-          <a href="https://github.com/JohnFCreep/Phase-G#funktion" class="mGit" target="_blank">Github (Funktion, Lizenz, ...)</a>
-        </div>
-        <span class="open" id="button">
-          <button class="currentclose" onClick="toggleMenu(this)" id="buttoninner">
-            ☰
-          </button>
-        </span>
+    <!---─────────────────────Sidebar-Handy─────────────────────--->
+    <div id="mSidebar">
+      <div id="menuM">
+        <b>&nbsp;&nbsp;Hallo ' . $_COOKIE["login_user"] . '!<br>
+        <a href="./index.php?logout=1" style="color:#8497a8; text-decoration: none !important;">&nbsp;&nbsp;Ausloggen</a></b><a href=""></a>
+        <a href="https://github.com/JohnFCreep/Phase-G#funktion" class="mGit" target="_blank">Github (Funktion, Lizenz, ...)</a>
       </div>
+      <span class="open" id="mButton">
+        <button class="currentclose" onClick="toggleMenu(this)" id="mButtoninner">
+          ☰
+        </button>
+      </span>
+    </div>
     <script>
-      function toggleMenu(button) { 
-        if ( button.className === "currentclose" ) {
+      function toggleMenu(mButton) { 
+        if ( mButton.className === "currentclose" ) {
           document.getElementById("menuM").style.marginRight = "0px";
-          document.getElementById("buttoninner").style.right = "280px";
+          document.getElementById("mButtoninner").style.right = "280px";
           document.getElementById("one").style.left = "-250px";
-          button.className = "";
+          mButton.className = "";
         } else {
           document.getElementById("menuM").style.marginRight = "-250px";
-          document.getElementById("buttoninner").style.right = "30px";
+          document.getElementById("mButtoninner").style.right = "30px";
           document.getElementById("one").style.left = "0px";
-          button.className = "currentclose";
+          mButton.className = "currentclose";
         }
       }
     </script>
-';
+</div>';
   if($_SERVER["REQUEST_METHOD"] == "POST") {
     $uname = $_COOKIE['login_user'];
     $error = "";
     if ($adminrow['id'] != 1) {
-      if($_POST['backwards'] <= "101" && $_POST['backwards'] >= "0"){
+      if($_POST['backwards'] <= "100" && $_POST['backwards'] >= "0"){
         $newbackwards =  htmlspecialchars($_POST['backwards']);
         $sql = "UPDATE accounts SET backwards='$newbackwards' WHERE username='$uname'";
         mysqli_query($db, $sql);
       }else {
-        $error = $error . "Zahl liegt nicht im erlaubten Bereich!<br>";
+        $error = $error . "Regler-Zahl liegt nicht im erlaubten Bereich!<br>";
       }
-  
+      
+      if($_POST['start'] <= "7" && $_POST['start'] >= "0"){
+        $newbackstart =  htmlspecialchars($_POST['start']);
+        $sql = "UPDATE accounts SET backstart='$newbackstart' WHERE username='$uname'";
+        mysqli_query($db, $sql);
+      }else {
+        $error = $error . "Level liegt nicht im erlaubten Bereich!<br>";
+      }
+
       if($_POST['github'] == "" || $_POST['github'] == "on"){
         $newgithub =  htmlspecialchars($_POST['github']);
         $sql = "UPDATE accounts SET github='$newgithub' WHERE username='$uname'";
@@ -99,7 +106,7 @@ echo '
   
   //─────────────────────HTML─────────────────────
   echo '
-  <div class="one" id="one"><div class="two"><div class="settingslogin">
+  <div class="one" id="one"><div class="two"><div class="bubble settingsbubble">
   ';
   if ($adminrow['id'] == 1) {
     echo '
@@ -110,17 +117,32 @@ echo '
     echo '
     <img src="back1.svg" alt="Zurück" onclick="location.href=\'./index.php\'" class="settingsback"><br>
     <form method="post" action="' . htmlspecialchars($_SERVER["PHP_SELF"]) . '">
-      <input id="backwards" type="range" min="0" max="100" value="' . $row["backwards"] . '" name="backwards"
-      ';
-      if($row["backwards"] == "on"){echo "checked";}
-      echo '
-      class="regler" />
-      <span id="currentrange" style="width:3ch;"></span>
-      <label class="labelhide"></label>
-      <div class="popup" onclick="myFunction()">Gebärdenabfrage (Klicke für Hilfe)
-        <span class="popuptext" id="myPopup">Hier kannst du die Wahrscheinlichkeit angeben, mit der du nach den Gebärden gefragt wirst (100 = immer bietet sich an wenn man sehr weit ist, 0 = nie). Da man das in dieser Umgebung nicht kontrollieren kann, ist deine Ehrlichkeit gefragt.
-          Du musst es wirklich exakt genau richtig machen, damit die Vokabel ein Level hoch kommt. Es werden nur Vokabeln genommen, die du auf Level 2 hast (also einmal richtig eingegeben).
-      <br><br><em>Klicke hier um das Popup zu schließen</em></span></div>
+      <section class="expand">
+        <input type="checkbox" name="collapse" id="expandbutton">
+        <h2 class="expandclick" onclick="closeFunction()">
+            <label for="expandbutton">Text zu Gebärde Optionen</label>
+        </h2>
+        <div class="content" id="contenttoggle">
+          <input id="backwards" type="range" min="0" max="100" value="' . $row["backwards"] . '" name="backwards" class="regler" />
+          <span id="currentrange" style="width:3ch;"></span>
+          <div class="popup" onclick="popFunction()">Gebärdenabfrage (Klicke für Hilfe)
+            <span class="popuptext" id="myPopup">Hier kannst du die Wahrscheinlichkeit angeben, mit der du nach den Gebärden gefragt wirst (100 = immer bietet sich an wenn man sehr weit ist, 0 = nie). Da man das in dieser Umgebung nicht kontrollieren kann, ist deine Ehrlichkeit gefragt.
+              Du musst es wirklich exakt genau richtig machen, damit die Vokabel ein Level hoch kommt. Es werden nur Vokabeln genommen, die du auf Level 2 hast (also einmal richtig eingegeben).
+          <br><br><em>Klicke hier um das Popup zu schließen</em></span></div>
+          <label style="width: 100%; height:40px; display: block; background: unset !important;"></label>
+          <p class="selectclass" style="padding:0 20px 5px 20px; text-align:center;">Ab welchem Level möchtest du Gebärden machen (0&nbsp;geeignet&nbsp;für&nbsp;Muttersprachler, 2&nbsp;ist&nbsp;Standard)?</p>
+          <select name="start" required class="selectclass">
+            <option '; if($row["backstart"] == 0){echo "selected";} echo ' value="0">0</option>
+            <option '; if($row["backstart"] == 1){echo "selected";} echo ' value="1">1</option>
+            <option '; if($row["backstart"] == 2){echo "selected";} echo ' value="2">2</option>
+            <option '; if($row["backstart"] == 3){echo "selected";} echo ' value="3">3</option>
+            <option '; if($row["backstart"] == 4){echo "selected";} echo ' value="4">4</option>
+            <option '; if($row["backstart"] == 5){echo "selected";} echo ' value="5">5</option>
+            <option '; if($row["backstart"] == 6){echo "selected";} echo ' value="6">6</option>
+            <option '; if($row["backstart"] == 7){echo "selected";} echo ' value="7">7</option>
+          </select>
+        </div>
+      </section>
       <label style="width: 100%; height:30px;"></label>
       <label class="form-control">
         <input type="checkbox" name="github"';
@@ -161,15 +183,27 @@ echo '
       output.innerHTML = this.value;
     }
 
-    function myFunction() {
+    function popFunction() {
       var popup = document.getElementById("myPopup");
       popup.classList.toggle("show");
+      if ( document.getElementById("contenttoggle").style.overflow === "unset" ) {
+        document.getElementById("contenttoggle").style.overflow = "";
+      } else {
+        document.getElementById("contenttoggle").style.overflow = "unset";
+      }
+    }
+    function closeFunction() {
+      if ( document.getElementById("contenttoggle").style.overflow === "unset" ) {
+        document.getElementById("contenttoggle").style.overflow = "";
+        var popup = document.getElementById("myPopup");
+        popup.classList.toggle("show");
+      }
     }
   </script>
   ';
   }else{
     echo '
-    <div class="one" id="one"><div class="two"><div class="login"><p style="text-align: center; padding: 70px 20px;"><a href="./index.php" style="color: #b7c7e2">Bitte logge dich erst hier ein!</a></p></div></div></div>
+    <div class="one" id="one"><div class="two"><div class="bubble notice"><p style="padding-bottom: 0px;"><a href="./index.php" style="color: #b7c7e2">Bitte logge dich erst hier ein!</a></p></div></div></div>
     ';
   }
   echo '
