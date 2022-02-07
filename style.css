@@ -75,6 +75,7 @@ video {
 	width: 100%;
 }
 
+/*──────Custom checkbox──────*/
 .form-control {
 	line-height: 1.1;
 	display: grid;
@@ -108,9 +109,29 @@ video {
 	transition: 120ms transform ease-in-out;
 	box-shadow: inset 1em 1em black;
 }
-/*──────Custom checkbox──────*/
 input[type=checkbox]:checked::before {
 	transform: scale(1);
+}
+
+/*──────Placeholder minimize──────*/
+.input-wrapper {
+	position: relative;
+}
+.logininput::placeholder {
+	color: transparent;
+	visibility: hidden; 
+}
+.input-label {
+	transition: transform 0.2s;
+	position: absolute;
+	top: 10px;
+	left: 20px;
+	transform-origin: top left;
+	transform: scale(0.7) translateY(-18px);
+	color: var(--body-color);
+}
+.logininput:placeholder-shown:not(.logininput:focus) ~ .input-label {
+	transform: unset; 
 }
 
 /*─────────────────────Sidebar────────────────────*/
@@ -190,9 +211,9 @@ input[type=checkbox]:checked::before {
 	border-radius: 25px;
 	height: 50px;
 	border: 1px solid var(--white-color);
-	color: black;
+	color: var(--body-color);
 	margin-bottom: 20px;
-	padding: 0 15px;
+	padding: 0 20px;
 }
 .bubble form input[type="submit"] {
 	width: 100%;
@@ -494,7 +515,8 @@ input[type=checkbox]:checked::before {
 @media (max-width: 1370px) {
 
 	.dNav,
-	.mobhide * {
+	.mobhide,
+	.mobhide .annotation {
 		visibility: hidden;
 		font-size: 0px;
 		width: 0px;
@@ -554,6 +576,24 @@ input[type=checkbox]:checked::before {
 	.form-control input[type=checkbox]::before {
 		width: 28px;
 		height: 28px;
+	}
+
+	/* .input-wrapper{
+		margin-left: 80px;
+	} */
+	.logininput {
+		height: 120px !important;
+		width: 90% !important;
+		border-radius: 60px !important;
+		padding-left: 50px !important;
+	}
+	.input-label {
+		top: 75px;
+		left: 80px;
+		transform: scale(0.7) translateY(-45px);
+	}
+	.specialmini{
+		top: 65px;
 	}
 
 	/*─────────────────────Sidebar────────────────────*/
@@ -636,6 +676,7 @@ input[type=checkbox]:checked::before {
 		width: 100%;
 		font-size: 50px;
 		height: 120px;
+		-webkit-appearance: none;
 	}
 	.notice p {
 		font-size: 50px;
@@ -655,10 +696,13 @@ input[type=checkbox]:checked::before {
 		width: 100%;
 		border-style: solid;
 		border-color: var(--body-color);
-		font-size: 32px;
+		font-size: 40px;
+		height: 110px;
+		-webkit-appearance: none;
 	}
-	.normform.gitallow input[type="submit"]{
+	.normform.gitallow input[type="submit"] {
 		border-radius: 0;
+		-webkit-appearance: none;
 	}
 	.normgitreport {
 		width: 100%;
@@ -673,6 +717,7 @@ input[type=checkbox]:checked::before {
 	.backanswer form input[type="submit"] {
 		border-radius: 0px 0px 25px 25px;
 		height: 120px;
+		-webkit-appearance: none;
 	}
 	.backpadleft {
 		width: 10%;
@@ -688,8 +733,10 @@ input[type=checkbox]:checked::before {
 
 	/*─────────────────────Backwards response─────────────────────*/
 	.rebacksubmit input[type="submit"] {
-		font-size: 32px;
+		height: 120px;
+		font-size: 40px;
 		font-weight: bold;
+		-webkit-appearance: none;
 	}
 	.customcheck {
 		margin-bottom: 3px;
@@ -709,9 +756,11 @@ input[type=checkbox]:checked::before {
 	.gitallow.backanswer .backpadleft input[type="submit"] {
 		border-radius: 0;
 		margin-bottom: 3px;
+		-webkit-appearance: none;
 	}
 	.gitallow.customcheck input[type="submit"] {
 		border-radius: 0;
+		-webkit-appearance: none;
 	}
 
 	/*─────────────────────Settings─────────────────────*/
@@ -733,6 +782,7 @@ input[type=checkbox]:checked::before {
 	.settingsbubble input[type="submit"] {
 		width: 100%;
 		height: 120px;
+		-webkit-appearance: none;
 	}
 	.settingsbubble span {
 		line-height: 25px;
@@ -741,9 +791,6 @@ input[type=checkbox]:checked::before {
 		margin-left: 40px;
 		margin-top: 40px;
 		height: 60px;
-	}
-	.settingspass {
-		margin-top: 75px;
 	}
 	/*──────Expandable──────*/
 	.expand > input[name="collapse"]:checked ~ .content {

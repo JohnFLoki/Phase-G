@@ -465,8 +465,8 @@ echo '
       echo '
       <div class="one" id="one"><div class="two"><div class="bubble"><br>
         <form method="post" action="' . htmlspecialchars($_SERVER["PHP_SELF"]) . '">
-          <input type="text" name="uname" placeholder="Benutzername" required /><br><br>
-          <input type="password" name="pass" placeholder="Passwort" required /><br><br>
+          <label class="input-wrapper"><input class="logininput" type="text" name="uname" placeholder="Benutzername" required /><span class="input-label specialmini">Benutzername</span></label>
+          <label class="input-wrapper"><input class="logininput" type="password" name="pass" placeholder="Passwort" required /><span class="input-label specialmini">Passwort</span></label>
           <b class="bubblepasswrong">Benutzername oder Passwort falsch!</b>
           <input type="submit" name="login" value="Senden" />
         </form>
@@ -477,8 +477,8 @@ echo '
     echo '
     <div class="one" id="one"><div class="two"><div class="bubble"><br>
       <form method="post" action="' . htmlspecialchars($_SERVER["PHP_SELF"]) . '">
-        <input type="text" name="uname" placeholder="Benutzername" required /><br><br>
-        <input type="password" name="pass" placeholder="Passwort" required /><br><br>
+        <label class="input-wrapper"><input class="logininput" type="text" name="uname" placeholder="Benutzername" required /><span class="input-label specialmini">Benutzername</span></label>
+        <label class="input-wrapper"><input class="logininput" type="password" name="pass" placeholder="Passwort" required /><span class="input-label specialmini">Passwort</span></label>
         <input type="submit" name="login" value="Senden" />
       </form>
     </div></div></div>

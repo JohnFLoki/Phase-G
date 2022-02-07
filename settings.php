@@ -164,8 +164,8 @@ echo '
       }
       echo '
       <label style="width: 100%; height:40px;"></label>
-      <input class="settingspass" type="password" name="newpass" placeholder="Neues Passwort (optional)" /><br><br>
-      <input type="password" name="renewpass" placeholder="Neues Passwort wiederholen" /><br>
+      <label class="input-wrapper"><input class="logininput" type="password" name="newpass" placeholder="Neues Passwort (optional)" /><span class="input-label">Neues Passwort (optional)</span></label>
+      <label class="input-wrapper"><input class="logininput" type="password" name="renewpass" placeholder="Neues Passwort wiederholen" /><span class="input-label">Neues Passwort wiederholen</span></label>
       ';
       echo $error;
       echo '

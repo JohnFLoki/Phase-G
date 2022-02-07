@@ -141,9 +141,9 @@ echo '
       //<label for="placeholder1">Placeholder1</label><br>
       echo '
       <label style="width: 100%; height:40px;"></label>
-      <input class="settingspass" type="text" name="newusername" placeholder="Benutzername" required /><br><br>
-      <input class="settingspass" type="password" name="newuserpass" placeholder="Passwort" required /><br><br>
-      <input type="password" name="renewuserpass" placeholder="Passwort wiederholen" required /><br>
+      <label class="input-wrapper"><input class="logininput" type="text" name="newusername" placeholder="Benutzername" required /><span class="input-label">Benutzername</span></label>
+      <label class="input-wrapper"><input class="logininput" type="password" name="newuserpass" placeholder="Passwort" required /><span class="input-label">Passwort</span></label>
+      <label class="input-wrapper"><input class="logininput" type="password" name="renewuserpass" placeholder="Passwort wiederholen" required /><span class="input-label">Passwort wiederholen</span></label>
       ';
       echo $error;
       echo '
