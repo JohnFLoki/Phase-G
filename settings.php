@@ -86,7 +86,7 @@ echo '
 
     if(!empty($_POST['newpass'])){
         if($_POST['newpass'] == $_POST['renewpass']){
-            $newpass =  htmlspecialchars($_POST['newpass']);
+            $newpass = password_hash(htmlspecialchars($_POST['newpass']), PASSWORD_DEFAULT);
             $sql = "UPDATE accounts SET password='$newpass' WHERE username='$uname'";
             mysqli_query($db, $sql);
             $error = $error .  "Neues Passwort wurde gespeichert!";

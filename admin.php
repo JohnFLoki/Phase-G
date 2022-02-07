@@ -77,7 +77,8 @@ echo '
           if ($fail == 0) {
             //─────────────────────neuer Benutzer─────────────────────
             $newuserpass =  htmlspecialchars($_POST['newuserpass']);
-            $sql = "INSERT INTO `accounts` (`id`, `username`, `password`) VALUES (NULL, '" . $newusername . "', '" . $newuserpass . "')";
+            $hashed_password = password_hash($newuserpass, PASSWORD_DEFAULT);
+            $sql = "INSERT INTO `accounts` (`id`, `username`, `password`) VALUES (NULL, '" . $newusername . "', '" . $hashed_password . "')";
             mysqli_query($db, $sql);
             $error = $error . "Benutzer erfolgreicht erstellt!<br>";
 

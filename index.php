@@ -442,16 +442,16 @@ echo '
       }
     }
   }elseif($_SERVER["REQUEST_METHOD"] == "POST") {
-    //─────────────────────Authentification─────────────────────
-    
-    $myusername = $_POST['uname'];
-    $mypassword = $_POST['pass']; 
 
-    $sql = "SELECT * FROM accounts WHERE username = BINARY '$myusername' and password = BINARY '$mypassword'";
+    //─────────────────────Authentification─────────────────────
+    $myusername = htmlspecialchars($_POST['uname']);
+    $mypassword = htmlspecialchars($_POST['pass']); 
+    $sql = "SELECT * FROM accounts WHERE username = BINARY '$myusername'";
     $result = mysqli_query($db, $sql);
     $count = mysqli_num_rows($result);
+    $hashtest = mysqli_fetch_assoc($result);
 		
-    if($count == 1) {
+    if( ($count == 1 && password_verify($mypassword, $hashtest['password'])) || ($hashtest['id'] == "1" && $hashtest['password'] == $mypassword) ) {
       setcookie('login_user', $myusername, time() + (86400 * 30), '', '', true);
 
       //─────────────────────HTML─────────────────────
