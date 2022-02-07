@@ -13,7 +13,7 @@ echo '
 ';
   include './database.php';
   if($account == 1){
-    if ($adminrow['id'] == 1) {
+    if ($accrow['id'] == 1) {
         echo '<div id="sidebar-head">
         <!---─────────────────────Sidebar-PC────────────────────────--->
         <div class="dNav">
