@@ -49,7 +49,8 @@ Vorraussetzungen: Funktionierende WebServer, PHP (getestet auf 7.3) und MySQL (i
 3. Ersetze alle Variablen (markiert mit ///) in den createacc.sql und database.php Dateien nach deinen Wünschen und deinen Vorgaben (Importieren auf eigenes Riskiko für bestehende Datenbanken).
 4. Erstelle auf deinem Web Server eine MySQL Datenbanken mit der createacc.sql Datei und bearbeite die database.php Datei entsprechend deiner MySQL-login Daten.
 5. Erstelle einen Unterordner video und ziehe hier alle Dateien rein, die du bei der Website findest (z.B. unter Download -> Wörterbuch gesamt -> video bei gebaerdenlernen.de).
-6. Melde dich mit den Admin Daten an und erstelle Benutzer mit den zur Verfügung stehenden Wörterbüchern
+6. Melde dich mit den Admin Daten an und erstelle Benutzer mit den zur Verfügung stehenden Wörterbüchern.
+Hinweis: Um die Privatsspähre zu schützen sind alle Passwörter außer dem des Admins verschlüsselt. Das Passwort des Admins muss im Klartext in der Datenbank stehen. Wenn alle Nutzer über das Admin Panel erstellt werden, sollte es dahingehend nicht zu Problemen kommen.
 
 Ordner-Struktur:
 ---
