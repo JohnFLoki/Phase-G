@@ -2,6 +2,7 @@
 
 //─────────────────────HTML─────────────────────
 echo '
+<!DOCTYPE html>
 <html>
 <head>
   <title>Einstellungen</title>

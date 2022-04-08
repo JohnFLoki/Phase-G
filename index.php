@@ -15,6 +15,7 @@
 
 //─────────────────────HTML─────────────────────
 echo '
+<!DOCTYPE html>
 <html>
 <head>
   <title>Phase-G</title>
@@ -204,7 +205,7 @@ echo '
           <table cellspacing="0" cellpadding="0">
             <tr>
               <td>
-              <video height="480" width="640" controls loop autoplay id="playback">
+              <video class="' . $nogitvideo . '" height="480" width="640" controls loop autoplay id="playback">
                 <source src="./video/' . $lastrow['link']  . '.mp4" type="video/mp4">
               </video>
               </td>
