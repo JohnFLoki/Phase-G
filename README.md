@@ -1,12 +1,6 @@
 # Phase-G
 Karteikartensystem für Gebärdensprache basierend auf HTML, PHP und MySQL.
 
-# Videos
-Die Videos bekommst du nicht hier sondern bei der Quelle: 
-- Berliner Dialekt: https://gebaerdenlernen.de/index.php 3694 Wörter
-
-  **Ordnername in video (siehe unten): berlin1**
-
 # Funktion
 Gebärde zu Text (GtT)
 ---
@@ -41,6 +35,12 @@ Level 5: 160 Tage<br>
 Level 6: 320 Tage<br>
 Level 7: 15 Monate<br>
 
+
+# Videos
+Die Videos bekommst du nicht hier sondern bei der Quelle: 
+- Berliner Dialekt: https://gebaerdenlernen.de/index.php 3654 Wörter
+
+  **Ordnername in video (siehe unten): berlin1**
 
 # How to install
 Vorraussetzungen: Funktionierende WebServer, PHP (getestet auf 7.3) und MySQL (inklusive Benutzer für database.php) Login-Daten.
