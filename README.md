@@ -73,6 +73,7 @@ Updates werden mit einem Update script gepostet.
 
 # ToDo
 - Specials aus berlin1
+- Mobile play speed
 - Weitere Wörterbücher
 - Englische Version
 - (Installer)
