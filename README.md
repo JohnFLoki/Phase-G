@@ -78,6 +78,7 @@ Updates werden mit einem Update script gepostet.
 - Englische Version
 - (Installer)
 - (Docker)
+- richtig/falsch bei TtG als zwei buttons ohne checkbox
 
 # Dialekte
 Da es in der Deutschen Gebärden Sprache mehrere Dialekte gibt, ist diese Webanwendung aufgebaut auf Wörterbüchern die zur Verfügung stehen.
