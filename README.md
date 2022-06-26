@@ -79,6 +79,14 @@ Updates werden mit einem Update script gepostet.
 - (Installer)
 - (Docker)
 - richtig/falsch bei TtG als zwei buttons ohne checkbox
+- 
+(3 Kategorien
+lvl 0 ist vorstellung der Vokabel raus aus der Tabelle
+lvl 1 ist beide richtungen)
+
+Zahnrad in neue Zeile mit "Einstellungen"
+
+Stattistik als Tabelle ohne "Level" in jeder Zeile und +1 Spalte TtG
 
 # Dialekte
 Da es in der Deutschen Gebärden Sprache mehrere Dialekte gibt, ist diese Webanwendung aufgebaut auf Wörterbüchern die zur Verfügung stehen.
