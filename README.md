@@ -68,8 +68,7 @@ reset_dont_use.php nur hinzufügen wenn du weißt was du tust!<br>
 
 Hier sind alle Hinweise auf gefundene fehlerhafte Daten:
 ---
-Bitte unter den Issues gucken!<br>
-Updates werden mit einem Update script gepostet.
+Bitte unter den Issues gucken!
 
 # ToDo
 - Specials aus berlin1
@@ -79,14 +78,13 @@ Updates werden mit einem Update script gepostet.
 - (Installer)
 - (Docker)
 - richtig/falsch bei TtG als zwei buttons ohne checkbox
-- 
-(3 Kategorien
-lvl 0 ist vorstellung der Vokabel raus aus der Tabelle
-lvl 1 ist beide richtungen
+- (3 Kategorien
+  -lvl 0 ist vorstellung der Vokabel raus aus der Tabelle
+  -lvl 1 ist beide richtungen
 
-Zahnrad in neue Zeile mit "Einstellungen"
+- Zahnrad in neue Zeile mit "Einstellungen"
 
-Statistik als Tabelle ohne "Level" in jeder Zeile und +1 Spalte TtG)
+- Statistik als Tabelle ohne "Level" in jeder Zeile und +1 Spalte TtG)
 
 # Dialekte
 Da es in der Deutschen Gebärden Sprache mehrere Dialekte gibt, ist diese Webanwendung aufgebaut auf Wörterbüchern die zur Verfügung stehen.
