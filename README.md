@@ -77,12 +77,6 @@ Bitte unter den Issues gucken!
 - Englische Version
 - (Installer)
 - (Docker)
-- richtig/falsch bei TtG als zwei buttons ohne checkbox
-- (3 Kategorien
-  -lvl 0 ist vorstellung der Vokabel raus aus der Tabelle
-  -lvl 1 ist beide richtungen
-
-- Zahnrad in neue Zeile mit "Einstellungen"
 
 - Statistik als Tabelle ohne "Level" in jeder Zeile und +1 Spalte TtG)
 
