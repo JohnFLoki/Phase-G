@@ -79,6 +79,7 @@ Bitte unter den Issues gucken!
 - (Docker)
 - Auth Cookie Random
 - Statistik als Tabelle ohne "Level" in jeder Zeile und +1 Spalte TtG)
+- Cookie fix (https://stackoverflow.com/questions/63315138/php-setcookie-doesnt-work-after-echo-on-production-server-it-does-work-on-lo#comment111959113_63315138)
 
 # Dialekte
 Da es in der Deutschen Gebärden Sprache mehrere Dialekte gibt, ist diese Webanwendung aufgebaut auf Wörterbüchern die zur Verfügung stehen.
