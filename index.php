@@ -8,7 +8,6 @@
   //session_start();
   if($_GET['logout'] == 1){
     setcookie("login_user", "", time() - 3600, '', '', true);
-    echo $_COOKIE['login_user'];
     sleep(1);
     header("location: ./index.php");
   }
