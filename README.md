@@ -77,7 +77,7 @@ Bitte unter den Issues gucken!
 - Englische Version
 - (Installer)
 - (Docker)
-
+- Auth Cookie Random
 - Statistik als Tabelle ohne "Level" in jeder Zeile und +1 Spalte TtG)
 
 # Dialekte
